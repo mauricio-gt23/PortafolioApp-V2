@@ -1,0 +1,457 @@
+// Layout Container
+.layout-container {
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+   position: relative;
+   display: flex;
+}
+
+// Sidebar Wrapper
+.sidebar-wrapper {
+   position: relative;
+   z-index: 1001;
+   transition: transform 0.3s ease;
+
+   @media (max-width: 768px) {
+      position: fixed;
+      transform: translateX(-100%);
+
+      &.mobile-open {
+         transform: translateX(0);
+      }
+   }
+}
+
+// Sidebar Container
+.sidebar-container {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 250px;
+   height: 100vh;
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   color: white;
+   padding: 20px;
+   overflow-y: auto;
+   z-index: 1001;
+   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease;
+
+   // Custom scrollbar
+   &::-webkit-scrollbar {
+      width: 6px;
+   }
+
+   &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+   }
+}
+
+// Profile Section
+.profile-section {
+   text-align: center;
+   margin-bottom: 30px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+   .avatar-container {
+      margin-bottom: 15px;
+
+      .avatar {
+         width: 80px;
+         height: 80px;
+         border-radius: 50%;
+         border: 3px solid rgba(255, 255, 255, 0.3);
+         object-fit: cover;
+         transition: transform 0.3s ease;
+
+         &:hover {
+            transform: scale(1.05);
+         }
+      }
+   }
+
+   .name {
+      margin: 10px 0 5px 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: white;
+   }
+
+   .title {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 300;
+   }
+}
+
+// Section Titles
+.section-title {
+   font-size: 1rem;
+   font-weight: 600;
+   margin-bottom: 15px;
+   color: rgba(255, 255, 255, 0.9);
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+}
+
+// Contact Section
+.contact-section {
+   margin-bottom: 30px;
+
+   .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 8px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+         background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      mat-icon {
+         margin-right: 12px;
+         font-size: 18px;
+         width: 18px;
+         height: 18px;
+         color: rgba(255, 255, 255, 0.8);
+      }
+
+      span {
+         font-size: 0.85rem;
+         color: rgba(255, 255, 255, 0.9);
+         word-break: break-word;
+      }
+   }
+}
+
+// Social Section
+.social-section {
+   margin-bottom: 30px;
+
+   .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .social-link {
+         display: flex;
+         align-items: center;
+         padding: 10px;
+         border-radius: 6px;
+         text-decoration: none;
+         color: rgba(255, 255, 255, 0.9);
+         transition: all 0.3s ease;
+
+         &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            color: white;
+         }
+
+         mat-icon {
+            margin-right: 12px;
+            font-size: 18px;
+            width: 18px;
+            height: 18px;
+         }
+
+         span {
+            font-size: 0.85rem;
+            font-weight: 500;
+         }
+      }
+   }
+}
+
+// Actions Section
+.actions-section {
+   .action-btn {
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      padding: 12px;
+      border-radius: 8px;
+
+      mat-icon {
+         margin-right: 8px;
+         font-size: 16px;
+         width: 16px;
+         height: 16px;
+      }
+   }
+}
+
+// Main Content
+.main-content {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   margin-left: 250px;
+   width: calc(100vw - 250px);
+   height: 100vh;
+   overflow: hidden;
+
+   &.mobile-full {
+      margin-left: 0;
+      width: 100vw;
+   }
+}
+
+// Navbar Container
+.navbar-container {
+   position: fixed;
+   top: 0;
+   left: 250px;
+   right: 0;
+   z-index: 1000;
+   background-color: #1976d2;
+   color: white;
+   height: 64px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   transition: left 0.3s ease;
+   overflow: hidden;
+
+   .container-fluid {
+      height: 100%;
+      padding: 0 20px;
+      max-width: none;
+   }
+
+   .row {
+      height: 100%;
+      margin: 0;
+   }
+
+   .navbar-brand {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: white;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+   }
+
+   .navbar-nav {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      
+      .d-flex {
+         width: 100%;
+         flex-wrap: nowrap;
+         align-items: center;
+      }
+   }
+
+   .nav-link-btn {
+      color: white !important;
+      border-radius: 8px;
+      padding: 8px 16px;
+      transition: all 0.3s ease;
+      min-width: auto;
+      margin: 0 4px;
+      font-size: 0.95rem;
+      white-space: nowrap;
+
+      &:hover {
+         background-color: rgba(255, 255, 255, 0.1);
+         transform: translateY(-1px);
+      }
+
+      &.active-link {
+         background-color: rgba(255, 255, 255, 0.2);
+         font-weight: 600;
+      }
+
+      mat-icon {
+         font-size: 18px;
+         width: 18px;
+         height: 18px;
+         margin-right: 6px;
+      }
+
+      span {
+         font-size: 0.95rem;
+      }
+   }
+}
+
+// Page Content
+.page-content {
+   flex: 1;
+   overflow-y: auto;
+   overflow-x: hidden;
+   margin-top: 64px;
+   height: calc(100vh - 64px);
+   background-color: #f5f5f5;
+
+   // Custom scrollbar
+   &::-webkit-scrollbar {
+      width: 8px;
+   }
+
+   &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 4px;
+
+      &:hover {
+         background: #a8a8a8;
+      }
+   }
+}
+
+// Content Container
+.content-container {
+   padding: 20px;
+   min-height: calc(100vh - 64px - 40px);
+   max-width: 1200px;
+   margin: 0 auto;
+   width: 100%;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+   .navbar-container {
+      left: 0;
+   }
+
+   .main-content {
+      margin-left: 0;
+      width: 100vw;
+   }
+
+   .content-container {
+      padding: 15px;
+   }
+}
+
+@media (max-width: 576px) {
+   .sidebar-container {
+      width: 280px;
+      padding: 15px;
+
+      .profile-section {
+         .avatar {
+            width: 70px;
+            height: 70px;
+         }
+
+         .name {
+            font-size: 1.2rem;
+         }
+      }
+
+      .contact-item,
+      .social-link {
+         padding: 8px;
+
+         span {
+            font-size: 0.8rem;
+         }
+      }
+   }
+
+   .content-container {
+      padding: 10px;
+   }
+
+   .page-content {
+      margin-top: 56px;
+      height: calc(100vh - 56px);
+   }
+
+   .navbar-container {
+      height: 56px;
+      
+      .container-fluid {
+         padding: 0 8px;
+      }
+      
+      .navbar-brand {
+         font-size: 1.1rem;
+      }
+      
+      .nav-link-btn {
+         padding: 4px 6px;
+         margin: 0 1px;
+         font-size: 0.75rem;
+
+         mat-icon {
+            font-size: 14px;
+            width: 14px;
+            height: 14px;
+            margin-right: 2px;
+         }
+         
+         span {
+            font-size: 0.75rem;
+         }
+      }
+   }
+}
+
+// Extra small screens
+@media (max-width: 480px) {
+   .navbar-container {
+      .container-fluid {
+         padding: 0 4px;
+      }
+      
+      .nav-link-btn {
+         padding: 3px 4px;
+         margin: 0;
+         
+         span {
+            display: none !important;
+         }
+         
+         mat-icon {
+            margin-right: 0;
+         }
+      }
+   }
+}
+
+// Medium screens adjustments
+@media (max-width: 992px) and (min-width: 577px) {
+   .navbar-container {
+      .nav-link-btn {
+         padding: 5px 8px;
+         font-size: 0.8rem;
+         
+         span {
+            font-size: 0.8rem;
+         }
+      }
+   }
+}
+
+// Smooth transitions
+* {
+   transition:
+      margin-left 0.3s ease,
+      width 0.3s ease;
+}
+
+// Box sizing
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}

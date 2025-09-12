@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterOutlet } from '@angular/router';
+import { LayoutStandaloneComponent } from './shared/components/layout/layout-standalone.component';
 
 @Component({
    selector: 'app-root',
    standalone: true,
-   imports: [RouterOutlet, MatButtonModule],
+   imports: [LayoutStandaloneComponent],
    templateUrl: './app.component.html',
    styleUrl: './app.component.scss',
 })
