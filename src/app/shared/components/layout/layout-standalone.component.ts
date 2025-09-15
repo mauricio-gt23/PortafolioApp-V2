@@ -104,13 +104,13 @@ import { Subject } from 'rxjs';
                   <div class="row w-100 align-items-center">
                      <!-- Logo/Brand Section -->
                      <div
-                        class="col-12 col-md-3 col-lg-3 p-0 text-center text-md-start"
+                        class="col-12 col-md-5 col-lg-5 col-xl-6 p-0 text-center text-md-start"
                      >
                         <span class="navbar-brand">Portfolio Web</span>
                      </div>
 
                      <!-- Navigation Links -->
-                     <div class="col-12 col-md-9 col-lg-9 p-0">
+                     <div class="col-12 col-md-1 col-lg-2 col-xl-4 p-0">
                         <nav class="navbar-nav">
                            <div
                               class="d-flex justify-content-center justify-content-md-center"
