@@ -1,3 +1,10 @@
+// =============================================================================
+// LAYOUT STANDALONE COMPONENT - ESTILOS ACTUALIZADOS
+// =============================================================================
+
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
 // Layout Container
 .layout-container {
    width: 100vw;
@@ -5,15 +12,17 @@
    overflow: hidden;
    position: relative;
    display: flex;
+   background-color: var(--background-primary);
+   color: var(--text-primary);
 }
 
 // Sidebar Wrapper
 .sidebar-wrapper {
    position: relative;
-   z-index: 1001;
-   transition: transform 0.3s ease;
+   z-index: $z-index-fixed;
+   @include smooth-transition(transform);
 
-   @media (max-width: 768px) {
+   @media (max-width: #{$breakpoint-md - 1px}) {
       position: fixed;
       transform: translateX(-100%);
 
@@ -30,13 +39,13 @@
    left: 0;
    width: 250px;
    height: 100vh;
-   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-   color: white;
-   padding: 20px;
+   background: linear-gradient(135deg, $primary-500 0%, $primary-700 100%);
+   color: $white;
+   padding: $spacing-5;
    overflow-y: auto;
-   z-index: 1001;
-   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-   transition: transform 0.3s ease;
+   z-index: $z-index-fixed;
+   box-shadow: $shadow-lg;
+   @include smooth-transition(transform);
 
    // Custom scrollbar
    &::-webkit-scrollbar {
@@ -56,47 +65,48 @@
 // Profile Section
 .profile-section {
    text-align: center;
-   margin-bottom: 30px;
-   padding-bottom: 20px;
+   margin-bottom: $spacing-8;
+   padding-bottom: $spacing-5;
    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
    .avatar-container {
-      margin-bottom: 15px;
+      margin-bottom: $spacing-4;
 
       .avatar {
          width: 80px;
          height: 80px;
-         border-radius: 50%;
+         border-radius: $border-radius-full;
          border: 3px solid rgba(255, 255, 255, 0.3);
          object-fit: cover;
-         transition: transform 0.3s ease;
+         @include hover-lift;
+         @include smooth-transition(transform, border-color);
 
          &:hover {
-            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.6);
          }
       }
    }
 
    .name {
-      margin: 10px 0 5px 0;
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: white;
+      margin: $spacing-3 0 $spacing-2 0;
+      @include text-xl;
+      font-weight: $font-weight-semibold;
+      color: $white;
    }
 
    .title {
       margin: 0;
-      font-size: 0.9rem;
+      @include text-sm;
       color: rgba(255, 255, 255, 0.8);
-      font-weight: 300;
+      font-weight: $font-weight-light;
    }
 }
 
 // Section Titles
 .section-title {
-   font-size: 1rem;
-   font-weight: 600;
-   margin-bottom: 15px;
+   @include text-base;
+   font-weight: $font-weight-semibold;
+   margin-bottom: $spacing-4;
    color: rgba(255, 255, 255, 0.9);
    text-transform: uppercase;
    letter-spacing: 0.5px;
@@ -104,22 +114,23 @@
 
 // Contact Section
 .contact-section {
-   margin-bottom: 30px;
+   margin-bottom: $spacing-8;
 
    .contact-item {
       display: flex;
       align-items: center;
-      margin-bottom: 12px;
-      padding: 8px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
+      margin-bottom: $spacing-3;
+      padding: $spacing-2;
+      border-radius: $border-radius-md;
+      @include smooth-transition(background-color);
+      @include focus-visible;
 
       &:hover {
          background-color: rgba(255, 255, 255, 0.1);
       }
 
       mat-icon {
-         margin-right: 12px;
+         margin-right: $spacing-3;
          font-size: 18px;
          width: 18px;
          height: 18px;
@@ -127,7 +138,7 @@
       }
 
       span {
-         font-size: 0.85rem;
+         @include text-sm;
          color: rgba(255, 255, 255, 0.9);
          word-break: break-word;
       }
@@ -136,38 +147,38 @@
 
 // Social Section
 .social-section {
-   margin-bottom: 30px;
+   margin-bottom: $spacing-8;
 
    .social-links {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: $spacing-2;
 
       .social-link {
          display: flex;
          align-items: center;
-         padding: 10px;
-         border-radius: 6px;
+         padding: $spacing-3;
+         border-radius: $border-radius-md;
+         @include smooth-transition(background-color, transform);
+         @include focus-visible;
          text-decoration: none;
-         color: rgba(255, 255, 255, 0.9);
-         transition: all 0.3s ease;
+         color: inherit;
 
          &:hover {
             background-color: rgba(255, 255, 255, 0.1);
-            transform: translateX(5px);
-            color: white;
+            transform: translateX(4px);
+            text-decoration: none;
          }
-
          mat-icon {
-            margin-right: 12px;
+            margin-right: $spacing-3;
             font-size: 18px;
             width: 18px;
             height: 18px;
          }
 
          span {
-            font-size: 0.85rem;
-            font-weight: 500;
+            @include text-sm;
+            font-weight: $font-weight-medium;
          }
       }
    }
@@ -177,13 +188,19 @@
 .actions-section {
    .action-btn {
       width: 100%;
-      margin-bottom: 10px;
-      font-size: 0.85rem;
-      padding: 12px;
-      border-radius: 8px;
+      margin-bottom: $spacing-3;
+      @include text-sm;
+      padding: $spacing-3;
+      border-radius: $border-radius-lg;
+      @include smooth-transition(background-color, transform);
+      @include focus-visible;
+
+      &:hover {
+         @include hover-lift;
+      }
 
       mat-icon {
-         margin-right: 8px;
+         margin-right: $spacing-2;
          font-size: 16px;
          width: 16px;
          height: 16px;
@@ -200,8 +217,15 @@
    width: calc(100vw - 250px);
    height: 100vh;
    overflow: hidden;
+   background-color: var(--background-primary);
+   color: var(--text-primary);
 
    &.mobile-full {
+      margin-left: 0;
+      width: 100vw;
+   }
+
+   @media (max-width: #{$breakpoint-md - 1px}) {
       margin-left: 0;
       width: 100vw;
    }
@@ -213,17 +237,21 @@
    top: 0;
    left: 250px;
    right: 0;
-   z-index: 1000;
-   background-color: #1976d2;
-   color: white;
+   z-index: $z-index-sticky;
+   background-color: $primary-600;
+   color: $white;
    height: 64px;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   transition: left 0.3s ease;
+   box-shadow: $shadow-md;
+   @include smooth-transition(left, background-color);
    overflow: hidden;
+
+   @media (max-width: #{$breakpoint-md - 1px}) {
+      left: 0;
+   }
 
    .container-fluid {
       height: 100%;
-      padding: 0 20px;
+      padding: 0 $spacing-5;
       max-width: none;
    }
 
@@ -233,9 +261,9 @@
    }
 
    .navbar-brand {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: white;
+      @include text-xl;
+      font-weight: $font-weight-semibold;
+      color: $white;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -256,13 +284,14 @@
    }
 
    .nav-link-btn {
-      color: white !important;
-      border-radius: 8px;
-      padding: 8px 16px;
-      transition: all 0.3s ease;
+      color: $white !important;
+      border-radius: $border-radius-lg;
+      padding: $spacing-2 $spacing-4;
+      @include smooth-transition(background-color, transform);
+      @include focus-visible;
       min-width: auto;
-      margin: 0 4px;
-      font-size: 0.95rem;
+      margin: 0 $spacing-1;
+      @include text-base;
       white-space: nowrap;
 
       &:hover {
@@ -272,18 +301,18 @@
 
       &.active-link {
          background-color: rgba(255, 255, 255, 0.2);
-         font-weight: 600;
+         font-weight: $font-weight-semibold;
       }
 
       mat-icon {
          font-size: 18px;
          width: 18px;
          height: 18px;
-         margin-right: 6px;
+         margin-right: $spacing-2;
       }
 
       span {
-         font-size: 0.95rem;
+         @include text-base;
       }
    }
 }
@@ -295,38 +324,21 @@
    overflow-x: hidden;
    margin-top: 64px;
    height: calc(100vh - 64px);
-   background-color: #f5f5f5;
-
-   // Custom scrollbar
-   &::-webkit-scrollbar {
-      width: 8px;
-   }
-
-   &::-webkit-scrollbar-track {
-      background: #f1f1f1;
-   }
-
-   &::-webkit-scrollbar-thumb {
-      background: #c1c1c1;
-      border-radius: 4px;
-
-      &:hover {
-         background: #a8a8a8;
-      }
-   }
+   background-color: var(--background-secondary);
+   @include custom-scrollbar;
 }
 
 // Content Container
 .content-container {
-   padding: 20px;
-   min-height: calc(100vh - 64px - 40px);
+   padding: $spacing-5;
+   min-height: calc(100vh - 64px - #{$spacing-10});
    max-width: 1200px;
    margin: 0 auto;
    width: 100%;
 }
 
 // Responsive Design
-@media (max-width: 768px) {
+@media (max-width: #{$breakpoint-md - 1px}) {
    .navbar-container {
       left: 0;
    }
@@ -337,14 +349,14 @@
    }
 
    .content-container {
-      padding: 15px;
+      padding: $spacing-4;
    }
 }
 
-@media (max-width: 576px) {
+@media (max-width: #{$breakpoint-sm - 1px}) {
    .sidebar-container {
       width: 280px;
-      padding: 15px;
+      padding: $spacing-4;
 
       .profile-section {
          .avatar {
@@ -353,22 +365,22 @@
          }
 
          .name {
-            font-size: 1.2rem;
+            @include text-lg;
          }
       }
 
       .contact-item,
       .social-link {
-         padding: 8px;
+         padding: $spacing-2;
 
          span {
-            font-size: 0.8rem;
+            @include text-xs;
          }
       }
    }
 
    .content-container {
-      padding: 10px;
+      padding: $spacing-3;
    }
 
    .page-content {
@@ -380,17 +392,17 @@
       height: 56px;
       
       .container-fluid {
-         padding: 0 8px;
+         padding: 0 $spacing-2;
       }
       
       .navbar-brand {
-         font-size: 1.1rem;
+         @include text-lg;
       }
       
       .nav-link-btn {
-         padding: 4px 6px;
+         padding: $spacing-1 $spacing-2;
          margin: 0 1px;
-         font-size: 0.75rem;
+         @include text-xs;
 
          mat-icon {
             font-size: 14px;
@@ -400,7 +412,7 @@
          }
          
          span {
-            font-size: 0.75rem;
+            @include text-xs;
          }
       }
    }
@@ -410,11 +422,11 @@
 @media (max-width: 480px) {
    .navbar-container {
       .container-fluid {
-         padding: 0 4px;
+         padding: 0 $spacing-1;
       }
       
       .nav-link-btn {
-         padding: 3px 4px;
+         padding: 3px $spacing-1;
          margin: 0;
          
          span {
@@ -429,29 +441,21 @@
 }
 
 // Medium screens adjustments
-@media (max-width: 992px) and (min-width: 577px) {
+@media (max-width: #{$breakpoint-lg - 1px}) and (min-width: #{$breakpoint-sm}) {
    .navbar-container {
       .nav-link-btn {
-         padding: 5px 8px;
-         font-size: 0.8rem;
+         padding: $spacing-1 $spacing-2;
+         @include text-sm;
          
          span {
-            font-size: 0.8rem;
+            @include text-sm;
          }
       }
    }
 }
 
-// Smooth transitions
-* {
-   transition:
-      margin-left 0.3s ease,
-      width 0.3s ease;
-}
-
-// Box sizing
-*,
-*::before,
-*::after {
-   box-sizing: border-box;
+// Layout transitions
+.main-content,
+.navbar-container {
+   @include smooth-transition(all);
 }
