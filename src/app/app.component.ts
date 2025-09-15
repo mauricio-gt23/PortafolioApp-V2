@@ -18,23 +18,27 @@ export class AppComponent implements OnInit {
    private initializeTheme() {
       // Verificar si ya hay un tema establecido en localStorage
       const savedTheme = localStorage.getItem('theme');
-      
+
       if (savedTheme) {
          document.documentElement.setAttribute('data-theme', savedTheme);
       } else {
          // Detectar preferencia del sistema
-         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+         const prefersDark = window.matchMedia(
+            '(prefers-color-scheme: dark)'
+         ).matches;
          const theme = prefersDark ? 'dark' : 'light';
          document.documentElement.setAttribute('data-theme', theme);
       }
 
       // Escuchar cambios en la preferencia del sistema
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-         // Solo cambiar si no hay tema guardado manualmente
-         if (!localStorage.getItem('theme')) {
-            const theme = e.matches ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', theme);
-         }
-      });
+      window
+         .matchMedia('(prefers-color-scheme: dark)')
+         .addEventListener('change', e => {
+            // Solo cambiar si no hay tema guardado manualmente
+            if (!localStorage.getItem('theme')) {
+               const theme = e.matches ? 'dark' : 'light';
+               document.documentElement.setAttribute('data-theme', theme);
+            }
+         });
    }
 }

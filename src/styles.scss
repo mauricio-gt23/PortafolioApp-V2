@@ -45,57 +45,57 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 // Configuración de variables CSS personalizadas
 :root {
-  @include adaptive-colors;
-  
-  // Variables de espaciado
-  --spacing-xs: #{$spacing-1};
-  --spacing-sm: #{$spacing-2};
-  --spacing-md: #{$spacing-4};
-  --spacing-lg: #{$spacing-6};
-  --spacing-xl: #{$spacing-8};
-  
-  // Variables de tipografía
-  --font-family-primary: #{$font-family-primary};
-  --font-family-secondary: #{$font-family-secondary};
-  --font-family-mono: #{$font-family-mono};
-  
-  // Variables de transición
-  --transition-fast: #{$transition-fast};
-  --transition-base: #{$transition-base};
-  --transition-slow: #{$transition-slow};
+   @include adaptive-colors;
+
+   // Variables de espaciado
+   --spacing-xs: #{$spacing-1};
+   --spacing-sm: #{$spacing-2};
+   --spacing-md: #{$spacing-4};
+   --spacing-lg: #{$spacing-6};
+   --spacing-xl: #{$spacing-8};
+
+   // Variables de tipografía
+   --font-family-primary: #{$font-family-primary};
+   --font-family-secondary: #{$font-family-secondary};
+   --font-family-mono: #{$font-family-mono};
+
+   // Variables de transición
+   --transition-fast: #{$transition-fast};
+   --transition-base: #{$transition-base};
+   --transition-slow: #{$transition-slow};
 }
 
 // Configuración HTML y Body
 html {
-  height: 100%;
-  font-size: 16px; // Base para rem
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+   height: 100%;
+   font-size: 16px; // Base para rem
+   scroll-behavior: smooth;
+   -webkit-text-size-adjust: 100%;
+   -ms-text-size-adjust: 100%;
 }
 
 body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-family-primary);
-  font-size: $font-size-base;
-  font-weight: $font-weight-regular;
-  line-height: $line-height-normal;
-  color: var(--text-primary);
-  background-color: var(--background-primary);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   font-family: var(--font-family-primary);
+   font-size: $font-size-base;
+   font-weight: $font-weight-regular;
+   line-height: $line-height-normal;
+   color: var(--text-primary);
+   background-color: var(--background-primary);
+   overflow-x: hidden;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-rendering: optimizeLegibility;
 }
 
 // -----------------------------------------------------------------------------
@@ -103,137 +103,146 @@ body {
 // -----------------------------------------------------------------------------
 
 // Headings responsivos
-h1, .h1 {
-  @include text-5xl;
-  font-weight: $font-weight-bold;
-  color: var(--text-primary);
-  margin-bottom: $spacing-6;
-  
-  @media (min-width: $breakpoint-md) {
-    @include text-6xl;
-  }
+h1,
+.h1 {
+   @include text-5xl;
+   font-weight: $font-weight-bold;
+   color: var(--text-primary);
+   margin-bottom: $spacing-6;
+
+   @media (min-width: $breakpoint-md) {
+      @include text-6xl;
+   }
 }
 
-h2, .h2 {
-  @include text-4xl;
-  font-weight: $font-weight-semibold;
-  color: var(--text-primary);
-  margin-bottom: $spacing-5;
-  
-  @media (min-width: $breakpoint-md) {
-    @include text-5xl;
-  }
+h2,
+.h2 {
+   @include text-4xl;
+   font-weight: $font-weight-semibold;
+   color: var(--text-primary);
+   margin-bottom: $spacing-5;
+
+   @media (min-width: $breakpoint-md) {
+      @include text-5xl;
+   }
 }
 
-h3, .h3 {
-  @include text-3xl;
-  font-weight: $font-weight-semibold;
-  color: var(--text-primary);
-  margin-bottom: $spacing-4;
-  
-  @media (min-width: $breakpoint-md) {
-    @include text-4xl;
-  }
+h3,
+.h3 {
+   @include text-3xl;
+   font-weight: $font-weight-semibold;
+   color: var(--text-primary);
+   margin-bottom: $spacing-4;
+
+   @media (min-width: $breakpoint-md) {
+      @include text-4xl;
+   }
 }
 
-h4, .h4 {
-  @include text-2xl;
-  font-weight: $font-weight-medium;
-  color: var(--text-primary);
-  margin-bottom: $spacing-4;
-  
-  @media (min-width: $breakpoint-md) {
-    @include text-3xl;
-  }
+h4,
+.h4 {
+   @include text-2xl;
+   font-weight: $font-weight-medium;
+   color: var(--text-primary);
+   margin-bottom: $spacing-4;
+
+   @media (min-width: $breakpoint-md) {
+      @include text-3xl;
+   }
 }
 
-h5, .h5 {
-  @include text-xl;
-  font-weight: $font-weight-medium;
-  color: var(--text-primary);
-  margin-bottom: $spacing-3;
-  
-  @media (min-width: $breakpoint-md) {
-    @include text-2xl;
-  }
+h5,
+.h5 {
+   @include text-xl;
+   font-weight: $font-weight-medium;
+   color: var(--text-primary);
+   margin-bottom: $spacing-3;
+
+   @media (min-width: $breakpoint-md) {
+      @include text-2xl;
+   }
 }
 
-h6, .h6 {
-  @include text-lg;
-  font-weight: $font-weight-medium;
-  color: var(--text-primary);
-  margin-bottom: $spacing-3;
-  
-  @media (min-width: $breakpoint-md) {
-    @include text-xl;
-  }
+h6,
+.h6 {
+   @include text-lg;
+   font-weight: $font-weight-medium;
+   color: var(--text-primary);
+   margin-bottom: $spacing-3;
+
+   @media (min-width: $breakpoint-md) {
+      @include text-xl;
+   }
 }
 
 // Párrafos y texto base
 p {
-  @include text-base;
-  color: var(--text-secondary);
-  margin-bottom: $spacing-4;
-  
-  &:last-child {
-    margin-bottom: 0;
-  }
+   @include text-base;
+   color: var(--text-secondary);
+   margin-bottom: $spacing-4;
+
+   &:last-child {
+      margin-bottom: 0;
+   }
 }
 
 // Enlaces
 a {
-  color: $primary-500;
-  text-decoration: none;
-  @include smooth-transition(color);
-  @include focus-visible;
-  
-  &:hover {
-    color: $primary-600;
-    text-decoration: underline;
-  }
-  
-  &:active {
-    color: $primary-700;
-  }
+   color: $primary-500;
+   text-decoration: none;
+   @include smooth-transition(color);
+   @include focus-visible;
+
+   &:hover {
+      color: $primary-600;
+      text-decoration: underline;
+   }
+
+   &:active {
+      color: $primary-700;
+   }
 }
 
 // Texto pequeño
-small, .small {
-  @include text-sm;
-  color: var(--text-secondary);
+small,
+.small {
+   @include text-sm;
+   color: var(--text-secondary);
 }
 
 // Código
 code {
-  font-family: var(--font-family-mono);
-  font-size: 0.875em;
-  background-color: $gray-100;
-  padding: $spacing-1 $spacing-2;
-  border-radius: $border-radius-sm;
-  color: $primary-700;
+   font-family: var(--font-family-mono);
+   font-size: 0.875em;
+   background-color: $gray-100;
+   padding: $spacing-1 $spacing-2;
+   border-radius: $border-radius-sm;
+   color: $primary-700;
 }
 
 pre {
-  font-family: var(--font-family-mono);
-  background-color: $gray-100;
-  padding: $spacing-4;
-  border-radius: $border-radius-base;
-  overflow-x: auto;
-  margin-bottom: $spacing-4;
-  
-  code {
-    background: none;
-    padding: 0;
-  }
+   font-family: var(--font-family-mono);
+   background-color: $gray-100;
+   padding: $spacing-4;
+   border-radius: $border-radius-base;
+   overflow-x: auto;
+   margin-bottom: $spacing-4;
+
+   code {
+      background: none;
+      padding: 0;
+   }
 }
 
 // -----------------------------------------------------------------------------
 // ELEMENTOS DE FORMULARIO GLOBALES
 // -----------------------------------------------------------------------------
 
-input, textarea, select {
-  font-family: inherit;
-  @include focus-visible;
+input,
+textarea,
+select {
+   font-family: inherit;
+   @include focus-visible;
 }
 
 // -----------------------------------------------------------------------------
@@ -242,30 +251,30 @@ input, textarea, select {
 
 // Mejora del contraste para usuarios con preferencias de alto contraste
 @media (prefers-contrast: high) {
-  :root {
-    --text-primary: #{$black};
-    --text-secondary: #{$gray-800};
-  }
+   :root {
+      --text-primary: #{$black};
+      --text-secondary: #{$gray-800};
+   }
 }
 
 // Respeto por la preferencia de movimiento reducido
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+   *,
+   *::before,
+   *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+   }
 }
 
 // Mejora de la legibilidad en pantallas de alta densidad
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+   body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+   }
 }
 
 // -----------------------------------------------------------------------------
@@ -273,25 +282,25 @@ input, textarea, select {
 // -----------------------------------------------------------------------------
 
 :root {
-  @media (prefers-color-scheme: dark) {
-    // Los estilos de modo oscuro se aplican automáticamente
-    // a través de las variables CSS personalizadas
-    
-    // Ajustes específicos para modo oscuro
-    code {
-      background-color: $gray-800;
-      color: $primary-300;
-    }
-    
-    pre {
-    background-color: $gray-800;
-  }
-  
-  // Mejora del contraste en imágenes para modo oscuro
-  img {
-    opacity: 0.9;
-  }
-  }
+   @media (prefers-color-scheme: dark) {
+      // Los estilos de modo oscuro se aplican automáticamente
+      // a través de las variables CSS personalizadas
+
+      // Ajustes específicos para modo oscuro
+      code {
+         background-color: $gray-800;
+         color: $primary-300;
+      }
+
+      pre {
+         background-color: $gray-800;
+      }
+
+      // Mejora del contraste en imágenes para modo oscuro
+      img {
+         opacity: 0.9;
+      }
+   }
 }
 
 // -----------------------------------------------------------------------------
@@ -300,49 +309,49 @@ input, textarea, select {
 
 // Animación de entrada para elementos
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+   from {
+      opacity: 0;
+      transform: translateY(30px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
 }
 
 @keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+   from {
+      opacity: 0;
+      transform: translateX(-30px);
+   }
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
 }
 
 @keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+   from {
+      opacity: 0;
+      transform: translateX(30px);
+   }
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
 }
 
 // Clases de animación
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+   animation: fadeInUp 0.6s ease-out;
 }
 
 .animate-fade-in-left {
-  animation: fadeInLeft 0.6s ease-out;
+   animation: fadeInLeft 0.6s ease-out;
 }
 
 .animate-fade-in-right {
-  animation: fadeInRight 0.6s ease-out;
+   animation: fadeInRight 0.6s ease-out;
 }
 
 // -----------------------------------------------------------------------------
@@ -351,35 +360,35 @@ input, textarea, select {
 
 // Webkit scrollbar
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+   width: 8px;
+   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background-secondary);
+   background: var(--background-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $gray-400;
-  border-radius: $border-radius-full;
-  
-  &:hover {
-    background: $gray-500;
-  }
+   background: $gray-400;
+   border-radius: $border-radius-full;
+
+   &:hover {
+      background: $gray-500;
+   }
 }
 
 @media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-track {
-    background: $gray-800;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: $gray-600;
-    
-    &:hover {
-      background: $gray-500;
-    }
-  }
+   ::-webkit-scrollbar-track {
+      background: $gray-800;
+   }
+
+   ::-webkit-scrollbar-thumb {
+      background: $gray-600;
+
+      &:hover {
+         background: $gray-500;
+      }
+   }
 }
 
 // -----------------------------------------------------------------------------
@@ -387,13 +396,13 @@ input, textarea, select {
 // -----------------------------------------------------------------------------
 
 ::selection {
-  background-color: rgba($primary-500, 0.2);
-  color: $primary-900;
+   background-color: rgba($primary-500, 0.2);
+   color: $primary-900;
 }
 
 ::-moz-selection {
-  background-color: rgba($primary-500, 0.2);
-  color: $primary-900;
+   background-color: rgba($primary-500, 0.2);
+   color: $primary-900;
 }
 
 // -----------------------------------------------------------------------------
@@ -402,33 +411,33 @@ input, textarea, select {
 
 // Clase para ocultar elementos visualmente pero mantener accesibilidad
 .visually-hidden {
-  @include sr-only;
+   @include sr-only;
 }
 
 // Clase para elementos que solo se muestran en modo oscuro
 .dark-only {
-  display: none;
-  
-  @media (prefers-color-scheme: dark) {
-    display: block;
-  }
+   display: none;
+
+   @media (prefers-color-scheme: dark) {
+      display: block;
+   }
 }
 
 // Clase para elementos que solo se muestran en modo claro
 .light-only {
-  display: block;
-  
-  @media (prefers-color-scheme: dark) {
-    display: none;
-  }
+   display: block;
+
+   @media (prefers-color-scheme: dark) {
+      display: none;
+   }
 }
 
 // Clase para contenido principal accesible
 .main-content {
-  min-height: 100vh;
-  padding-top: $spacing-4;
-  
-  @media (min-width: $breakpoint-md) {
-    padding-top: $spacing-6;
-  }
+   min-height: 100vh;
+   padding-top: $spacing-4;
+
+   @media (min-width: $breakpoint-md) {
+      padding-top: $spacing-6;
+   }
 }

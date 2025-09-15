@@ -23,12 +23,7 @@
    @include smooth-transition(transform);
 
    @media (max-width: #{$breakpoint-md - 1px}) {
-      position: fixed;
-      transform: translateX(-100%);
-
-      &.mobile-open {
-         transform: translateX(0);
-      }
+      display: none;
    }
 }
 
@@ -46,6 +41,10 @@
    z-index: $z-index-fixed;
    box-shadow: $shadow-lg;
    @include smooth-transition(transform);
+
+   @media (max-width: #{$breakpoint-md - 1px}) {
+      display: none;
+   }
 
    // Custom scrollbar
    &::-webkit-scrollbar {
@@ -220,11 +219,6 @@
    background-color: var(--background-primary);
    color: var(--text-primary);
 
-   &.mobile-full {
-      margin-left: 0;
-      width: 100vw;
-   }
-
    @media (max-width: #{$breakpoint-md - 1px}) {
       margin-left: 0;
       width: 100vw;
@@ -268,6 +262,18 @@
       overflow: hidden;
       text-overflow: ellipsis;
       line-height: 1.2;
+      display: block;
+
+      @media (max-width: #{$breakpoint-md - 1px}) {
+         text-align: center;
+         margin-bottom: $spacing-2;
+         @include text-lg;
+      }
+
+      @media (max-width: #{$breakpoint-sm - 1px}) {
+         @include text-base;
+         margin-bottom: $spacing-1;
+      }
    }
 
    .navbar-nav {
@@ -275,7 +281,7 @@
       height: 100%;
       display: flex;
       align-items: center;
-      
+
       .d-flex {
          width: 100%;
          flex-wrap: nowrap;
@@ -341,6 +347,22 @@
 @media (max-width: #{$breakpoint-md - 1px}) {
    .navbar-container {
       left: 0;
+      height: auto;
+      min-height: 64px;
+
+      .container-fluid {
+         padding: $spacing-2 $spacing-3;
+      }
+
+      .row {
+         flex-direction: column;
+         align-items: center;
+      }
+
+      .navbar-brand {
+         @include text-lg;
+         font-weight: $font-weight-bold;
+      }
    }
 
    .main-content {
@@ -350,6 +372,10 @@
 
    .content-container {
       padding: $spacing-4;
+   }
+
+   .page-content {
+      margin-top: 80px;
    }
 }
 
@@ -384,35 +410,31 @@
    }
 
    .page-content {
-      margin-top: 56px;
-      height: calc(100vh - 56px);
+      margin-top: 80px;
+      height: calc(100vh - 80px);
    }
 
    .navbar-container {
-      height: 56px;
-      
+      height: auto;
+      min-height: 80px;
+
       .container-fluid {
-         padding: 0 $spacing-2;
+         padding: $spacing-2;
       }
-      
-      .navbar-brand {
-         @include text-lg;
+
+      .row {
+         flex-direction: column;
+         align-items: center;
       }
-      
+
       .nav-link-btn {
-         padding: $spacing-1 $spacing-2;
-         margin: 0 1px;
+         padding: $spacing-2 $spacing-3;
          @include text-xs;
 
-         mat-icon {
-            font-size: 14px;
-            width: 14px;
-            height: 14px;
-            margin-right: 2px;
-         }
-         
-         span {
-            @include text-xs;
+         .nav-icon {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
          }
       }
    }
@@ -421,20 +443,19 @@
 // Extra small screens
 @media (max-width: 480px) {
    .navbar-container {
+      min-height: 90px;
+
       .container-fluid {
-         padding: 0 $spacing-1;
+         padding: $spacing-1;
       }
-      
+
       .nav-link-btn {
-         padding: 3px $spacing-1;
-         margin: 0;
-         
-         span {
-            display: none !important;
-         }
-         
-         mat-icon {
-            margin-right: 0;
+         padding: $spacing-2 $spacing-2;
+
+         .nav-icon {
+            font-size: 24px;
+            width: 24px;
+            height: 24px;
          }
       }
    }
@@ -446,7 +467,7 @@
       .nav-link-btn {
          padding: $spacing-1 $spacing-2;
          @include text-sm;
-         
+
          span {
             @include text-sm;
          }

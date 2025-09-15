@@ -1,8 +1,4 @@
-import {
-  BreakpointObserver,
-  Breakpoints,
-  LayoutModule,
-} from '@angular/cdk/layout';
+import { BreakpointObserver, LayoutModule } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,7 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
    selector: 'app-layout-standalone',
@@ -27,7 +22,7 @@ import { takeUntil } from 'rxjs/operators';
    template: `
       <div class="layout-container">
          <!-- Sidebar -->
-         <div class="sidebar-wrapper" [class.mobile-open]="sidebarOpen">
+         <div class="sidebar-wrapper">
             <div class="sidebar-container">
                <!-- Profile Section -->
                <div class="profile-section">
@@ -102,20 +97,24 @@ import { takeUntil } from 'rxjs/operators';
          </div>
 
          <!-- Main Content Area -->
-         <div class="main-content" [class.mobile-full]="isMobile">
+         <div class="main-content">
             <!-- Navbar -->
             <mat-toolbar class="navbar-container">
                <div class="container-fluid">
                   <div class="row w-100 align-items-center">
                      <!-- Logo/Brand Section -->
-                     <div class="col-md-3 d-none d-md-block">
+                     <div
+                        class="col-12 col-md-3 col-lg-3 p-0 text-center text-md-start"
+                     >
                         <span class="navbar-brand">Portfolio Web</span>
                      </div>
 
                      <!-- Navigation Links -->
-                     <div class="col-12 col-md-9">
+                     <div class="col-12 col-md-9 col-lg-9 p-0">
                         <nav class="navbar-nav">
-                           <div class="d-flex justify-content-center gap-2">
+                           <div
+                              class="d-flex justify-content-center justify-content-md-center"
+                           >
                               <button
                                  mat-button
                                  *ngFor="let link of navigationLinks"
@@ -150,8 +149,6 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class LayoutStandaloneComponent implements OnInit, OnDestroy {
    private destroy$ = new Subject<void>();
-   isMobile = false;
-   sidebarOpen = false;
 
    personalInfo = {
       name: 'Mauricio',
@@ -175,34 +172,17 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
       { path: '/home', label: 'Inicio', icon: 'home' },
       { path: '/about', label: 'Acerca', icon: 'person' },
       { path: '/projects', label: 'Proyectos', icon: 'work' },
-      { path: '/contact', label: 'Contacto', icon: 'mail' },
    ];
 
    constructor(private breakpointObserver: BreakpointObserver) {}
 
    ngOnInit(): void {
-      this.breakpointObserver
-         .observe([Breakpoints.Handset])
-         .pipe(takeUntil(this.destroy$))
-         .subscribe(result => {
-            this.isMobile = result.matches;
-            if (!this.isMobile) {
-               this.sidebarOpen = false;
-            }
-         });
+      // Component initialization
    }
 
    ngOnDestroy(): void {
       this.destroy$.next();
       this.destroy$.complete();
-   }
-
-   toggleSidebar(): void {
-      this.sidebarOpen = !this.sidebarOpen;
-   }
-
-   closeSidebar(): void {
-      this.sidebarOpen = false;
    }
 
    downloadCV(): void {
