@@ -93,14 +93,6 @@ import {
                      <mat-icon>send</mat-icon>
                      Contáctame
                   </button>
-                  <button
-                     mat-stroked-button
-                     class="action-btn"
-                     (click)="downloadCV()"
-                  >
-                     <mat-icon>download</mat-icon>
-                     Descargar CV
-                  </button>
                </div>
             </div>
          </div>
@@ -178,18 +170,22 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
 
    personalInfo = {
       name: 'Mauricio',
-      title: 'Full Stack Developer',
-      email: 'mauricio@example.com',
-      phone: '+1 (555) 123-4567',
-      location: 'Ciudad, País',
+      title: 'Full-Stack Developer',
+      email: 'mauricio_carmen01@hotmail.com',
+      phone: '+51 937598438',
+      location: 'Lima, Perú',
       avatar: 'assets/images/avatar.jpg',
    };
 
    socialLinks = [
-      { platform: 'GitHub', url: 'https://github.com/mauricio', icon: 'code' },
+      {
+         platform: 'GitHub',
+         url: 'https://github.com/mauricio-gt23',
+         icon: 'code',
+      },
       {
          platform: 'LinkedIn',
-         url: 'https://linkedin.com/in/mauricio',
+         url: 'https://www.linkedin.com/in/mauriciocl/',
          icon: 'work',
       },
    ];
@@ -202,9 +198,9 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
 
    constructor(
       private breakpointObserver: BreakpointObserver,
-      private themeService: ThemeService
+      private readonly _themeService: ThemeService
    ) {
-      this.isDarkTheme = this.themeService.isDarkTheme();
+      this.isDarkTheme = this._themeService.isDarkTheme();
    }
 
    ngOnInit(): void {
@@ -212,19 +208,12 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
    }
 
    toggleTheme(): void {
-      this.themeService.toggleTheme();
-      this.isDarkTheme = this.themeService.isDarkTheme();
+      this._themeService.toggleTheme();
+      this.isDarkTheme = this._themeService.isDarkTheme();
    }
 
    ngOnDestroy(): void {
       this.destroy$.next();
       this.destroy$.complete();
-   }
-
-   downloadCV(): void {
-      const link = document.createElement('a');
-      link.href = 'assets/documents/cv.pdf';
-      link.download = 'Mauricio_CV.pdf';
-      link.click();
    }
 }
