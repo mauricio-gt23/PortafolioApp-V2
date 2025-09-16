@@ -94,10 +94,41 @@
    overflow-y: auto;
    z-index: $z-index-fixed;
    box-shadow: $shadow-lg;
-   @include smooth-transition(transform);
+   transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+               box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+   // Pseudo-elemento para transición suave del gradiente
+   &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, $dark-primary-500 0%, $dark-primary-700 100%);
+      opacity: 0;
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+   }
 
    @media (max-width: #{$breakpoint-md - 1px}) {
       display: none;
+   }
+
+   // Tema oscuro
+   &.dark-theme {
+      color: $dark-text-primary;
+      box-shadow: 0 4px 20px rgba($dark-primary-900, 0.3);
+      
+      &::before {
+         opacity: 1;
+      }
+   }
+
+   // Asegurar que el contenido esté por encima del pseudo-elemento
+   > * {
+      position: relative;
+      z-index: 1;
    }
 
    // Custom scrollbar
@@ -122,6 +153,10 @@
    padding-bottom: $spacing-5;
    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
+   .sidebar-container.dark-theme & {
+      border-bottom-color: rgba($dark-text-primary, 0.2);
+   }
+
    .avatar-container {
       margin-bottom: $spacing-4;
 
@@ -132,10 +167,19 @@
          border: 3px solid rgba(255, 255, 255, 0.3);
          object-fit: cover;
          @include hover-lift;
-         @include smooth-transition(transform, border-color);
+         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                     border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 
          &:hover {
             border-color: rgba(255, 255, 255, 0.6);
+         }
+
+         .sidebar-container.dark-theme & {
+            border-color: rgba($dark-text-primary, 0.3);
+
+            &:hover {
+               border-color: rgba($dark-text-primary, 0.6);
+            }
          }
       }
    }
@@ -145,6 +189,11 @@
       @include text-xl;
       font-weight: $font-weight-semibold;
       color: $white;
+      transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+      .sidebar-container.dark-theme & {
+         color: $dark-text-primary;
+      }
    }
 
    .title {
@@ -152,6 +201,11 @@
       @include text-sm;
       color: rgba(255, 255, 255, 0.8);
       font-weight: $font-weight-light;
+      transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+      .sidebar-container.dark-theme & {
+         color: rgba($dark-text-primary, 0.8);
+      }
    }
 }
 
@@ -163,6 +217,11 @@
    color: rgba(255, 255, 255, 0.9);
    text-transform: uppercase;
    letter-spacing: 0.5px;
+   transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+   .sidebar-container.dark-theme & {
+      color: rgba($dark-text-primary, 0.9);
+   }
 }
 
 // Contact Section
@@ -182,18 +241,34 @@
          background-color: rgba(255, 255, 255, 0.1);
       }
 
+      .sidebar-container.dark-theme & {
+         &:hover {
+            background-color: rgba($dark-text-primary, 0.1);
+         }
+      }
+
       mat-icon {
          margin-right: $spacing-3;
          font-size: 18px;
          width: 18px;
          height: 18px;
          color: rgba(255, 255, 255, 0.8);
+         transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+         .sidebar-container.dark-theme & {
+            color: rgba($dark-text-primary, 0.8);
+         }
       }
 
       span {
          @include text-sm;
          color: rgba(255, 255, 255, 0.9);
          word-break: break-word;
+         transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+         .sidebar-container.dark-theme & {
+            color: rgba($dark-text-primary, 0.9);
+         }
       }
    }
 }
@@ -212,7 +287,9 @@
          align-items: center;
          padding: $spacing-3;
          border-radius: $border-radius-md;
-         @include smooth-transition(background-color, transform);
+         transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                     color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
          @include focus-visible;
          text-decoration: none;
          color: inherit;
@@ -240,16 +317,48 @@
 // Actions Section
 .actions-section {
    .action-btn {
+      position: relative;
       width: 100%;
       margin-bottom: $spacing-3;
       @include text-sm;
       padding: $spacing-3;
       border-radius: $border-radius-lg;
-      @include smooth-transition(background-color, transform);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       @include focus-visible;
+      overflow: hidden;
+      z-index: 1;
+
+      // Pseudo-elemento para transición suave del fondo
+      &::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background: linear-gradient(135deg, $dark-primary-500 0%, $dark-primary-700 100%);
+         opacity: 0;
+         transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+         z-index: -1;
+         border-radius: inherit;
+      }
+
+      // Asegurar que el contenido esté por encima del pseudo-elemento
+      > * {
+         position: relative;
+         z-index: 1;
+      }
 
       &:hover {
          @include hover-lift;
+      }
+
+      // Tema oscuro
+      .sidebar-container.dark-theme & {
+         &::before {
+            opacity: 1;
+         }
       }
 
       mat-icon {
@@ -272,10 +381,18 @@
    overflow: hidden;
    background-color: var(--background-primary);
    color: var(--text-primary);
+   transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+               color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 
    @media (max-width: #{$breakpoint-md - 1px}) {
       margin-left: 0;
       width: 100vw;
+   }
+
+   // Tema oscuro
+   &.dark-theme {
+      background-color: $dark-background-primary;
+      color: $dark-text-primary;
    }
 }
 
@@ -290,11 +407,21 @@
    color: $white;
    height: 64px;
    box-shadow: $shadow-md;
-   @include smooth-transition(left, background-color);
+   transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+               background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+               color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+               box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
    overflow: hidden;
 
    @media (max-width: #{$breakpoint-md - 1px}) {
       left: 0;
+   }
+
+   // Tema oscuro
+   &.dark-theme {
+      background-color: $dark-primary-600;
+      color: $dark-text-primary;
+      box-shadow: 0 2px 10px rgba($dark-primary-900, 0.3);
    }
 
    .container-fluid {
@@ -327,6 +454,7 @@
       text-overflow: ellipsis;
       line-height: 1.2;
       display: block;
+      transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 
       @media (max-width: #{$breakpoint-md - 1px}) {
          @include text-lg;
@@ -334,6 +462,10 @@
 
       @media (max-width: #{$breakpoint-sm - 1px}) {
          @include text-base;
+      }
+
+      .navbar-container.dark-theme & {
+         color: $dark-text-primary;
       }
    }
 
@@ -354,7 +486,9 @@
       color: $white !important;
       border-radius: $border-radius-lg;
       padding: $spacing-2 $spacing-4;
-      @include smooth-transition(background-color, transform);
+      transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       @include focus-visible;
       min-width: auto;
       margin: 0 $spacing-1;
@@ -369,6 +503,18 @@
       &.active-link {
          background-color: rgba(255, 255, 255, 0.2);
          font-weight: $font-weight-semibold;
+      }
+
+      .navbar-container.dark-theme & {
+         color: $dark-text-primary !important;
+
+         &:hover {
+            background-color: rgba($dark-text-primary, 0.1);
+         }
+
+         &.active-link {
+            background-color: rgba($dark-text-primary, 0.2);
+         }
       }
 
       mat-icon {
@@ -393,6 +539,12 @@
    height: calc(100vh - 40px);
    background-color: var(--background-secondary);
    @include custom-scrollbar;
+   transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+   // Tema oscuro
+   &.dark-theme {
+      background-color: $dark-background-secondary;
+   }
 }
 
 // Content Container
@@ -402,6 +554,13 @@
    max-width: 1200px;
    margin: 0 auto;
    width: 100%;
+   transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+               color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+   // Tema oscuro
+   &.dark-theme {
+      color: $dark-text-primary;
+   }
 }
 
 // Responsive Design

@@ -29,10 +29,10 @@ import {
    ],
    animations: [fadeInUp, slideInLeft, slideInRight, scaleIn, fadeIn],
    template: `
-      <div class="layout-container">
+      <div class="layout-container" [class.dark-theme]="isDarkTheme" [class.light-theme]="!isDarkTheme">
          <!-- Sidebar -->
-         <div class="sidebar-wrapper">
-            <div class="sidebar-container">
+         <div class="sidebar-wrapper" [class.dark-theme]="isDarkTheme">
+            <div class="sidebar-container" [class.dark-theme]="isDarkTheme">
                <!-- Profile Section -->
                <div class="profile-section" [@fadeInUp]>
                   <div class="avatar-container">
@@ -106,9 +106,9 @@ import {
          </div>
 
          <!-- Main Content Area -->
-         <div class="main-content">
+         <div class="main-content" [class.dark-theme]="isDarkTheme">
             <!-- Navbar -->
-            <mat-toolbar class="navbar-container" [@fadeInUp]>
+            <mat-toolbar class="navbar-container" [class.dark-theme]="isDarkTheme" [@fadeInUp]>
                <div class="container-fluid">
                   <div class="row w-100 align-items-center">
                      <!-- Logo/Brand Section -->
@@ -162,8 +162,8 @@ import {
             </mat-toolbar>
 
             <!-- Page Content -->
-            <main class="page-content">
-               <div class="content-container">
+            <main class="page-content" [class.dark-theme]="isDarkTheme">
+               <div class="content-container" [class.dark-theme]="isDarkTheme">
                   <router-outlet></router-outlet>
                </div>
             </main>

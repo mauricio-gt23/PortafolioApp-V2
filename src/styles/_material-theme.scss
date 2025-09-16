@@ -16,7 +16,7 @@ mat.$theme-ignore-duplication-warnings: true;
 // DEFINICIÓN DE PALETAS PERSONALIZADAS
 // -----------------------------------------------------------------------------
 
-// Paleta primaria para tema claro (Crema)
+// Paleta primaria para tema claro (Tierra Cálida)
 $light-primary-palette: (
    50: $primary-50,
    100: $primary-100,
@@ -28,10 +28,10 @@ $light-primary-palette: (
    700: $primary-700,
    800: $primary-800,
    900: $primary-900,
-   A100: #fcfcf0,
-   A200: #f9f9e1,
-   A400: #f6f6c3,
-   A700: #dbdbb2,
+   A100: #f5deb3,
+   A200: #deb887,
+   A400: #cd853f,
+   A700: #a0522d,
    contrast: (
       50: $text-primary,
       100: $text-primary,
@@ -50,7 +50,7 @@ $light-primary-palette: (
    ),
 );
 
-// Paleta primaria para tema oscuro (Azul)
+// Paleta primaria para tema oscuro (Tierra Profunda)
 $dark-primary-palette: (
    50: $dark-primary-50,
    100: $dark-primary-100,
@@ -62,10 +62,10 @@ $dark-primary-palette: (
    700: $dark-primary-700,
    800: $dark-primary-800,
    900: $dark-primary-900,
-   A100: #e3f2fd,
-   A200: #90caf9,
-   A400: #42a5f5,
-   A700: #1565c0,
+   A100: #d2b48c,
+   A200: #bc9a6a,
+   A400: #8b4513,
+   A700: #654321,
    contrast: (
       50: $text-primary,
       100: $text-primary,
@@ -84,7 +84,7 @@ $dark-primary-palette: (
    ),
 );
 
-// Paleta secundaria (Gris neutro para ambos temas)
+// Paleta secundaria (Verde tierra para ambos temas)
 $custom-secondary-palette: (
    50: $secondary-50,
    100: $secondary-100,
@@ -96,8 +96,8 @@ $custom-secondary-palette: (
    700: $secondary-700,
    800: $secondary-800,
    900: $secondary-900,
-   A100: #f8f9fa,
-   A200: #dee2e6,
+   A100: #f1f4ee,
+   A200: #d4dcc8,
    A400: #adb5bd,
    A700: #495057,
    contrast: (
@@ -118,22 +118,22 @@ $custom-secondary-palette: (
    ),
 );
 
-// Paleta de advertencia personalizada (Rojo cálido)
+// Paleta de advertencia personalizada (Terracota tierra)
 $custom-warn-palette: (
-   50: #fdf2f2,
-   100: #fce4e4,
-   200: #f9c9c9,
-   300: #f5a3a3,
-   400: #f17d7d,
+   50: #faf6f4,
+   100: #f2e6e0,
+   200: #e8d4c9,
+   300: #ddc1b1,
+   400: #d4b29e,
    500: $error,
-   600: #b84545,
-   700: #a33333,
-   800: #8e2222,
-   900: #791111,
-   A100: #ffb3b3,
-   A200: #ff8080,
-   A400: #ff1744,
-   A700: #d50000,
+   600: #ad6b5b,
+   700: #965d4f,
+   800: #7f4f43,
+   900: #5c3a30,
+   A100: #f4c2a7,
+   A200: #e09775,
+   A400: #c17767,
+   A700: #a0522d,
    contrast: (
       50: $text-primary,
       100: $text-primary,

@@ -6,37 +6,37 @@
 // COLORES
 // -----------------------------------------------------------------------------
 
-// Colores primarios - Tema Claro (Paleta Optimizada)
-$primary-50: #ffffff;
-$primary-100: #f8fffe;
-$primary-200: #f0fffc;
-$primary-300: #e8fff9;
-$primary-400: #e0fff7;
-$primary-500: #71DBD2; // Color principal - Agua suave
-$primary-600: #66c7be;
-$primary-700: #5bb3aa;
-$primary-800: #509f96;
-$primary-900: #458b82;
+// Colores primarios - Tema Claro (Paleta Tierra Cálida)
+$primary-50: #fefcf9;
+$primary-100: #fdf6ed;
+$primary-200: #faebd7;
+$primary-300: #f5deb3;
+$primary-400: #e6c79a;
+$primary-500: #D2B48C; // Color principal - Tierra cálida
+$primary-600: #c19a6b;
+$primary-700: #a67c52;
+$primary-800: #8b5a3c;
+$primary-900: #704214;
 
-// Colores secundarios - Tema Claro (Acentos naturales)
-$secondary-50: #f8fff9;
-$secondary-100: #f0ffef;
-$secondary-200: #e8ffe5;
-$secondary-300: #e0ffdb;
-$secondary-400: #d8ffd1;
-$secondary-500: #8FD89A; // Color secundario - Verde pastel
-$secondary-600: #81c28b;
-$secondary-700: #73ac7c;
-$secondary-800: #65966d;
-$secondary-900: #57805e;
+// Colores secundarios - Tema Claro (Tierra Verde Natural)
+$secondary-50: #f9faf8;
+$secondary-100: #f1f4ee;
+$secondary-200: #e6ebe0;
+$secondary-300: #d4dcc8;
+$secondary-400: #bcc7a8;
+$secondary-500: #9CAF88; // Color secundario - Verde tierra
+$secondary-600: #8a9b76;
+$secondary-700: #748063;
+$secondary-800: #5e6650;
+$secondary-900: #4a4f3d;
 
 // Colores de estado
-$success: #8FD89A; // Verde pastel
-$warning: #FFEE80; // Amarillo pastel
-$error: #ff6b6b; // Rojo suave
-$info: #71DBD2; // Agua suave
-$accent-lime: #C5E495; // Verde lima
-$accent-yellow: #FFEE80; // Amarillo pastel
+$success: #9CAF88; // Verde tierra
+$warning: #E6B800; // Ocre dorado
+$error: #C17767; // Terracota suave
+$info: #D2B48C; // Tierra cálida
+$accent-lime: #A8B894; // Verde oliva
+$accent-yellow: #E6B800; // Ocre dorado
 
 // Colores neutros - Tema Claro
 $white: #ffffff;
@@ -181,37 +181,37 @@ $z-index-tooltip: 1070;
 // MODO OSCURO (Paleta Mejorada)
 // -----------------------------------------------------------------------------
 
-// Variables para modo oscuro (Esquema Optimizado)
-$dark-primary-50: #e0f7f5;
-$dark-primary-100: #b3ebe6;
-$dark-primary-200: #80ded6;
-$dark-primary-300: #4dd1c6;
-$dark-primary-400: #26c7ba;
-$dark-primary-500: #3DB8AC; // Color principal - Agua oscuro
-$dark-primary-600: #37a69b;
-$dark-primary-700: #2f9389;
-$dark-primary-800: #278177;
-$dark-primary-900: #1a5d57;
+// Variables para modo oscuro (Esquema Tierra Profunda)
+$dark-primary-50: #f4f0e8;
+$dark-primary-100: #e3d5c1;
+$dark-primary-200: #d0b896;
+$dark-primary-300: #bc9a6a;
+$dark-primary-400: #ad8347;
+$dark-primary-500: #8B4513; // Color principal - Tierra oscura
+$dark-primary-600: #7d3e11;
+$dark-primary-700: #6c350e;
+$dark-primary-800: #5b2c0c;
+$dark-primary-900: #421f07;
 
 // Colores secundarios - Tema Oscuro
-$dark-secondary-50: #e8f5e8;
-$dark-secondary-100: #c5e4c6;
-$dark-secondary-200: #9fd2a1;
-$dark-secondary-300: #79c07c;
-$dark-secondary-400: #5cb260;
-$dark-secondary-500: #5CAE6A; // Verde suave oscuro
-$dark-secondary-600: #54a060;
-$dark-secondary-700: #4a8f55;
-$dark-secondary-800: #407f4b;
-$dark-secondary-900: #2e5f38;
+$dark-secondary-50: #f0f2ed;
+$dark-secondary-100: #d9ddd1;
+$dark-secondary-200: #bfc6b2;
+$dark-secondary-300: #a4ae92;
+$dark-secondary-400: #909b7a;
+$dark-secondary-500: #556B2F; // Verde oliva oscuro
+$dark-secondary-600: #4e612a;
+$dark-secondary-700: #455424;
+$dark-secondary-800: #3c471e;
+$dark-secondary-900: #2d3414;
 
 // Colores de estado - Tema Oscuro
-$dark-success: #5CAE6A; // Verde suave oscuro
-$dark-warning: #D9B740; // Amarillo fresco oscuro
-$dark-error: #ff5252; // Rojo suave oscuro
-$dark-info: #3DB8AC; // Agua oscuro
-$dark-accent-lime: #85B84A; // Verde lima oscuro
-$dark-accent-yellow: #D9B740; // Amarillo fresco oscuro
+$dark-success: #556B2F; // Verde oliva oscuro
+$dark-warning: #B8860B; // Ocre oscuro
+$dark-error: #A0522D; // Siena tostada
+$dark-info: #8B4513; // Tierra oscura
+$dark-accent-lime: #6B8E23; // Verde oliva
+$dark-accent-yellow: #B8860B; // Ocre oscuro
 
 // Fondos - Tema Oscuro
 $dark-background-primary: #121212; // Negro profundo
