@@ -6,6 +6,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Subject } from 'rxjs';
+import {
+   fadeIn,
+   fadeInUp,
+   scaleIn,
+   slideInLeft,
+   slideInRight,
+} from '../../animations/animations';
 
 @Component({
    selector: 'app-layout-standalone',
@@ -19,13 +26,14 @@ import { Subject } from 'rxjs';
       MatButtonModule,
       MatIconModule,
    ],
+   animations: [fadeInUp, slideInLeft, slideInRight, scaleIn, fadeIn],
    template: `
       <div class="layout-container">
          <!-- Sidebar -->
          <div class="sidebar-wrapper">
             <div class="sidebar-container">
                <!-- Profile Section -->
-               <div class="profile-section">
+               <div class="profile-section" [@fadeInUp]>
                   <div class="avatar-container">
                      <img
                         [src]="personalInfo.avatar"
@@ -39,7 +47,7 @@ import { Subject } from 'rxjs';
                </div>
 
                <!-- Contact Info -->
-               <div class="contact-section">
+               <div class="contact-section" [@slideInLeft]>
                   <h4 class="section-title">Contacto</h4>
                   <div class="contact-item">
                      <mat-icon>email</mat-icon>
@@ -56,7 +64,7 @@ import { Subject } from 'rxjs';
                </div>
 
                <!-- Social Links -->
-               <div class="social-section">
+               <div class="social-section" [@slideInRight]>
                   <h4 class="section-title">Redes Sociales</h4>
                   <div class="social-links">
                      <a
@@ -74,7 +82,7 @@ import { Subject } from 'rxjs';
                </div>
 
                <!-- Quick Actions -->
-               <div class="actions-section">
+               <div class="actions-section" [@scaleIn]>
                   <button
                      mat-raised-button
                      color="primary"
@@ -99,7 +107,7 @@ import { Subject } from 'rxjs';
          <!-- Main Content Area -->
          <div class="main-content">
             <!-- Navbar -->
-            <mat-toolbar class="navbar-container">
+            <mat-toolbar class="navbar-container" [@fadeInUp]>
                <div class="container-fluid">
                   <div class="row w-100 align-items-center">
                      <!-- Logo/Brand Section -->
