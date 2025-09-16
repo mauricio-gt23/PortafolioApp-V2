@@ -549,10 +549,6 @@
 
 // Content Container
 .content-container {
-   padding: $spacing-5;
-   min-height: calc(100vh - 64px - #{$spacing-10});
-   max-width: 1200px;
-   margin: 0 auto;
    width: 100%;
    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
                color 0.8s cubic-bezier(0.4, 0, 0.2, 1);

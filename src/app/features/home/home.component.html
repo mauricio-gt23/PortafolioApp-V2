@@ -1,1 +1,127 @@
-<div [@fadeIn]>home view!</div>
+<!-- Hero Section -->
+<section class="hero-section" [@fadeIn]>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text" [@slideInLeft]>
+        <h1 class="hero-title">
+          <span class="greeting">Hola, soy</span>
+          <span class="name">Mauricio Carmen</span>
+          <span class="role">Desarrollador Full Stack</span>
+        </h1>
+        <p class="hero-subtitle" [@fadeInUp]>
+          Transformo ideas en aplicaciones web y móviles funcionales, escalables y seguras
+        </p>
+        <div class="hero-actions" [@scaleIn]>
+          <button mat-raised-button color="primary" class="cta-button">
+            <mat-icon>work</mat-icon>
+            Ver mi trabajo
+          </button>
+          <button mat-stroked-button color="primary" class="contact-button">
+            <mat-icon>email</mat-icon>
+            Contactar
+          </button>
+        </div>
+      </div>
+      <div class="hero-visual" [@slideInRight]>
+        <div class="profile-card">
+          <div class="profile-image">
+            <mat-icon class="profile-icon">person</mat-icon>
+          </div>
+          <div class="profile-info">
+            <h3>Mauricio Carmen</h3>
+            <p>Full Stack Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section" [@fadeInUp]>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Lo que ofrezco</h2>
+      <p class="section-subtitle">Servicios especializados para llevar tu proyecto al siguiente nivel</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- Desarrollo Web -->
+      <div class="service-card" [@scaleIn]>
+        <div class="service-icon">
+          <mat-icon>language</mat-icon>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">Desarrollo Web</h3>
+          <p class="service-description">
+            Aplicaciones y sitios modernos, responsivos y optimizados para una experiencia excepcional en todos los dispositivos.
+          </p>
+          <div class="service-features">
+            <span class="feature-tag">React</span>
+            <span class="feature-tag">Angular</span>
+            <span class="feature-tag">Vue.js</span>
+            <span class="feature-tag">Responsive</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desarrollo Móvil -->
+      <div class="service-card" [@scaleIn]>
+        <div class="service-icon">
+          <mat-icon>smartphone</mat-icon>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">Desarrollo Móvil</h3>
+          <p class="service-description">
+            Apps híbridas o nativas con experiencia fluida en iOS y Android, optimizadas para rendimiento y usabilidad.
+          </p>
+          <div class="service-features">
+            <span class="feature-tag">React Native</span>
+            <span class="feature-tag">Flutter</span>
+            <span class="feature-tag">Ionic</span>
+            <span class="feature-tag">PWA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend & APIs -->
+      <div class="service-card" [@scaleIn]>
+        <div class="service-icon">
+          <mat-icon>settings</mat-icon>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">Backend & APIs</h3>
+          <p class="service-description">
+            Integraciones robustas, arquitectura escalable y seguridad de datos para aplicaciones empresariales confiables.
+          </p>
+          <div class="service-features">
+            <span class="feature-tag">Node.js</span>
+            <span class="feature-tag">Python</span>
+            <span class="feature-tag">REST API</span>
+            <span class="feature-tag">GraphQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section" [@fadeIn]>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item" [@slideInLeft]>
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Proyectos completados</div>
+      </div>
+      <div class="stat-item" [@fadeInUp]>
+        <div class="stat-number">2+</div>
+        <div class="stat-label">Años de experiencia</div>
+      </div>
+      <div class="stat-item" [@slideInRight]>
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Clientes satisfechos</div>
+      </div>
+    </div>
+  </div>
+</section>
