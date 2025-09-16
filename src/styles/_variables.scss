@@ -6,35 +6,37 @@
 // COLORES
 // -----------------------------------------------------------------------------
 
-// Colores primarios - Tema Claro (Paleta Crema)
-$primary-50: #fefefe;
-$primary-100: #fcfcf0;
-$primary-200: #f9f9e1;
-$primary-300: #f7f7d2;
-$primary-400: #f6f6c3;
-$primary-500: #f5f5dc; // Color principal - Crema claro
-$primary-600: #e8e8c7;
-$primary-700: #dbdbb2;
-$primary-800: #cecf9d;
-$primary-900: #c1c288;
+// Colores primarios - Tema Claro (Paleta Optimizada)
+$primary-50: #ffffff;
+$primary-100: #f8fffe;
+$primary-200: #f0fffc;
+$primary-300: #e8fff9;
+$primary-400: #e0fff7;
+$primary-500: #71DBD2; // Color principal - Agua suave
+$primary-600: #66c7be;
+$primary-700: #5bb3aa;
+$primary-800: #509f96;
+$primary-900: #458b82;
 
-// Colores secundarios - Tema Claro (Complementarios al crema)
-$secondary-50: #f8f9fa;
-$secondary-100: #e9ecef;
-$secondary-200: #dee2e6;
-$secondary-300: #ced4da;
-$secondary-400: #adb5bd;
-$secondary-500: #6c757d; // Color secundario - Gris neutro
-$secondary-600: #5a6268;
-$secondary-700: #495057;
-$secondary-800: #343a40;
-$secondary-900: #212529;
+// Colores secundarios - Tema Claro (Acentos naturales)
+$secondary-50: #f8fff9;
+$secondary-100: #f0ffef;
+$secondary-200: #e8ffe5;
+$secondary-300: #e0ffdb;
+$secondary-400: #d8ffd1;
+$secondary-500: #8FD89A; // Color secundario - Verde pastel
+$secondary-600: #81c28b;
+$secondary-700: #73ac7c;
+$secondary-800: #65966d;
+$secondary-900: #57805e;
 
 // Colores de estado
-$success: #6b8e23; // Verde oliva
-$warning: #d2691e; // Naranja chocolate
-$error: #cd5c5c; // Rojo indio
-$info: #4682b4; // Azul acero;
+$success: #8FD89A; // Verde pastel
+$warning: #FFEE80; // Amarillo pastel
+$error: #ff6b6b; // Rojo suave
+$info: #71DBD2; // Agua suave
+$accent-lime: #C5E495; // Verde lima
+$accent-yellow: #FFEE80; // Amarillo pastel
 
 // Colores neutros - Tema Claro
 $white: #ffffff;
@@ -50,15 +52,15 @@ $gray-800: #3c4043;
 $gray-900: #202124;
 $black: #000000;
 
-// Colores de texto
-$text-primary: rgba(0, 0, 0, 0.87);
-$text-secondary: rgba(0, 0, 0, 0.6);
-$text-disabled: rgba(0, 0, 0, 0.38);
-$text-hint: rgba(0, 0, 0, 0.38);
+// Colores de texto - Tema Claro
+$text-primary: #1E1E1E; // Negro suavizado
+$text-secondary: #555555; // Gris medio
+$text-disabled: rgba(30, 30, 30, 0.38);
+$text-hint: rgba(30, 30, 30, 0.38);
 
 // Colores de fondo - Tema Claro
-$background-primary: #f5f5dc; // Fondo crema principal
-$background-secondary: #fafafa; // Fondo secundario
+$background-primary: #FFFFFF; // Fondo blanco puro
+$background-secondary: #f8f9fa; // Fondo secundario
 $background-card: #ffffff; // Fondo de tarjetas
 $background-overlay: rgba(0, 0, 0, 0.32); // Overlay estándar
 
@@ -176,24 +178,49 @@ $z-index-popover: 1060;
 $z-index-tooltip: 1070;
 
 // -----------------------------------------------------------------------------
-// MODO OSCURO (preparación)
+// MODO OSCURO (Paleta Mejorada)
 // -----------------------------------------------------------------------------
 
-// Variables para modo oscuro (Esquema Azul)
-$dark-primary-50: #e3f2fd;
-$dark-primary-100: #bbdefb;
-$dark-primary-200: #90caf9;
-$dark-primary-300: #64b5f6;
-$dark-primary-400: #42a5f5;
-$dark-primary-500: #1e3a8a; // Color principal - Azul oscuro
-$dark-primary-600: #1976d2;
-$dark-primary-700: #1565c0;
-$dark-primary-800: #0d47a1;
-$dark-primary-900: #0a2e5c;
+// Variables para modo oscuro (Esquema Optimizado)
+$dark-primary-50: #e0f7f5;
+$dark-primary-100: #b3ebe6;
+$dark-primary-200: #80ded6;
+$dark-primary-300: #4dd1c6;
+$dark-primary-400: #26c7ba;
+$dark-primary-500: #3DB8AC; // Color principal - Agua oscuro
+$dark-primary-600: #37a69b;
+$dark-primary-700: #2f9389;
+$dark-primary-800: #278177;
+$dark-primary-900: #1a5d57;
 
-$dark-background-primary: #0f172a; // Azul muy oscuro
-$dark-background-secondary: #1e293b; // Azul oscuro
-$dark-background-card: #334155; // Azul medio oscuro
-$dark-text-primary: rgba(255, 255, 255, 0.87); // Texto blanco
-$dark-text-secondary: rgba(255, 255, 255, 0.6); // Texto blanco secundario
-$dark-text-disabled: rgba(255, 255, 255, 0.38); // Texto blanco deshabilitado
+// Colores secundarios - Tema Oscuro
+$dark-secondary-50: #e8f5e8;
+$dark-secondary-100: #c5e4c6;
+$dark-secondary-200: #9fd2a1;
+$dark-secondary-300: #79c07c;
+$dark-secondary-400: #5cb260;
+$dark-secondary-500: #5CAE6A; // Verde suave oscuro
+$dark-secondary-600: #54a060;
+$dark-secondary-700: #4a8f55;
+$dark-secondary-800: #407f4b;
+$dark-secondary-900: #2e5f38;
+
+// Colores de estado - Tema Oscuro
+$dark-success: #5CAE6A; // Verde suave oscuro
+$dark-warning: #D9B740; // Amarillo fresco oscuro
+$dark-error: #ff5252; // Rojo suave oscuro
+$dark-info: #3DB8AC; // Agua oscuro
+$dark-accent-lime: #85B84A; // Verde lima oscuro
+$dark-accent-yellow: #D9B740; // Amarillo fresco oscuro
+
+// Fondos - Tema Oscuro
+$dark-background-primary: #121212; // Negro profundo
+$dark-background-secondary: #1E1E1E; // Gris muy oscuro
+$dark-background-card: #2A2A2A; // Gris oscuro para tarjetas
+$dark-background-overlay: rgba(255, 255, 255, 0.08); // Overlay claro
+
+// Texto - Tema Oscuro
+$dark-text-primary: #F5F5F5; // Blanco suave
+$dark-text-secondary: #B8B8B8; // Gris claro
+$dark-text-disabled: rgba(245, 245, 245, 0.38); // Texto blanco deshabilitado
+$dark-text-hint: rgba(245, 245, 245, 0.38); // Texto blanco hint
