@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Subject } from 'rxjs';
+import { ThemeService } from '../../../core/services/theme.service';
 import {
    fadeIn,
    fadeInUp,
@@ -114,7 +115,23 @@ import {
                      <div
                         class="col-12 col-md-5 col-lg-5 col-xl-6 p-0 text-center text-md-start"
                      >
-                        <span class="navbar-brand">Portfolio Web</span>
+                        <div class="brand-section d-flex justify-content-center justify-content-md-start align-items-center">
+                           <span class="navbar-brand">Portfolio Web</span>
+                           <button
+                              mat-icon-button
+                              (click)="toggleTheme()"
+                              class="theme-toggle-btn ms-2"
+                              [title]="
+                                 isDarkTheme
+                                    ? 'Cambiar a tema claro'
+                                    : 'Cambiar a tema oscuro'
+                              "
+                           >
+                              <mat-icon>{{
+                                 isDarkTheme ? 'light_mode' : 'dark_mode'
+                              }}</mat-icon>
+                           </button>
+                        </div>
                      </div>
 
                      <!-- Navigation Links -->
@@ -157,6 +174,7 @@ import {
 })
 export class LayoutStandaloneComponent implements OnInit, OnDestroy {
    private destroy$ = new Subject<void>();
+   isDarkTheme = false;
 
    personalInfo = {
       name: 'Mauricio',
@@ -182,10 +200,20 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
       { path: '/projects', label: 'Proyectos', icon: 'work' },
    ];
 
-   constructor(private breakpointObserver: BreakpointObserver) {}
+   constructor(
+      private breakpointObserver: BreakpointObserver,
+      private themeService: ThemeService
+   ) {
+      this.isDarkTheme = this.themeService.isDarkTheme();
+   }
 
    ngOnInit(): void {
       // Component initialization
+   }
+
+   toggleTheme(): void {
+      this.themeService.toggleTheme();
+      this.isDarkTheme = this.themeService.isDarkTheme();
    }
 
    ngOnDestroy(): void {

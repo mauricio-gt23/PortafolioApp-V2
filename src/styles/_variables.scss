@@ -6,29 +6,29 @@
 // COLORES
 // -----------------------------------------------------------------------------
 
-// Colores primarios (Paleta Crema/Beige)
-$primary-50: #fefcf8;
-$primary-100: #fdf6e8;
-$primary-200: #fbedc1;
-$primary-300: #f8e09a;
-$primary-400: #f5d373;
-$primary-500: #f2c94c; // Color principal - Dorado suave
-$primary-600: #e6b800;
-$primary-700: #cc9f00;
-$primary-800: #b38600;
-$primary-900: #996d00;
+// Colores primarios - Tema Claro (Paleta Crema)
+$primary-50: #fefefe;
+$primary-100: #fcfcf0;
+$primary-200: #f9f9e1;
+$primary-300: #f7f7d2;
+$primary-400: #f6f6c3;
+$primary-500: #f5f5dc; // Color principal - Crema claro
+$primary-600: #e8e8c7;
+$primary-700: #dbdbb2;
+$primary-800: #cecf9d;
+$primary-900: #c1c288;
 
-// Colores secundarios (Terracota/Coral)
-$secondary-50: #fef7f4;
-$secondary-100: #fde8e0;
-$secondary-200: #fbd1c1;
-$secondary-300: #f8b5a2;
-$secondary-400: #f59983;
-$secondary-500: #f27d64; // Color secundario - Terracota suave
-$secondary-600: #e85a3a;
-$secondary-700: #d4421f;
-$secondary-800: #b8371a;
-$secondary-900: #9c2c15;
+// Colores secundarios - Tema Claro (Complementarios al crema)
+$secondary-50: #f8f9fa;
+$secondary-100: #e9ecef;
+$secondary-200: #dee2e6;
+$secondary-300: #ced4da;
+$secondary-400: #adb5bd;
+$secondary-500: #6c757d; // Color secundario - Gris neutro
+$secondary-600: #5a6268;
+$secondary-700: #495057;
+$secondary-800: #343a40;
+$secondary-900: #212529;
 
 // Colores de estado
 $success: #6b8e23; // Verde oliva
@@ -36,19 +36,19 @@ $warning: #d2691e; // Naranja chocolate
 $error: #cd5c5c; // Rojo indio
 $info: #4682b4; // Azul acero;
 
-// Colores neutros (Tonos cálidos)
-$white: #fffef9; // Blanco crema
-$gray-50: #faf9f6;
-$gray-100: #f5f3ee;
-$gray-200: #ede9e0;
-$gray-300: #e0dbd0;
-$gray-400: #c7bfb0;
-$gray-500: #a69b8a;
-$gray-600: #8b7d6b;
-$gray-700: #6f6354;
-$gray-800: #544a3d;
-$gray-900: #3a3126;
-$black: #2c251a;
+// Colores neutros - Tema Claro
+$white: #ffffff;
+$gray-50: #f8f9fa;
+$gray-100: #f1f3f4;
+$gray-200: #e8eaed;
+$gray-300: #dadce0;
+$gray-400: #bdc1c6;
+$gray-500: #9aa0a6;
+$gray-600: #80868b;
+$gray-700: #5f6368;
+$gray-800: #3c4043;
+$gray-900: #202124;
+$black: #000000;
 
 // Colores de texto
 $text-primary: rgba(0, 0, 0, 0.87);
@@ -56,11 +56,11 @@ $text-secondary: rgba(0, 0, 0, 0.6);
 $text-disabled: rgba(0, 0, 0, 0.38);
 $text-hint: rgba(0, 0, 0, 0.38);
 
-// Colores de fondo
-$background-primary: #fffef9; // Fondo crema principal
-$background-secondary: #faf9f6; // Fondo secundario
-$background-card: #fffef9; // Fondo de tarjetas
-$background-overlay: rgba(44, 37, 26, 0.32); // Overlay con tono cálido;
+// Colores de fondo - Tema Claro
+$background-primary: #f5f5dc; // Fondo crema principal
+$background-secondary: #fafafa; // Fondo secundario
+$background-card: #ffffff; // Fondo de tarjetas
+$background-overlay: rgba(0, 0, 0, 0.32); // Overlay estándar
 
 // -----------------------------------------------------------------------------
 // TIPOGRAFÍA
@@ -179,10 +179,21 @@ $z-index-tooltip: 1070;
 // MODO OSCURO (preparación)
 // -----------------------------------------------------------------------------
 
-// Variables para modo oscuro (Tonos cálidos oscuros)
-$dark-background-primary: #1a1612; // Marrón muy oscuro
-$dark-background-secondary: #252017; // Marrón oscuro
-$dark-background-card: #2f2a1f; // Marrón medio oscuro
-$dark-text-primary: rgba(255, 254, 249, 0.87); // Texto crema
-$dark-text-secondary: rgba(255, 254, 249, 0.6); // Texto crema secundario
-$dark-text-disabled: rgba(255, 254, 249, 0.38); // Texto crema deshabilitado
+// Variables para modo oscuro (Esquema Azul)
+$dark-primary-50: #e3f2fd;
+$dark-primary-100: #bbdefb;
+$dark-primary-200: #90caf9;
+$dark-primary-300: #64b5f6;
+$dark-primary-400: #42a5f5;
+$dark-primary-500: #1e3a8a; // Color principal - Azul oscuro
+$dark-primary-600: #1976d2;
+$dark-primary-700: #1565c0;
+$dark-primary-800: #0d47a1;
+$dark-primary-900: #0a2e5c;
+
+$dark-background-primary: #0f172a; // Azul muy oscuro
+$dark-background-secondary: #1e293b; // Azul oscuro
+$dark-background-card: #334155; // Azul medio oscuro
+$dark-text-primary: rgba(255, 255, 255, 0.87); // Texto blanco
+$dark-text-secondary: rgba(255, 255, 255, 0.6); // Texto blanco secundario
+$dark-text-disabled: rgba(255, 255, 255, 0.38); // Texto blanco deshabilitado

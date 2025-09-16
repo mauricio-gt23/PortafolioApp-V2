@@ -16,8 +16,8 @@ mat.$theme-ignore-duplication-warnings: true;
 // DEFINICIÓN DE PALETAS PERSONALIZADAS
 // -----------------------------------------------------------------------------
 
-// Paleta primaria personalizada (Crema/Dorado)
-$custom-primary-palette: (
+// Paleta primaria para tema claro (Crema)
+$light-primary-palette: (
    50: $primary-50,
    100: $primary-100,
    200: $primary-200,
@@ -28,10 +28,10 @@ $custom-primary-palette: (
    700: $primary-700,
    800: $primary-800,
    900: $primary-900,
-   A100: #fdf6e8,
-   A200: #fbedc1,
-   A400: #f5d373,
-   A700: #cc9f00,
+   A100: #fcfcf0,
+   A200: #f9f9e1,
+   A400: #f6f6c3,
+   A700: #dbdbb2,
    contrast: (
       50: $text-primary,
       100: $text-primary,
@@ -39,18 +39,52 @@ $custom-primary-palette: (
       300: $text-primary,
       400: $text-primary,
       500: $text-primary,
+      600: $text-primary,
+      700: $text-primary,
+      800: $text-primary,
+      900: $text-primary,
+      A100: $text-primary,
+      A200: $text-primary,
+      A400: $text-primary,
+      A700: $text-primary,
+   ),
+);
+
+// Paleta primaria para tema oscuro (Azul)
+$dark-primary-palette: (
+   50: $dark-primary-50,
+   100: $dark-primary-100,
+   200: $dark-primary-200,
+   300: $dark-primary-300,
+   400: $dark-primary-400,
+   500: $dark-primary-500,
+   600: $dark-primary-600,
+   700: $dark-primary-700,
+   800: $dark-primary-800,
+   900: $dark-primary-900,
+   A100: #e3f2fd,
+   A200: #90caf9,
+   A400: #42a5f5,
+   A700: #1565c0,
+   contrast: (
+      50: $text-primary,
+      100: $text-primary,
+      200: $text-primary,
+      300: $white,
+      400: $white,
+      500: $white,
       600: $white,
       700: $white,
       800: $white,
       900: $white,
       A100: $text-primary,
       A200: $text-primary,
-      A400: $text-primary,
+      A400: $white,
       A700: $white,
    ),
 );
 
-// Paleta secundaria personalizada (Terracota/Coral)
+// Paleta secundaria (Gris neutro para ambos temas)
 $custom-secondary-palette: (
    50: $secondary-50,
    100: $secondary-100,
@@ -62,10 +96,10 @@ $custom-secondary-palette: (
    700: $secondary-700,
    800: $secondary-800,
    900: $secondary-900,
-   A100: #fde8e0,
-   A200: #fbd1c1,
-   A400: #f59983,
-   A700: #d4421f,
+   A100: #f8f9fa,
+   A200: #dee2e6,
+   A400: #adb5bd,
+   A700: #495057,
    contrast: (
       50: $text-primary,
       100: $text-primary,
@@ -148,7 +182,7 @@ $custom-typography: mat.define-typography-config(
 $light-theme: mat.define-light-theme(
    (
       color: (
-         primary: mat.define-palette($custom-primary-palette),
+         primary: mat.define-palette($light-primary-palette),
          accent: mat.define-palette($custom-secondary-palette),
          warn: mat.define-palette($custom-warn-palette),
       ),
@@ -161,7 +195,7 @@ $light-theme: mat.define-light-theme(
 $dark-theme: mat.define-dark-theme(
    (
       color: (
-         primary: mat.define-palette($custom-primary-palette),
+         primary: mat.define-palette($dark-primary-palette),
          accent: mat.define-palette($custom-secondary-palette),
          warn: mat.define-palette($custom-warn-palette),
       ),

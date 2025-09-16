@@ -326,19 +326,7 @@ select {
    }
 }
 
-@media (prefers-color-scheme: dark) {
-   ::-webkit-scrollbar-track {
-      background: $gray-800;
-   }
-
-   ::-webkit-scrollbar-thumb {
-      background: $gray-600;
-
-      &:hover {
-         background: $gray-500;
-      }
-   }
-}
+// Los estilos de scrollbar para tema oscuro se manejan en la sección de temas
 
 // -----------------------------------------------------------------------------
 // SELECCIÓN DE TEXTO
@@ -363,11 +351,88 @@ select {
    @include sr-only;
 }
 
+// -----------------------------------------------------------------------------
+// ESTILOS ESPECÍFICOS PARA TEMAS
+// -----------------------------------------------------------------------------
+
+// Estilos para tema claro
+[data-theme='light'],
+.light-theme {
+   --primary-color: #{$primary-500};
+   --primary-hover: #{$primary-600};
+   --background-primary: #{$background-primary};
+   --background-secondary: #{$background-secondary};
+   --text-primary: #{$text-primary};
+   --text-secondary: #{$text-secondary};
+}
+
+// Estilos para tema oscuro
+[data-theme='dark'],
+.dark-theme {
+   --primary-color: #{$dark-primary-500};
+   --primary-hover: #{$dark-primary-400};
+   --background-primary: #{$dark-background-primary};
+   --background-secondary: #{$dark-background-secondary};
+   --text-primary: #{$dark-text-primary};
+   --text-secondary: #{$dark-text-secondary};
+
+   // Ajustes específicos para modo oscuro
+   img {
+      opacity: 0.9;
+      filter: brightness(0.9);
+   }
+
+   // Scrollbar para tema oscuro
+   ::-webkit-scrollbar-track {
+      background: $dark-background-secondary;
+   }
+
+   ::-webkit-scrollbar-thumb {
+      background: $dark-primary-600;
+
+      &:hover {
+         background: $dark-primary-500;
+      }
+   }
+}
+
+// -----------------------------------------------------------------------------
+// ESTILOS PARA EL BOTÓN TOGGLE DE TEMA
+// -----------------------------------------------------------------------------
+
+.theme-toggle-btn {
+   position: relative;
+   border-radius: $border-radius-full !important;
+   transition: all $transition-base;
+   color: var(--text-primary) !important;
+   background-color: transparent !important;
+   border: 1px solid transparent;
+
+   &:hover {
+      background-color: rgba(var(--primary-color), 0.1) !important;
+      border-color: rgba(var(--primary-color), 0.2);
+      transform: scale(1.05);
+   }
+
+   &:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+   }
+
+   mat-icon {
+      transition: transform $transition-base;
+   }
+
+   &:hover mat-icon {
+      transform: rotate(180deg);
+   }
+}
+
 // Clase para elementos que solo se muestran en modo oscuro
 .dark-only {
    display: none;
 
-   @media (prefers-color-scheme: dark) {
+   [data-theme='dark'] & {
       display: block;
    }
 }
@@ -376,7 +441,7 @@ select {
 .light-only {
    display: block;
 
-   @media (prefers-color-scheme: dark) {
+   [data-theme='dark'] & {
       display: none;
    }
 }

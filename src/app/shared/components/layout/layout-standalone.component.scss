@@ -5,6 +5,60 @@
 @import '../../../../styles/variables';
 @import '../../../../styles/mixins';
 
+// -----------------------------------------------------------------------------
+// ESTILOS PARA EL BOTÓN TOGGLE DE TEMA
+// -----------------------------------------------------------------------------
+
+.theme-toggle-btn {
+   min-width: 40px !important;
+   width: 40px !important;
+   height: 40px !important;
+   border-radius: $border-radius-full !important;
+   background-color: rgba(var(--primary-color), 0.1) !important;
+   border: 1px solid rgba(var(--primary-color), 0.2) !important;
+   color: var(--text-primary) !important;
+   transition: all $transition-base !important;
+   display: flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+
+   &:hover {
+      background-color: rgba(var(--primary-color), 0.2) !important;
+      border-color: rgba(var(--primary-color), 0.4) !important;
+      transform: scale(1.1) !important;
+      box-shadow: 0 4px 12px rgba(var(--primary-color), 0.3) !important;
+   }
+
+   &:focus {
+      outline: 2px solid var(--primary-color) !important;
+      outline-offset: 2px !important;
+   }
+
+   mat-icon {
+      font-size: 20px !important;
+      width: 20px !important;
+      height: 20px !important;
+      transition: transform $transition-base !important;
+   }
+
+   &:hover mat-icon {
+      transform: rotate(180deg) !important;
+   }
+
+   // Estilos específicos para tema oscuro
+    [data-theme='dark'] & {
+       background-color: rgba($dark-primary-500, 0.2) !important;
+       border-color: rgba($dark-primary-500, 0.3) !important;
+       color: $dark-text-primary !important;
+
+       &:hover {
+          background-color: rgba($dark-primary-400, 0.3) !important;
+          border-color: rgba($dark-primary-400, 0.5) !important;
+          box-shadow: 0 4px 12px rgba($dark-primary-500, 0.4) !important;
+       }
+    }
+}
+
 // Layout Container
 .layout-container {
    width: 100vw;
@@ -254,6 +308,16 @@
       margin: 0;
    }
 
+   .brand-section {
+      width: 100%;
+      gap: $spacing-2;
+      
+      @media (max-width: #{$breakpoint-md - 1px}) {
+         justify-content: center !important;
+         margin-bottom: $spacing-2;
+      }
+   }
+
    .navbar-brand {
       @include text-xl;
       font-weight: $font-weight-semibold;
@@ -265,14 +329,11 @@
       display: block;
 
       @media (max-width: #{$breakpoint-md - 1px}) {
-         text-align: center;
-         margin-bottom: $spacing-2;
          @include text-lg;
       }
 
       @media (max-width: #{$breakpoint-sm - 1px}) {
          @include text-base;
-         margin-bottom: $spacing-1;
       }
    }
 
