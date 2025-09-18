@@ -86,7 +86,7 @@ import {
                <div class="actions-section" [@scaleIn]>
                   <button
                      mat-raised-button
-                     color="primary"
+                     color="accent"
                      class="action-btn"
                      routerLink="/contact"
                   >
