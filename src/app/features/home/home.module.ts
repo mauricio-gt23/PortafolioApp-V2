@@ -1,3 +1,4 @@
+import { LayoutModule } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -8,10 +9,11 @@ import { HomeRoutingModule } from './home.routing';
 @NgModule({
    declarations: [HomeComponent],
    imports: [
-      CommonModule, 
+      CommonModule,
       HomeRoutingModule,
       MatButtonModule,
-      MatIconModule
+      MatIconModule,
+      LayoutModule,
    ],
 })
 export class HomeModule {}

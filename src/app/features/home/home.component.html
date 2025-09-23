@@ -11,7 +11,7 @@
         <p class="hero-subtitle" [@fadeInUp]>
           Transformo ideas en aplicaciones web y móviles funcionales, escalables y seguras
         </p>
-        <div class="hero-actions" [@scaleIn]>
+        <div class="hero-actions" [@scaleIn] *ngIf="isSidebarHidden">
           <button mat-stroked-button color="primary" class="contact-button">
             <mat-icon>email</mat-icon>
             Contactar
