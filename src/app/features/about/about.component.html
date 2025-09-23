@@ -1,1 +1,114 @@
-<div [@fadeInUp]>About view!</div>
+<!-- About Section -->
+<section class="about-section" [@fadeIn]>
+  <div class="container">
+    
+    <!-- Header Section -->
+    <div class="section-header" [@fadeInUp]>
+      <h1 class="section-title">Acerca de Mí</h1>
+      <p class="section-subtitle">Conoce más sobre mi experiencia, educación y habilidades técnicas</p>
+    </div>
+
+    <!-- Personal Description -->
+    <div class="description-section" [@slideInLeft]>
+      <mat-card class="description-card">
+        <mat-card-header>
+          <div mat-card-avatar class="description-avatar">
+            <mat-icon>person</mat-icon>
+          </div>
+          <mat-card-title>¿Quién soy?</mat-card-title>
+          <mat-card-subtitle>Una breve descripción sobre mí</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="description-text">{{ personalDescription }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Experience Section -->
+    <div class="experience-section" [@slideInRight]>
+      <h2 class="subsection-title">
+        <mat-icon>work</mat-icon>
+        Experiencia Profesional
+      </h2>
+      <div class="experience-grid">
+        <mat-card class="experience-card" *ngFor="let exp of experiences; let i = index" [@scaleIn]>
+          <mat-card-header>
+            <div mat-card-avatar class="experience-avatar">
+              <mat-icon>business</mat-icon>
+            </div>
+            <mat-card-title>{{ exp.position }}</mat-card-title>
+            <mat-card-subtitle>{{ exp.company }} • {{ exp.period }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="experience-description">{{ exp.description }}</p>
+            <div class="technologies">
+              <mat-chip-set>
+                <mat-chip *ngFor="let tech of exp.technologies">{{ tech }}</mat-chip>
+              </mat-chip-set>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="education-section" [@slideInLeft]>
+      <h2 class="subsection-title">
+        <mat-icon>school</mat-icon>
+        Educación
+      </h2>
+      <div class="education-grid">
+        <mat-card class="education-card" *ngFor="let edu of education; let i = index" [@scaleIn]>
+          <mat-card-header>
+            <div mat-card-avatar class="education-avatar">
+              <mat-icon>school</mat-icon>
+            </div>
+            <mat-card-title>{{ edu.degree }}</mat-card-title>
+            <mat-card-subtitle>{{ edu.institution }} • {{ edu.period }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="education-description">{{ edu.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="skills-section" [@fadeInUp]>
+      <h2 class="subsection-title">
+        <mat-icon>code</mat-icon>
+        Habilidades Técnicas
+      </h2>
+      <div class="skills-grid">
+        <mat-card class="skill-card" *ngFor="let skill of skills; let i = index" [@scaleIn]>
+          <mat-card-header>
+            <div mat-card-avatar class="skill-avatar" [style.background-color]="skill.color">
+              <mat-icon>{{ skill.icon }}</mat-icon>
+            </div>
+            <mat-card-title>{{ skill.category }}</mat-card-title>
+            <mat-card-subtitle>Nivel de competencia</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="skill-level">
+              <div class="level-info">
+                <span class="level-text">{{ skill.level }}%</span>
+              </div>
+              <mat-progress-bar 
+                mode="determinate" 
+                [value]="skill.level"
+                [color]="'primary'"
+                class="skill-progress">
+              </mat-progress-bar>
+            </div>
+            <div class="skill-technologies">
+              <mat-chip-set>
+                <mat-chip *ngFor="let tech of skill.technologies">{{ tech }}</mat-chip>
+              </mat-chip-set>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+</section>
