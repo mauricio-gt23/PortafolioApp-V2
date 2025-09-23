@@ -37,7 +37,6 @@ interface Skill {
    animations: [fadeInUp, slideInLeft, slideInRight, scaleIn, fadeIn],
 })
 export class AboutComponent {
-   
    personalDescription = `
       Soy un desarrollador Full Stack apasionado por crear soluciones tecnológicas innovadoras y escalables. 
       Con más de 2 años de experiencia en el desarrollo de aplicaciones web y móviles, me especializo en 
@@ -49,32 +48,42 @@ export class AboutComponent {
       {
          position: 'Desarrollador Full Stack',
          company: 'Freelance',
-         period: '2022 - Presente',
-         description: 'Desarrollo de aplicaciones web y móviles personalizadas para diversos clientes, implementando soluciones completas desde el frontend hasta el backend.',
-         technologies: ['Angular', 'Spring Boot', 'PostgreSQL', 'Kotlin', 'TypeScript']
+         period: '2024 - Presente',
+         description:
+            'Diseño y desarrollo de aplicaciones móviles a medida, abordando todas las fases del ciclo de vida del software: análisis de requerimientos, arquitectura, programación, pruebas y despliegue. Integración de servicios externos, uso de Firebase para autenticación, base de datos y despliegue, además de la optimización de la experiencia de usuario.',
+         technologies: ['Kotlin', 'Firebase'],
       },
       {
-         position: 'Desarrollador Frontend',
-         company: 'Proyectos Académicos',
-         period: '2021 - 2022',
-         description: 'Creación de interfaces de usuario modernas y responsivas, enfocándome en la experiencia del usuario y las mejores prácticas de desarrollo frontend.',
-         technologies: ['HTML', 'CSS', 'JavaScript', 'Angular', 'Bootstrap']
-      }
+         position: 'Desarrollador Junior Full Stack',
+         company: 'Sintad S.A.C',
+         period: '2022 - Presente',
+         description:
+            'Participación en el desarrollo de plataformas web y móviles empresariales, colaborando en la construcción de interfaces interactivas, APIs robustas y gestión de bases de datos. Apoyo en la implementación de nuevas funcionalidades, despliegue en la nube con AWS y mejora continua de los sistemas existentes.',
+         technologies: [
+            'Angular',
+            'Spring Boot',
+            'PostgreSQL',
+            'Kotlin',
+            'AWS',
+         ],
+      },
    ];
 
    education: Education[] = [
       {
-         degree: 'Ingeniería de Sistemas',
-         institution: 'Universidad Nacional Mayor de San Marcos',
-         period: '2019 - Presente',
-         description: 'Formación integral en desarrollo de software, algoritmos, estructuras de datos y arquitectura de sistemas.'
+         degree: 'Ingeniería de Software',
+         institution: 'Universidad Peruana de Ciencias Aplicadas',
+         period: '2018 - 2024',
+         description:
+            'Formación integral en desarrollo de software, algoritmos, estructuras de datos y arquitectura de sistemas.',
       },
       {
-         degree: 'Certificación en Desarrollo Web',
-         institution: 'Cursos Online Especializados',
-         period: '2021 - 2022',
-         description: 'Especialización en tecnologías web modernas, frameworks y metodologías ágiles de desarrollo.'
-      }
+         degree: 'Certificación Cloud Practitioner',
+         institution: 'AWS',
+         period: '2025',
+         description:
+            'Certificación en servicios de la nube de AWS, enfocada en la implementación, administración y monitorización de infraestructura en la nube.',
+      },
    ];
 
    skills: Skill[] = [
@@ -82,37 +91,56 @@ export class AboutComponent {
          category: 'Frontend',
          icon: 'web',
          level: 85,
-         technologies: ['Angular', 'TypeScript', 'HTML5', 'CSS3', 'SCSS', 'Bootstrap', 'Material Design'],
-         color: '#2196F3'
+         technologies: [
+            'HTML5',
+            'CSS3',
+            'Angular',
+            'SCSS',
+            'Bootstrap',
+            'Material Design',
+         ],
+         color: '#2196F3',
       },
       {
          category: 'Mobile',
          icon: 'phone_android',
          level: 80,
-         technologies: ['Kotlin', 'Android Studio', 'Jetpack Compose', 'MVVM', 'Room Database'],
-         color: '#4CAF50'
+         technologies: [
+            'Kotlin',
+            'Android Studio',
+            'Jetpack Compose',
+            'MVVM',
+            'Room Database',
+         ],
+         color: '#4CAF50',
       },
       {
          category: 'Backend',
          icon: 'storage',
          level: 75,
-         technologies: ['Java', 'Spring Boot', 'REST APIs', 'Microservicios', 'JPA/Hibernate'],
-         color: '#FF9800'
+         technologies: [
+            'Java',
+            'Spring Boot',
+            'REST APIs',
+            'Microservicios',
+            'JPA/Hibernate',
+         ],
+         color: '#FF9800',
       },
       {
          category: 'Cloud',
          icon: 'cloud',
          level: 65,
-         technologies: ['AWS', 'Docker', 'CI/CD', 'Git', 'Linux'],
-         color: '#9C27B0'
+         technologies: ['AWS', 'Docker', 'CI/CD', 'Git', 'Firebase'],
+         color: '#9C27B0',
       },
       {
          category: 'Database',
          icon: 'database',
          level: 70,
-         technologies: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQL'],
-         color: '#F44336'
-      }
+         technologies: ['PostgreSQL', 'MongoDB', 'Redis'],
+         color: '#F44336',
+      },
    ];
 
    constructor() {}

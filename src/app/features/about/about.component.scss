@@ -134,6 +134,9 @@
       .description-avatar {
         background: linear-gradient(135deg, $primary-500, $secondary-500);
         color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         mat-icon {
           font-size: 24px;
@@ -206,6 +209,9 @@
         .experience-avatar {
           background: linear-gradient(135deg, $secondary-500, $primary-500);
           color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
           mat-icon {
             font-size: 24px;
@@ -311,6 +317,9 @@
         .education-avatar {
           background: linear-gradient(135deg, $primary-500, $secondary-500);
           color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
           mat-icon {
             font-size: 24px;
