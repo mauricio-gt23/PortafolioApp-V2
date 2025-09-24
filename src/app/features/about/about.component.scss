@@ -83,9 +83,9 @@
     gap: 0.75rem;
     font-size: 2rem;
     font-weight: 600;
-    color: $primary-700;
+    color: $primary-900;
     margin-bottom: 2rem;
-    font-family: 'Roboto Slab', serif;
+    font-family: $font-family-secondary;
 
     @media (max-width: 768px) {
       font-size: 1.75rem;
@@ -128,7 +128,7 @@
 
       &:hover {
         transform: translateY(-8px);
-        box-shadow: 0 20px 60px rgba($primary-900, 0.3);
+        box-shadow: 0 60px 60px rgba($primary-900, 0.3);
       }
 
       .description-avatar {
@@ -434,16 +434,17 @@
             flex-wrap: wrap;
             gap: 0.5rem;
 
-            mat-chip {
-              background: $gray-100;
-              color: $gray-700;
+            .skill-technologies-chip {
+              background: $primary-100;
+              color: $primary-700;
+              padding: 0.25rem 0.5rem;
+              border-radius: 16px;
               font-size: 0.8rem;
               font-weight: 500;
-              border-radius: 16px;
               transition: all 0.3s ease;
 
               &:hover {
-                background: $gray-200;
+                background: $primary-200;
                 transform: scale(1.05);
               }
             }

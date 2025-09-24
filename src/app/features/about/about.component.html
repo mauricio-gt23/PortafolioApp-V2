@@ -1,5 +1,5 @@
 <!-- About Section -->
-<section class="about-section" [@fadeIn]>
+<section class="about-section">
   <div class="container">
     
     <!-- Header Section -->
@@ -101,7 +101,7 @@
             </div>
             <div class="skill-technologies">
               <mat-chip-set>
-                <mat-chip *ngFor="let tech of skill.technologies">{{ tech }}</mat-chip>
+                <mat-chip *ngFor="let tech of skill.technologies" class="skill-technologies-chip">{{ tech }}</mat-chip>
               </mat-chip-set>
             </div>
           </mat-card-content>
