@@ -63,7 +63,7 @@
     .section-subtitle {
       font-size: 1.25rem;
       line-height: 1.6;
-      color: $gray-600;
+      color: var(--text-secondary);
       max-width: 600px;
       margin: 0 auto;
 
@@ -71,6 +71,18 @@
         font-size: 1.1rem;
       }
     }
+  }
+
+  // -----------------------------------------------------------------------------
+  // CARD TITLES
+  // -----------------------------------------------------------------------------
+
+  .card-title {
+    color: $secondary-600;
+  }
+
+  .card-subtitle {
+    color: var(--text-secondary);
   }
 
   // -----------------------------------------------------------------------------
@@ -95,7 +107,7 @@
       font-size: 2rem;
       width: 2rem;
       height: 2rem;
-      color: $secondary-600;
+      color: $primary-900;
     }
   }
 
@@ -128,7 +140,7 @@
 
       &:hover {
         transform: translateY(-8px);
-        box-shadow: 0 60px 60px rgba($primary-900, 0.3);
+        box-shadow: 0 20px 60px rgba($primary-900, 0.3);
       }
 
       .description-avatar {
@@ -148,7 +160,7 @@
       .description-text {
         font-size: 1.1rem;
         line-height: 1.8;
-        color: $gray-700;
+        color: var(--text-secondary);
         text-align: justify;
         margin: 0;
 
@@ -223,7 +235,7 @@
         .experience-description {
           font-size: 1rem;
           line-height: 1.6;
-          color: $gray-600;
+          color: var(--text-secondary);
           margin-bottom: 1.5rem;
           text-align: justify;
 
@@ -241,9 +253,10 @@
             mat-chip {
               background: $primary-100;
               color: $primary-700;
+              padding: 0.25rem 0.75rem;
+              border-radius: 20px;
               font-size: 0.875rem;
               font-weight: 500;
-              border-radius: 20px;
               transition: all 0.3s ease;
 
               &:hover {
@@ -331,7 +344,6 @@
         .education-description {
           font-size: 1rem;
           line-height: 1.6;
-          color: $gray-600;
           margin: 0;
           text-align: justify;
 
@@ -436,11 +448,8 @@
 
             .skill-technologies-chip {
               background: $primary-100;
-              color: $primary-700;
-              padding: 0.25rem 0.5rem;
-              border-radius: 16px;
-              font-size: 0.8rem;
-              font-weight: 500;
+              padding: 0.25rem 0.75rem;
+              border-radius: 20px;
               transition: all 0.3s ease;
 
               &:hover {
@@ -504,4 +513,11 @@
       }
     }
   }
+}
+
+::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) 
+  .mdc-evolution-chip__text-label {
+  color: $primary-700 !important;
+                font-size: 0.875rem;
+              font-weight: 500;
 }

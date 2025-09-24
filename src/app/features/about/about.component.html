@@ -15,7 +15,7 @@
           <div mat-card-avatar class="description-avatar">
             <mat-icon>person</mat-icon>
           </div>
-          <mat-card-title>¿Quién soy?</mat-card-title>
+          <mat-card-title class="card-title">¿Quién soy?</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <p class="description-text">{{ personalDescription }}</p>
@@ -35,14 +35,14 @@
             <div mat-card-avatar class="experience-avatar">
               <mat-icon>business</mat-icon>
             </div>
-            <mat-card-title>{{ exp.position }}</mat-card-title>
-            <mat-card-subtitle>{{ exp.company }} • {{ exp.period }}</mat-card-subtitle>
+            <mat-card-title class="card-title">{{ exp.position }}</mat-card-title>
+            <mat-card-subtitle class="card-subtitle">{{ exp.company }} • {{ exp.period }}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <p class="experience-description">{{ exp.description }}</p>
             <div class="technologies">
               <mat-chip-set>
-                <mat-chip *ngFor="let tech of exp.technologies">{{ tech }}</mat-chip>
+                <mat-chip *ngFor="let tech of exp.technologies" class="technology-chip">{{ tech }}</mat-chip>
               </mat-chip-set>
             </div>
           </mat-card-content>
@@ -62,8 +62,8 @@
             <div mat-card-avatar class="education-avatar">
               <mat-icon>school</mat-icon>
             </div>
-            <mat-card-title>{{ edu.degree }}</mat-card-title>
-            <mat-card-subtitle>{{ edu.institution }} • {{ edu.period }}</mat-card-subtitle>
+            <mat-card-title class="card-title">{{ edu.degree }}</mat-card-title>
+            <mat-card-subtitle class="card-subtitle">{{ edu.institution }} • {{ edu.period }}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <p class="education-description">{{ edu.description }}</p>
@@ -84,8 +84,8 @@
             <div mat-card-avatar class="skill-avatar" [style.background-color]="skill.color">
               <mat-icon>{{ skill.icon }}</mat-icon>
             </div>
-            <mat-card-title>{{ skill.category }}</mat-card-title>
-            <mat-card-subtitle>Nivel de competencia</mat-card-subtitle>
+            <mat-card-title class="card-title">{{ skill.category }}</mat-card-title>
+            <mat-card-subtitle class="card-subtitle">Nivel de competencia</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <div class="skill-level">

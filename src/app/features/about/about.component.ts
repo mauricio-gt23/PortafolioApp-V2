@@ -90,7 +90,7 @@ export class AboutComponent {
       {
          category: 'Frontend',
          icon: 'web',
-         level: 85,
+         level: 80,
          technologies: [
             'HTML5',
             'CSS3',
@@ -104,7 +104,7 @@ export class AboutComponent {
       {
          category: 'Mobile',
          icon: 'phone_android',
-         level: 80,
+         level: 85,
          technologies: [
             'Kotlin',
             'Android Studio',
@@ -117,7 +117,7 @@ export class AboutComponent {
       {
          category: 'Backend',
          icon: 'storage',
-         level: 75,
+         level: 65,
          technologies: [
             'Java',
             'Spring Boot',
@@ -130,7 +130,7 @@ export class AboutComponent {
       {
          category: 'Cloud',
          icon: 'cloud',
-         level: 65,
+         level: 50,
          technologies: ['AWS', 'Docker', 'CI/CD', 'Git', 'Firebase'],
          color: '#9C27B0',
       },

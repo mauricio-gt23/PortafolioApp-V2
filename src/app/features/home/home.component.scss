@@ -114,7 +114,7 @@
     .hero-subtitle {
       font-size: 1.25rem;
       line-height: 1.6;
-      color: $gray-700;
+      color: var(--text-secondary);
       margin-bottom: 2rem;
       max-width: 500px;
       text-align: center;
@@ -245,7 +245,7 @@
 
     .section-subtitle {
       font-size: 1.25rem;
-      color: $gray-600;
+      color: var(--text-secondary);
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -346,16 +346,16 @@
         .service-title {
           font-size: 1.5rem;
           font-weight: 600;
-          color: $primary-700;
+          color: $secondary-600;
           margin-bottom: 1rem;
-          font-family: 'Roboto Slab', serif;
+          font-family: $font-family-secondary;
           text-align: center;
         }
 
         .service-description {
           font-size: 1rem;
           line-height: 1.6;
-          color: $gray-600;
+          color: var(--text-secondary);
           margin-bottom: 1.5rem;
           text-align: justify;
         }
