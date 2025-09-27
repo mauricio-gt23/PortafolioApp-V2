@@ -19,9 +19,11 @@
 // IMPORTACIONES DE BOOTSTRAP (SOLO GRID Y UTILIDADES)
 // -----------------------------------------------------------------------------
 
-// Bootstrap - Solo funciones y breakpoints (importación mínima)
+// Bootstrap - Funciones, variables, mixins y componentes necesarios
 @import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/mixins/breakpoints';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/carousel';
 
 // -----------------------------------------------------------------------------
 // IMPORTACIONES DEL SISTEMA DE DISEÑO PERSONALIZADO
