@@ -605,56 +605,6 @@
       }
     }
   }
-
-
-
-
-
-  // -----------------------------------------------------------------------------
-  // NOT FOUND
-  // -----------------------------------------------------------------------------
-
-  .not-found {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: $white;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba($primary-500, 0.1);
-    border: 1px solid $primary-100;
-
-    mat-icon {
-      font-size: 4rem;
-      width: 4rem;
-      height: 4rem;
-      color: $warning;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      color: $primary-800;
-      margin-bottom: 1rem;
-      font-size: 1.75rem;
-    }
-
-    p {
-      color: var(--text-secondary);
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-
-    button {
-      padding: 0.75rem 1.5rem;
-      font-weight: 500;
-      border-radius: 10px;
-
-      mat-icon {
-        margin-right: 0.5rem;
-        font-size: 1.125rem;
-        width: 1.125rem;
-        height: 1.125rem;
-      }
-    }
-  }
 }
 
 // -----------------------------------------------------------------------------

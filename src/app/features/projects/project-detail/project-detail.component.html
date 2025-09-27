@@ -9,65 +9,67 @@
     <!-- Project Detail Content -->
     <div *ngIf="!loading && project" class="project-detail-content">
       
-      <!-- Header Section -->
-      <div class="project-header" [@slideInLeft]>
-        <div class="header-top">
-          <button mat-icon-button class="back-button" (click)="goBack()" aria-label="Volver a proyectos">
-            <mat-icon>arrow_back</mat-icon>
-          </button>
-          
-          <div class="project-meta">
-            <div class="category-badge">
-              <mat-icon>{{ getCategoryIcon(project.category) }}</mat-icon>
-              <span>{{ getCategoryText(project.category) }}</span>
-            </div>
-            <div class="project-type-badge" [ngClass]="'project-type-' + project.projectType">
-              <mat-icon>{{ project.projectType === 'propio' ? 'person' : 'business' }}</mat-icon>
-              <span>{{ project.projectType === 'propio' ? 'Proyecto Propio' : 'Proyecto Cliente' }}</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="header-content">
-          <h1 class="project-title">{{ project.title }}</h1>
-          <p class="project-subtitle">{{ project.subtitle }}</p>
-          
-          <div class="project-info-grid">
-            <div class="info-item">
-              <mat-icon>work</mat-icon>
-              <div>
-                <span class="label">Rol</span>
-                <span class="value">{{ project.role }}</span>
-              </div>
-            </div>
-            <div class="info-item" *ngIf="project.client">
-              <mat-icon>business</mat-icon>
-              <div>
-                <span class="label">Cliente</span>
-                <span class="value">{{ project.client }}</span>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Action Button -->
-          <div class="header-action" *ngIf="project.githubUrl">
-            <button mat-raised-button color="accent" (click)="openUrl(project.githubUrl)">
-              <mat-icon>code</mat-icon>
-              Ver Código
+      <!-- Layout para pantallas xs, sm, md y lg: Header → Images → Information -->
+      <div class="d-block d-xl-none">
+        <!-- Header Section -->
+        <div class="project-header" [@slideInLeft]>
+          <div class="header-top">
+            <button mat-icon-button class="back-button" (click)="goBack()" aria-label="Volver a proyectos">
+              <mat-icon>arrow_back</mat-icon>
             </button>
+            
+            <div class="project-meta">
+              <div class="category-badge">
+                <mat-icon>{{ getCategoryIcon(project.category) }}</mat-icon>
+                <span>{{ getCategoryText(project.category) }}</span>
+              </div>
+              <div class="project-type-badge" [ngClass]="'project-type-' + project.projectType">
+                <mat-icon>{{ project.projectType === 'propio' ? 'person' : 'business' }}</mat-icon>
+                <span>{{ project.projectType === 'propio' ? 'Proyecto Propio' : 'Proyecto Cliente' }}</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="header-content">
+            <h1 class="project-title">{{ project.title }}</h1>
+            <p class="project-subtitle">{{ project.subtitle }}</p>
+            
+            <div class="project-info-grid">
+              <div class="info-item">
+                <mat-icon>work</mat-icon>
+                <div>
+                  <span class="label">Rol</span>
+                  <span class="value">{{ project.role }}</span>
+                </div>
+              </div>
+              <div class="info-item" *ngIf="project.client">
+                <mat-icon>business</mat-icon>
+                <div>
+                  <span class="label">Cliente</span>
+                  <span class="value">{{ project.client }}</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Action Button -->
+            <div class="header-action" *ngIf="project.githubUrl">
+              <button mat-raised-button color="accent" (click)="openUrl(project.githubUrl)">
+                <mat-icon>code</mat-icon>
+                Ver Código
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Project Images Carousel -->
+        <!-- Project Images Carousel -->
         <div class="project-images" [@fadeIn] *ngIf="project.images && project.images.length > 0">
-          <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div id="projectCarouselMobile" class="carousel slide" data-bs-ride="carousel">
             <!-- Carousel Indicators -->
             <div class="carousel-indicators" *ngIf="project.images.length > 1">
               <button 
                 *ngFor="let image of project.images; let i = index" 
                 type="button" 
-                [attr.data-bs-target]="'#projectCarousel'" 
+                [attr.data-bs-target]="'#projectCarouselMobile'" 
                 [attr.data-bs-slide-to]="i" 
                 [class.active]="i === 0"
                 [attr.aria-label]="'Slide ' + (i + 1)">
@@ -91,7 +93,7 @@
               *ngIf="project.images.length > 1"
               class="carousel-control-prev" 
               type="button" 
-              data-bs-target="#projectCarousel" 
+              data-bs-target="#projectCarouselMobile" 
               data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -100,7 +102,7 @@
               *ngIf="project.images.length > 1"
               class="carousel-control-next" 
               type="button" 
-              data-bs-target="#projectCarousel" 
+              data-bs-target="#projectCarouselMobile" 
               data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
@@ -108,54 +110,195 @@
           </div>
         </div>
 
-      <!-- Project Information Section -->
-      <div class="project-information-section" [@fadeIn]>
-        <div class="container">
-          <h2 class="section-title">Descripción general</h2>
-          <div class="project-description-content">
-            <mat-card class="content-card">
-              <mat-card-header>
-                <mat-card-title>
-                  <mat-icon>description</mat-icon>
-                  Acerca del Proyecto
-                </mat-card-title>
-              </mat-card-header>
-              <mat-card-content>
-                <p class="long-description">{{ project.longDescription }}</p>
-              </mat-card-content>
-            </mat-card>
+        <!-- Project Information Section -->
+        <div class="project-information-section" [@fadeIn]>
+          <div class="container">
+            <h2 class="section-title">Descripción general</h2>
+            <div class="project-description-content">
+              <mat-card class="content-card">
+                <mat-card-header>
+                  <mat-card-title>
+                    <mat-icon>description</mat-icon>
+                    Acerca del Proyecto
+                  </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <p class="long-description">{{ project.longDescription }}</p>
+                </mat-card-content>
+              </mat-card>
 
-            <mat-card class="content-card">
-              <mat-card-header>
-                <mat-card-title>
-                  <mat-icon>build</mat-icon>
-                  Tecnologías Utilizadas
-                </mat-card-title>
-              </mat-card-header>
-              <mat-card-content>
-                <mat-chip-set class="technologies-chips">
-                  <mat-chip *ngFor="let tech of project.technologies" class="technology-chip">
-                    {{ tech }}
-                  </mat-chip>
-                </mat-chip-set>
-              </mat-card-content>
-            </mat-card>
+              <mat-card class="content-card">
+                <mat-card-header>
+                  <mat-card-title>
+                    <mat-icon>build</mat-icon>
+                    Tecnologías Utilizadas
+                  </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <mat-chip-set class="technologies-chips">
+                    <mat-chip *ngFor="let tech of project.technologies" class="technology-chip">
+                      {{ tech }}
+                    </mat-chip>
+                  </mat-chip-set>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layout para pantallas xl y xxl: Header + Information en fila, Images abajo -->
+      <div class="d-none d-xl-block">
+        <!-- Primera fila: Header + Information -->
+        <div class="row">
+          <!-- Header Section -->
+          <div class="col-xl-6">
+            <div class="project-header" [@slideInLeft]>
+              <div class="header-top">
+                <button mat-icon-button class="back-button" (click)="goBack()" aria-label="Volver a proyectos">
+                  <mat-icon>arrow_back</mat-icon>
+                </button>
+                
+                <div class="project-meta">
+                  <div class="category-badge">
+                    <mat-icon>{{ getCategoryIcon(project.category) }}</mat-icon>
+                    <span>{{ getCategoryText(project.category) }}</span>
+                  </div>
+                  <div class="project-type-badge" [ngClass]="'project-type-' + project.projectType">
+                    <mat-icon>{{ project.projectType === 'propio' ? 'person' : 'business' }}</mat-icon>
+                    <span>{{ project.projectType === 'propio' ? 'Proyecto Propio' : 'Proyecto Cliente' }}</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="header-content">
+                <h1 class="project-title">{{ project.title }}</h1>
+                <p class="project-subtitle">{{ project.subtitle }}</p>
+                
+                <div class="project-info-grid">
+                  <div class="info-item">
+                    <mat-icon>work</mat-icon>
+                    <div>
+                      <span class="label">Rol</span>
+                      <span class="value">{{ project.role }}</span>
+                    </div>
+                  </div>
+                  <div class="info-item" *ngIf="project.client">
+                    <mat-icon>business</mat-icon>
+                    <div>
+                      <span class="label">Cliente</span>
+                      <span class="value">{{ project.client }}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Action Button -->
+                <div class="header-action" *ngIf="project.githubUrl">
+                  <button mat-raised-button color="accent" (click)="openUrl(project.githubUrl)">
+                    <mat-icon>code</mat-icon>
+                    Ver Código
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Information Section -->
+          <div class="col-xl-6">
+            <div class="project-information-section" [@fadeIn]>
+              <div class="container">
+                <h2 class="section-title">Descripción general</h2>
+                <div class="project-description-content">
+                  <mat-card class="content-card">
+                    <mat-card-header>
+                      <mat-card-title>
+                        <mat-icon>description</mat-icon>
+                        Acerca del Proyecto
+                      </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p class="long-description">{{ project.longDescription }}</p>
+                    </mat-card-content>
+                  </mat-card>
+
+                  <mat-card class="content-card">
+                    <mat-card-header>
+                      <mat-card-title>
+                        <mat-icon>build</mat-icon>
+                        Tecnologías Utilizadas
+                      </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <mat-chip-set class="technologies-chips">
+                        <mat-chip *ngFor="let tech of project.technologies" class="technology-chip">
+                          {{ tech }}
+                        </mat-chip>
+                      </mat-chip-set>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Segunda fila: Images -->
+        <div class="row">
+          <div class="col-12">
+            <div class="project-images" [@fadeIn] *ngIf="project.images && project.images.length > 0">
+              <div id="projectCarouselDesktop" class="carousel slide" data-bs-ride="carousel">
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators" *ngIf="project.images.length > 1">
+                  <button 
+                    *ngFor="let image of project.images; let i = index" 
+                    type="button" 
+                    [attr.data-bs-target]="'#projectCarouselDesktop'" 
+                    [attr.data-bs-slide-to]="i" 
+                    [class.active]="i === 0"
+                    [attr.aria-label]="'Slide ' + (i + 1)">
+                  </button>
+                </div>
+
+                <!-- Carousel Inner -->
+                <div class="carousel-inner">
+                  <div 
+                    *ngFor="let image of project.images; let i = index" 
+                    class="carousel-item"
+                    [class.active]="i === 0">
+                    <div class="image-container">
+                      <img [src]="image" [alt]="project.title + ' - Imagen ' + (i + 1)" class="d-block w-100 project-image">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button 
+                  *ngIf="project.images.length > 1"
+                  class="carousel-control-prev" 
+                  type="button" 
+                  data-bs-target="#projectCarouselDesktop" 
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button 
+                  *ngIf="project.images.length > 1"
+                  class="carousel-control-next" 
+                  type="button" 
+                  data-bs-target="#projectCarouselDesktop" 
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
     </div>
 
-    <!-- Project Not Found -->
-    <div *ngIf="!loading && !project" class="not-found">
-      <mat-icon>error_outline</mat-icon>
-      <h2>Proyecto no encontrado</h2>
-      <p>El proyecto que buscas no existe o ha sido removido.</p>
-      <button mat-raised-button color="primary" (click)="goBack()">
-        <mat-icon>arrow_back</mat-icon>
-        Volver a Proyectos
-      </button>
-    </div>
+
 
   </div>
 </section>
