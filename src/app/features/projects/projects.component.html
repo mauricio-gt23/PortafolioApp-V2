@@ -1,1 +1,156 @@
-<div [@fadeIn]>Projects view!</div>
+<!-- Projects Section -->
+<section class="projects-section">
+  <div class="container">
+    
+    <!-- Header Section -->
+    <div class="section-header" [@fadeInUp]>
+      <h1 class="section-title">Proyectos</h1>
+      <p class="section-subtitle">Explora mi trabajo en desarrollo web y móvil, desde aplicaciones empresariales hasta proyectos personales innovadores</p>
+    </div>
+
+        <!-- Mobile Applications Section -->
+    <div class="projects-category" [@slideInRight]>
+      <h2 class="category-title">
+        <mat-icon>phone_android</mat-icon>
+        Aplicaciones Móviles
+      </h2>
+      <p class="category-description">
+        Desarrollo de aplicaciones móviles nativas para Android utilizando Kotlin y Jetpack Compose, 
+        con enfoque en rendimiento, usabilidad y experiencia de usuario intuitiva.
+      </p>
+      
+      <div class="projects-grid">
+        <mat-card 
+          class="project-card" 
+          *ngFor="let project of mobileProjects; let i = index" 
+          [@scaleIn]>
+          
+          <!-- Project Image -->
+          <div class="project-image">
+            <img [src]="project.image" [alt]="project.title" class="project-img">
+            <!-- Project Type Badge -->
+            <div class="project-type-badge" [ngClass]="'project-type-' + project.projectType">
+              <mat-icon>{{ project.projectType === 'propio' ? 'person' : 'business' }}</mat-icon>
+              <span>{{ project.projectType === 'propio' ? 'Proyecto Propio' : 'Proyecto Cliente' }}</span>
+            </div>
+          </div>
+
+          <!-- Project Content -->
+          <mat-card-header>
+            <mat-card-title class="project-title">{{ project.title }}</mat-card-title>
+            <mat-card-subtitle class="project-subtitle">{{ project.subtitle }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p class="project-description">{{ project.description }}</p>
+            
+            <!-- Technologies -->
+            <div class="technologies-section">
+              <h4 class="tech-title">Tecnologías</h4>
+              <div class="technologies">
+                <mat-chip-set>
+                  <mat-chip *ngFor="let tech of project.technologies">
+                    {{ tech }}
+                  </mat-chip>
+                </mat-chip-set>
+              </div>
+            </div>
+
+
+          </mat-card-content>
+
+          <!-- Project Actions -->
+          <mat-card-actions class="project-actions">
+            <button 
+              mat-stroked-button 
+              color="primary" 
+              class="action-button"
+              (click)="viewProjectDetails(project.id)">
+              <mat-icon>visibility</mat-icon>
+              Ver Detalles
+            </button>
+            <a 
+              *ngIf="project.githubUrl" 
+              mat-stroked-button 
+              class="action-button"
+              [href]="project.githubUrl" 
+              target="_blank">
+              <mat-icon>code</mat-icon>
+              GitHub
+            </a>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Web Applications Section -->
+    <div class="projects-category" [@slideInLeft]>
+      <h2 class="category-title">
+        <mat-icon>web</mat-icon>
+        Aplicaciones Web
+      </h2>
+      <p class="category-description">
+        Desarrollo de aplicaciones web modernas enfocadas en experiencia de usuario excepcional y arquitecturas escalables.
+      </p>
+      
+      <div class="projects-grid">
+        <mat-card 
+          class="project-card" 
+          *ngFor="let project of webProjects; let i = index" 
+          [@scaleIn]>
+          
+          <!-- Project Image -->
+          <div class="project-image">
+            <img [src]="project.image" [alt]="project.title" class="project-img">
+            <!-- Project Type Badge -->
+            <div class="project-type-badge" [ngClass]="'project-type-' + project.projectType">
+              <mat-icon>{{ project.projectType === 'propio' ? 'person' : 'business' }}</mat-icon>
+              <span>{{ project.projectType === 'propio' ? 'Proyecto Propio' : 'Proyecto Cliente' }}</span>
+            </div>
+          </div>
+
+          <!-- Project Content -->
+          <mat-card-header>
+            <mat-card-title class="project-title">{{ project.title }}</mat-card-title>
+            <mat-card-subtitle class="project-subtitle">{{ project.subtitle }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="project-description">{{ project.description }}</p>      
+            <!-- Technologies -->
+            <div class="technologies-section">
+              <h4 class="tech-title">Tecnologías</h4>
+              <div class="technologies">
+                <mat-chip-set>
+                  <mat-chip *ngFor="let tech of project.technologies">
+                    {{ tech }}
+                  </mat-chip>
+                </mat-chip-set>
+              </div>
+            </div>
+          </mat-card-content>
+
+          <!-- Project Actions -->
+          <mat-card-actions class="project-actions">
+            <button 
+              mat-stroked-button 
+              color="primary" 
+              class="action-button"
+              (click)="viewProjectDetails(project.id)">
+              <mat-icon>visibility</mat-icon>
+              Ver Detalles
+            </button>
+            <a 
+              *ngIf="project.githubUrl" 
+              mat-stroked-button 
+              class="action-button"
+              [href]="project.githubUrl" 
+              target="_blank">
+              <mat-icon>code</mat-icon>
+              GitHub
+            </a>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
