@@ -11,10 +11,14 @@
 
 .project-detail-section {
   min-height: 100vh;
-  padding: 2rem 1rem;
+  padding: 2rem 0.5rem;
   background: linear-gradient(135deg, $primary-50 0%, $secondary-50 100%);
   position: relative;
   overflow: hidden;
+
+  @media (min-width: 1200px) {
+    padding: 2rem 1rem;
+  }
 
   &::before {
     content: '';
@@ -29,9 +33,9 @@
 
   .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1rem;
     position: relative;
     z-index: 1;
   }
@@ -347,8 +351,6 @@
   // -----------------------------------------------------------------------------
 
   .project-images {
-    padding: 1rem;
-
     .carousel {
       border-radius: 12px;
       overflow: hidden;
@@ -471,7 +473,7 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 2rem;
       background: $white;
@@ -541,7 +543,6 @@
   // -----------------------------------------------------------------------------
 
   .content-card {
-    margin-bottom: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba($primary-500, 0.08);
     border: 1px solid $primary-100;
