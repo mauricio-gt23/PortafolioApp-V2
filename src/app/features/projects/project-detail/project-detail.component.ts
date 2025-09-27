@@ -34,7 +34,6 @@ export interface ProjectDetail {
    images: string[];
    demoUrl?: string;
    githubUrl?: string;
-   role: string;
    client?: string;
    testimonial?: {
       text: string;
@@ -158,9 +157,8 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
             'assets/projects/ecommerce/mobile.jpg',
          ],
          demoUrl: 'https://ecommerce-demo.example.com',
-         githubUrl: 'https://github.com/usuario/ecommerce-platform',
-         role: 'Full Stack Developer & Team Lead',
-         client: 'TechCorp Solutions',
+          githubUrl: 'https://github.com/usuario/ecommerce-platform',
+          client: 'TechCorp Solutions',
          testimonial: {
             text: 'Excelente trabajo en el desarrollo de nuestra plataforma. El equipo entregó una solución robusta y escalable que superó nuestras expectativas.',
             author: 'María González',
@@ -208,9 +206,8 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
             'assets/projects/task-manager/kanban.jpg',
          ],
          demoUrl: 'https://taskmanager-demo.example.com',
-         githubUrl: 'https://github.com/usuario/task-manager',
-         role: 'Frontend Developer',
-         client: 'StartupXYZ',
+          githubUrl: 'https://github.com/usuario/task-manager',
+          client: 'StartupXYZ',
       },
       {
          id: 'fitness-tracker',
@@ -254,8 +251,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
             'assets/projects/fitness/stats.jpg',
          ],
          githubUrl: 'https://github.com/usuario/fitness-tracker',
-         role: 'Mobile Developer',
-         client: 'HealthTech Inc.',
+          client: 'HealthTech Inc.',
       },
    ];
 
