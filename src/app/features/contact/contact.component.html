@@ -1,1 +1,103 @@
-<div [@fadeInUp]>Contact view!</div>
+<div class="contact-container" [@fadeIn]>
+  <div class="container">
+    <div class="contact-header" [@slideInLeft]>
+      <h1 class="contact-title">Contacto</h1>
+      <p class="contact-subtitle">¿Tienes un proyecto en mente? Envíame un mensaje y hablemos sobre cómo puedo ayudarte.</p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-card" [@scaleIn]>
+        <div class="card-decoration">
+          <div class="decoration-circle"></div>
+          <div class="decoration-line"></div>
+        </div>
+        
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-header">
+            <mat-icon class="form-icon">email</mat-icon>
+            <h2 class="form-title">Escríbeme</h2>
+          </div>
+          
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="email_id">Correo electrónico</label>
+            <input 
+              type="email" 
+              id="email_id" 
+              formControlName="email_id" 
+              placeholder="tu@email.com"
+              [ngClass]="{'invalid': hasError('email_id', 'required') || hasError('email_id', 'email')}"
+            >
+            <div class="error-message" *ngIf="hasError('email_id', 'required')">
+              El correo electrónico es requerido
+            </div>
+            <div class="error-message" *ngIf="hasError('email_id', 'email')">
+              Ingresa un correo electrónico válido
+            </div>
+          </div>
+          
+          <!-- Subject Field -->
+          <div class="form-group">
+            <label for="subject">Asunto</label>
+            <input 
+              type="text" 
+              id="subject" 
+              formControlName="subject" 
+              placeholder="Asunto del mensaje"
+              [ngClass]="{'invalid': hasError('subject', 'required') || hasError('subject', 'minlength')}"
+            >
+            <div class="error-message" *ngIf="hasError('subject', 'required')">
+              El asunto es requerido
+            </div>
+            <div class="error-message" *ngIf="hasError('subject', 'minlength')">
+              El asunto debe tener al menos 3 caracteres
+            </div>
+          </div>
+          
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea 
+              id="message" 
+              formControlName="message" 
+              rows="6" 
+              placeholder="Escribe tu mensaje aquí..."
+              [ngClass]="{'invalid': hasError('message', 'required') || hasError('message', 'minlength')}"
+            ></textarea>
+            <div class="error-message" *ngIf="hasError('message', 'required')">
+              El mensaje es requerido
+            </div>
+            <div class="error-message" *ngIf="hasError('message', 'minlength')">
+              El mensaje debe tener al menos 10 caracteres
+            </div>
+          </div>
+          
+          <!-- Form Actions -->
+          <div class="form-actions">
+            <button 
+              type="submit" 
+              class="submit-button" 
+              [disabled]="isSubmitting"
+            >
+              <span>{{ !isSubmitting ? 'Enviar mensaje' : 'Enviando...' }}</span>
+              <mat-icon>send</mat-icon>
+            </button>
+          </div>
+          
+          <!-- Form Status Messages -->
+          <div class="form-feedback">
+            <div *ngIf="submitSuccess" class="success-message">
+              <mat-icon>check_circle</mat-icon>
+              <span>¡Mensaje enviado con éxito! Gracias por contactarme.</span>
+            </div>
+            
+            <div *ngIf="submitError" class="error-message">
+              <mat-icon>error</mat-icon>
+              <span>Ocurrió un error al enviar el mensaje. Por favor, intenta nuevamente.</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
