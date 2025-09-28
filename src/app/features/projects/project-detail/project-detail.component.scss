@@ -635,8 +635,23 @@
       display: block !important;
     }
 
+    mat-chip {
+      background: $primary-100;
+      color: $primary-700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $primary-200;
+        transform: scale(1.05);
+      }
+    }
+
     .technology-chip {
-      background: linear-gradient(135deg, $primary-100, $secondary-100);
+      background: $primary-100;
       color: $primary-700;
       font-weight: 500;
       border: 1px solid $primary-200;
@@ -655,8 +670,8 @@
       }
 
       &:hover {
-        background: linear-gradient(135deg, $primary-200, $secondary-200);
-        transform: translateY(-1px);
+        background: $primary-200;
+        transform: scale(1.05);
       }
     }
   }
@@ -696,6 +711,17 @@
   }
 }
 
-::ng-deep .mat-mdc-card-header {
-  padding: 10px 16px 0px !important;
+::ng-deep .mat-mdc-card {
+  background-color: $white !important;
+  
+  .mat-mdc-card-header {
+    padding: 10px 16px 0px !important;
+  }
+}
+
+::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) 
+  .mdc-evolution-chip__text-label {
+  color: $primary-700 !important;
+  font-size: 0.875rem;
+  font-weight: 500;
 }

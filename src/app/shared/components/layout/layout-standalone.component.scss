@@ -472,7 +472,9 @@
 
    .navbar-brand {
       @include text-xl;
-      font-weight: $font-weight-semibold;
+      font-family: $font-family-mono;
+      font-weight: $font-weight-bold;
+      font-size: x-large;
       color: $white;
       white-space: nowrap;
       overflow: hidden;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LayoutStandaloneComponent } from './shared/components/layout/layout-standalone.component';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { ThemeService } from './core/services/theme.service';
+import { LayoutStandaloneComponent } from './shared/components/layout/layout-standalone.component';
 
 @Component({
    selector: 'app-root',
@@ -12,10 +13,31 @@ import { ThemeService } from './core/services/theme.service';
 export class AppComponent implements OnInit {
    title = 'PortafolioApp-V2';
 
-   constructor(private themeService: ThemeService) {}
+   constructor(
+      private themeService: ThemeService,
+      private router: Router
+   ) {}
 
    ngOnInit() {
-      // El ThemeService se inicializa automáticamente
-      // No necesitamos lógica adicional aquí
+      this.router.events.subscribe(event => {
+         if (event instanceof NavigationStart) {
+            window.scrollTo(0, 0);
+         }
+
+         if (event instanceof NavigationEnd) {
+            setTimeout(() => {
+               window.scrollTo({
+                  top: 0,
+                  left: 0,
+                  behavior: 'auto',
+               });
+
+               const mainContent = document.querySelector('.page-content');
+               if (mainContent) {
+                  mainContent.scrollTop = 0;
+               }
+            }, 0);
+         }
+      });
    }
 }

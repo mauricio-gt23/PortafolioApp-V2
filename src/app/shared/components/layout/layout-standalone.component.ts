@@ -108,7 +108,7 @@ import {
                         class="col-12 col-md-5 col-lg-5 col-xl-6 p-0 text-center text-md-start"
                      >
                         <div class="brand-section d-flex justify-content-center justify-content-md-start align-items-center">
-                           <span class="navbar-brand">Portfolio Web</span>
+                           <span class="navbar-brand">PORTAFOLIO WEB</span>
                            <button
                               mat-icon-button
                               (click)="toggleTheme()"
