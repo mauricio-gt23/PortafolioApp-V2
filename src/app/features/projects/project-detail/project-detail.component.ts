@@ -28,18 +28,9 @@ export interface ProjectDetail {
    category: 'web' | 'mobile';
    projectType: 'propio' | 'cliente';
    technologies: string[];
-   features: string[];
-   challenges: string[];
-   solutions: string[];
    images: string[];
-   demoUrl?: string;
    githubUrl?: string;
    client?: string;
-   testimonial?: {
-      text: string;
-      author: string;
-      position: string;
-   };
 }
 
 @Component({
@@ -108,150 +99,151 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
    loading = true;
    private destroy$ = new Subject<void>();
 
-   // Sample detailed projects data
    private projectsData: ProjectDetail[] = [
+      // Web Projects
       {
-         id: 'ecommerce-platform',
-         title: 'Plataforma E-commerce Avanzada',
-         subtitle: 'Sistema completo de comercio electrónico',
-         description:
-            'Plataforma de e-commerce moderna con gestión de inventario, pagos y analytics.',
+         id: 'legiz-landing',
+         title: 'Legiz - Landing Page',
+         subtitle: '',
+         description: 'Plataforma moderna para conectar abogados y clientes.',
          longDescription:
-            'Una plataforma de comercio electrónico completa desarrollada con Angular y Node.js, que incluye un sistema de gestión de productos, carrito de compras, procesamiento de pagos, gestión de usuarios, panel de administración y analytics en tiempo real. La aplicación está optimizada para SEO y cuenta con un diseño responsive que se adapta a todos los dispositivos.',
+            'Plataforma moderna diseñada para conectar abogados y clientes de manera eficiente. Ofrece una interfaz intuitiva que facilita la búsqueda y contratación de servicios legales.',
+         category: 'web',
+         projectType: 'propio',
+         technologies: ['HTML', 'CSS', 'JavaScript', 'Github Pages'],
+         images: [
+            'assets/legiz/legiz.png',
+            'assets/legiz/legiz-image2.png',
+            'assets/legiz/legiz-image3.png',
+            'assets/legiz/legiz-image4.png',
+            'assets/legiz/legiz-image5.png',
+         ],
+         githubUrl: 'https://github.com/mauricio-gt23/Legiz-LadingPage.git',
+      },
+      {
+         id: 'fruit-app',
+         title: 'Fruit App',
+         subtitle: 'Aplicación de gestión de frutas/jugos',
+         description: 'Seguimiento de ventas de frutas y jugos por internet.',
+         longDescription:
+            'Aplicación web para el seguimiento y gestión de ventas de frutas y jugos por internet. Permite a los usuarios administrar inventario, procesar pedidos y analizar estadísticas de ventas.',
          category: 'web',
          projectType: 'cliente',
          technologies: [
             'Angular',
-            'Node.js',
-            'MongoDB',
-            'Express',
-            'Stripe',
-            'JWT',
-            'Socket.io',
-         ],
-         features: [
-            'Catálogo de productos con filtros avanzados',
-            'Carrito de compras persistente',
-            'Sistema de pagos con Stripe',
-            'Panel de administración completo',
-            'Analytics y reportes en tiempo real',
-            'Sistema de notificaciones',
-            'Gestión de inventario automática',
-            'SEO optimizado',
-         ],
-         challenges: [
-            'Optimización de rendimiento con grandes catálogos',
-            'Implementación de pagos seguros',
-            'Sincronización en tiempo real del inventario',
-            'Escalabilidad del sistema',
-         ],
-         solutions: [
-            'Implementación de lazy loading y paginación',
-            'Integración segura con Stripe y validaciones',
-            'Uso de WebSockets para actualizaciones en tiempo real',
-            'Arquitectura de microservicios con Docker',
+            'TypeScript',
+            'Bootstrap',
+            'Angular Material',
+            'Spring Boot',
+            'Firebase',
          ],
          images: [
-            'assets/projects/ecommerce/main.jpg',
-            'assets/projects/ecommerce/admin.jpg',
-            'assets/projects/ecommerce/mobile.jpg',
+            'assets/fruit/fruitApp-image1.png',
+            'assets/fruit/fruitApp-image2.png',
+            'assets/fruit/fruitApp-image3.png',
+            'assets/fruit/fruitApp-image4.png',
          ],
-         demoUrl: 'https://ecommerce-demo.example.com',
-          githubUrl: 'https://github.com/usuario/ecommerce-platform',
-          client: 'TechCorp Solutions',
-         testimonial: {
-            text: 'Excelente trabajo en el desarrollo de nuestra plataforma. El equipo entregó una solución robusta y escalable que superó nuestras expectativas.',
-            author: 'María González',
-            position: 'CTO, TechCorp Solutions',
-         },
+         githubUrl: 'https://github.com/mauricio-gt23/FruitApp-Frontend.git',
       },
       {
-         id: 'task-manager',
-         title: 'Gestor de Tareas Colaborativo',
-         subtitle: 'Aplicación de productividad en equipo',
-         description:
-            'Herramienta de gestión de proyectos con colaboración en tiempo real.',
+         id: 'finance-app',
+         title: 'Finance App',
+         subtitle: 'Gestión de finanzas personales',
+         description: 'Aplicación moderna para alcanzar objetivos financieros.',
          longDescription:
-            'Una aplicación web de gestión de tareas y proyectos que permite a los equipos colaborar de manera eficiente. Incluye funcionalidades como tableros Kanban, asignación de tareas, seguimiento de tiempo, comentarios en tiempo real y generación de reportes. La aplicación está diseñada con un enfoque en la usabilidad y la productividad.',
+            'Aplicación web moderna diseñada para ayudar a los usuarios a gestionar sus finanzas personales y alcanzar sus objetivos financieros. Ofrece herramientas para seguimiento de gastos, presupuestos y planificación financiera.',
+         category: 'web',
+         projectType: 'cliente',
+         technologies: [
+            'Angular',
+            'TypeScript',
+            'Bootstrap',
+            'Firebase',
+            'Spring Boot',
+         ],
+         images: [
+            'assets/finance/finance.png',
+            'assets/finance/financeApp-image2.png',
+            'assets/finance/financeApp-image3.png',
+         ],
+         githubUrl: 'https://github.com/mauricio-gt23/FinanceApp.git',
+      },
+      {
+         id: 'portfolio-v1',
+         title: 'Portfolio v1',
+         subtitle: 'Portafolio de proyectos personales',
+         description: 'Plataforma web para mostrar proyectos y habilidades.',
+         longDescription:
+            'Plataforma web personal diseñada para mostrar proyectos, habilidades y experiencia profesional. Incluye secciones para proyectos, habilidades técnicas, experiencia laboral y contacto.',
          category: 'web',
          projectType: 'propio',
          technologies: [
-            'React',
+            'Angular',
             'TypeScript',
+            'Material Angular',
             'Firebase',
-            'Material-UI',
-            'Chart.js',
-         ],
-         features: [
-            'Tableros Kanban interactivos',
-            'Asignación y seguimiento de tareas',
-            'Comentarios y colaboración en tiempo real',
-            'Seguimiento de tiempo integrado',
-            'Reportes y analytics',
-            'Notificaciones push',
-            'Integración con calendario',
-         ],
-         challenges: [
-            'Sincronización en tiempo real entre usuarios',
-            'Gestión eficiente del estado de la aplicación',
-            'Optimización para equipos grandes',
-         ],
-         solutions: [
-            'Implementación con Firebase Realtime Database',
-            'Uso de Redux para gestión de estado',
-            'Optimización con React.memo y useMemo',
          ],
          images: [
-            'assets/projects/task-manager/dashboard.jpg',
-            'assets/projects/task-manager/kanban.jpg',
+            'assets/portfoliov1/portfoliov1.png',
+            'assets/portfoliov1/portfoliov1-image2.png',
+            'assets/portfoliov1/portfoliov1-image3.png',
+            'assets/portfoliov1/portfoliov1-image4.png',
          ],
-         demoUrl: 'https://taskmanager-demo.example.com',
-          githubUrl: 'https://github.com/usuario/task-manager',
-          client: 'StartupXYZ',
+         githubUrl: 'https://github.com/mauricio-gt23/PortfolioApp-V1.git',
+      },
+
+      // Mobile Projects
+      {
+         id: 'paradox',
+         title: 'Paradox',
+         subtitle: 'App de búsqueda de empleo',
+         description: 'Conectar solicitantes de empleo con empleadores',
+         longDescription:
+            'Aplicación móvil diseñada para conectar solicitantes de empleo con empleadores de manera eficiente. Ofrece funcionalidades para búsqueda de empleo, creación de perfiles profesionales y gestión de aplicaciones.',
+         category: 'mobile',
+         projectType: 'cliente',
+         technologies: [
+            'Kotlin',
+            'Retrofit',
+            'SpringBoot',
+            'Firebase',
+            'Material Design',
+         ],
+         images: [
+            'assets/paradox/paradox-image1.png',
+            'assets/paradox/paradox-image2.png',
+            'assets/paradox/paradox-image3.png',
+            'assets/paradox/paradox-image4.png',
+            'assets/paradox/paradox-image5.png',
+            'assets/paradox/paradox-image6.png',
+         ],
+         githubUrl: 'https://github.com/mauricio-gt23/Paradox.git',
       },
       {
-         id: 'fitness-tracker',
-         title: 'FitTracker Pro',
-         subtitle: 'App de seguimiento fitness',
-         description:
-            'Aplicación móvil para seguimiento de ejercicios y nutrición.',
+         id: 'mi-chambita',
+         title: 'Mi Chambita',
+         subtitle: 'App para emprendedores',
+         description: 'Herramienta para registrar ventas, gastos e inventario.',
          longDescription:
-            'Una aplicación móvil completa para el seguimiento de actividades físicas, nutrición y objetivos de salud. Incluye planes de entrenamiento personalizados, seguimiento de calorías, integración con dispositivos wearables y una comunidad social para motivación mutua.',
+            'Aplicación móvil diseñada para emprendedores que necesitan una herramienta sencilla pero potente para registrar ventas, gastos e inventario. Ideal para pequeños negocios que buscan digitalizar sus operaciones.',
          category: 'mobile',
-         projectType: 'propio',
+         projectType: 'cliente',
          technologies: [
-            'React Native',
-            'Redux',
+            'Kotlin',
+            'MVVM',
+            'Room',
+            'DataStore',
             'Firebase',
-            'HealthKit',
-            'Google Fit',
-         ],
-         features: [
-            'Seguimiento de ejercicios y rutinas',
-            'Contador de calorías y macros',
-            'Planes de entrenamiento personalizados',
-            'Integración con dispositivos wearables',
-            'Red social fitness',
-            'Recordatorios y notificaciones',
-            'Progreso visual con gráficos',
-         ],
-         challenges: [
-            'Integración con múltiples APIs de salud',
-            'Optimización de batería',
-            'Sincronización offline/online',
-         ],
-         solutions: [
-            'Uso de HealthKit y Google Fit APIs',
-            'Implementación de background tasks eficientes',
-            'Sistema de caché local con sincronización',
+            'Jetpack Compose',
          ],
          images: [
-            'assets/projects/fitness/home.jpg',
-            'assets/projects/fitness/workout.jpg',
-            'assets/projects/fitness/stats.jpg',
+            'assets/mi-chambita/chambita-image1.png',
+            'assets/mi-chambita/chambita-image2.png',
+            'assets/mi-chambita/chambita-image3.png',
+            'assets/mi-chambita/chambita-image4.png',
+            'assets/mi-chambita/chambita-image5.png',
          ],
-         githubUrl: 'https://github.com/usuario/fitness-tracker',
-          client: 'HealthTech Inc.',
+         githubUrl: 'https://github.com/mauricio-gt23/Mi-Chambita.git',
       },
    ];
 
@@ -275,7 +267,6 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
    private loadProject(id: string): void {
       this.loading = true;
 
-      // Simulate API call delay
       setTimeout(() => {
          this.project = this.projectsData.find(p => p.id === id) || null;
          this.loading = false;

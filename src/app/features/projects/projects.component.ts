@@ -53,6 +53,7 @@ export class ProjectsComponent {
             'Bootstrap',
             'Angular Material',
             'Firebase',
+            'Spring Boot',
          ],
          image: 'assets/fruit/fruit.png',
          githubUrl: 'https://github.com/mauricio-gt23/FruitApp-Frontend.git',
@@ -64,7 +65,13 @@ export class ProjectsComponent {
          description: 'Aplicación moderna para alcanzar objetivos financieros.',
          category: 'web',
          projectType: 'cliente',
-         technologies: ['Angular', 'TypeScript', 'Bootstrap', 'Firebase'],
+         technologies: [
+            'Angular',
+            'TypeScript',
+            'Bootstrap',
+            'Firebase',
+            'Spring Boot',
+         ],
          image: 'assets/finance/finance.png',
          githubUrl: 'https://github.com/mauricio-gt23/FinanceApp.git',
       },
@@ -114,6 +121,7 @@ export class ProjectsComponent {
             'Jetpack Compose',
          ],
          image: 'assets/mi-chambita/mi-chambita.png',
+         githubUrl: 'https://github.com/mauricio-gt23/Mi-Chambita.git',
       },
    ];
 

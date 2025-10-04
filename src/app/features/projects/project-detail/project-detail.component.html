@@ -59,7 +59,7 @@
 
         <!-- Project Images Carousel -->
         <div class="project-images" [@fadeIn] *ngIf="project.images && project.images.length > 0">
-          <div id="projectCarouselMobile" class="carousel slide" data-bs-ride="carousel">
+          <div id="projectCarouselMobile" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-transition="200">
             <!-- Carousel Indicators -->
             <div class="carousel-indicators" *ngIf="project.images.length > 1">
               <button 
@@ -235,7 +235,7 @@
         <div class="row pt-4">
           <div class="col-12">
             <div class="project-images" [@fadeIn] *ngIf="project.images && project.images.length > 0">
-              <div id="projectCarouselDesktop" class="carousel slide" data-bs-ride="carousel">
+              <div id="projectCarouselDesktop" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-transition="200">
                 <!-- Carousel Indicators -->
                 <div class="carousel-indicators" *ngIf="project.images.length > 1">
                   <button 
