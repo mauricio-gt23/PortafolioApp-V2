@@ -27,7 +27,7 @@
           
           <!-- Project Image -->
           <div class="project-image">
-            <img [src]="project.image" [alt]="project.title" class="project-img">
+            <img [src]="project.image" [alt]="project.title" class="project-img" width="800" loading="eager">
             <!-- Project Type Badge -->
             <div class="project-type-badge" [ngClass]="'project-type-' + project.projectType">
               <mat-icon>{{ project.projectType === 'propio' ? 'person' : 'business' }}</mat-icon>

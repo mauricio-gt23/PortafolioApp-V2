@@ -196,7 +196,7 @@
     // Project Image
     .project-image {
       position: relative;
-      height: 200px;
+      height: 225px;
       overflow: hidden;
       background: linear-gradient(135deg, $primary-100, $secondary-100);
 
@@ -205,6 +205,7 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.3s ease;
+        aspect-ratio: 16/9;
       }
 
       // Project Type Badge
