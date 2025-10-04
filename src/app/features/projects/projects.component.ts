@@ -18,7 +18,6 @@ export interface Project {
    projectType: 'propio' | 'cliente';
    technologies: string[];
    image: string;
-   demoUrl?: string;
    githubUrl?: string;
 }
 
@@ -29,92 +28,97 @@ export interface Project {
    animations: [fadeInUp, slideInLeft, slideInRight, scaleIn, fadeIn],
 })
 export class ProjectsComponent {
-   // Sample projects data
    webProjects: Project[] = [
       {
-         id: 'ecommerce-platform',
-         title: 'Plataforma E-commerce Avanzada',
-         subtitle: 'Sistema completo de comercio electrónico',
-         description:
-            'Plataforma de e-commerce moderna con gestión de inventario, pagos y analytics.',
-         category: 'web',
-         projectType: 'cliente',
-         technologies: ['Angular', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
-         image: 'assets/projects/ecommerce.jpg',
-         demoUrl: 'https://ecommerce-demo.example.com',
-         githubUrl: 'https://github.com/usuario/ecommerce-platform',
-      },
-      {
-         id: 'task-manager',
-         title: 'Gestor de Tareas Colaborativo',
-         subtitle: 'Aplicación de productividad en equipo',
-         description:
-            'Herramienta de gestión de proyectos con colaboración en tiempo real.',
+         id: 'legiz-landing',
+         title: 'Legiz - Landing Page',
+         subtitle: '',
+         description: 'Plataforma moderna para conectar abogados y clientes.',
          category: 'web',
          projectType: 'propio',
-         technologies: ['React', 'TypeScript', 'Firebase', 'Material-UI'],
-         image: 'assets/projects/task-manager.jpg',
-         demoUrl: 'https://taskmanager-demo.example.com',
-         githubUrl: 'https://github.com/usuario/task-manager',
+         technologies: ['HTML', 'CSS', 'JavaScript', 'Github Pages'],
+         image: 'assets/legiz/legiz.png',
+         githubUrl: 'https://github.com/mauricio-gt23/Legiz-LadingPage.git',
       },
       {
-         id: 'dashboard-analytics',
-         title: 'Dashboard Analytics',
-         subtitle: 'Panel de control empresarial',
-         description:
-            'Dashboard interactivo para visualización de datos empresariales.',
+         id: 'fruit-app',
+         title: 'Fruit App',
+         subtitle: 'Aplicación de gestión de frutas/jugos',
+         description: 'Seguimiento de ventas de frutas y jugos por internet.',
          category: 'web',
          projectType: 'cliente',
-         technologies: ['Vue.js', 'D3.js', 'Python', 'FastAPI'],
-         image: 'assets/projects/dashboard.jpg',
-         githubUrl: 'https://github.com/usuario/analytics-dashboard',
+         technologies: [
+            'Angular',
+            'TypeScript',
+            'Bootstrap',
+            'Angular Material',
+            'Firebase',
+         ],
+         image: 'assets/fruit/fruit.png',
+         githubUrl: 'https://github.com/mauricio-gt23/FruitApp-Frontend.git',
+      },
+      {
+         id: 'finance-app',
+         title: 'Finance App',
+         subtitle: 'Gestión de finanzas personales',
+         description: 'Aplicación moderna para alcanzar objetivos financieros.',
+         category: 'web',
+         projectType: 'cliente',
+         technologies: ['Angular', 'TypeScript', 'Bootstrap', 'Firebase'],
+         image: 'assets/finance/finance.png',
+         githubUrl: 'https://github.com/mauricio-gt23/FinanceApp.git',
+      },
+      {
+         id: 'portfolio-v1',
+         title: 'Portfolio v1',
+         subtitle: 'Portafolio de proyectos personales',
+         description: 'Plataforma web para mostrar proyectos y habilidades.',
+         category: 'web',
+         projectType: 'propio',
+         technologies: [
+            'Angular',
+            'TypeScript',
+            'Material Angular',
+            'Firebase',
+         ],
+         image: 'assets/portfoliov1/portfoliov1.png',
+         githubUrl: 'https://github.com/mauricio-gt23/PortfolioApp-V1.git',
       },
    ];
 
    mobileProjects: Project[] = [
       {
-         id: 'fitness-tracker',
-         title: 'FitTracker Pro',
-         subtitle: 'App de seguimiento fitness',
-         description:
-            'Aplicación móvil para seguimiento de ejercicios y nutrición.',
-         category: 'mobile',
-         projectType: 'propio',
-         technologies: ['React Native', 'Redux', 'Firebase', 'HealthKit'],
-         image: 'assets/projects/fitness-app.jpg',
-         githubUrl: 'https://github.com/usuario/fitness-tracker',
-      },
-      {
-         id: 'medi-reminder',
-         title: 'MediReminder',
-         subtitle: 'Recordatorio de medicamentos',
-         description:
-            'App para gestión y recordatorio de medicamentos personales.',
+         id: 'paradox',
+         title: 'Paradox',
+         subtitle: 'App de búsqueda de empleo',
+         description: 'Conectar solicitantes de empleo con empleadores',
          category: 'mobile',
          projectType: 'cliente',
-         technologies: ['Flutter', 'Dart', 'SQLite', 'Push Notifications'],
-         image: 'assets/projects/medi-app.jpg',
+         technologies: ['Kotlin', 'Retrofit', 'Firebase', 'Material Design'],
+         image: 'assets/paradox/paradox.png',
+         githubUrl: 'https://github.com/mauricio-gt23/Paradox.git',
       },
       {
-         id: 'travel-buddy',
-         title: 'TravelBuddy',
-         subtitle: 'Compañero de viajes',
-         description: 'Aplicación para planificación y seguimiento de viajes.',
+         id: 'mi-chambita',
+         title: 'Mi Chambita',
+         subtitle: 'App para emprendedores',
+         description: 'Herramienta para registrar ventas, gastos e inventario.',
          category: 'mobile',
-         projectType: 'propio',
+         projectType: 'cliente',
          technologies: [
-            'React Native',
-            'TypeScript',
-            'Maps API',
-            'Weather API',
+            'Kotlin',
+            'MVVM',
+            'Room',
+            'DataStore',
+            'Firebase',
+            'Jetpack Compose',
          ],
-         image: 'assets/projects/travel-app.jpg',
+         image: 'assets/mi-chambita/mi-chambita.png',
       },
    ];
 
    constructor(private router: Router) {}
 
-   // Método para navegar a los detalles del proyecto
    viewProjectDetails(projectId: string): void {
       this.router.navigate(['/projects', projectId]);
    }
