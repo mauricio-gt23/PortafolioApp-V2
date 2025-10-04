@@ -144,6 +144,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
             'assets/fruit/fruitApp-image4.png',
          ],
          githubUrl: 'https://github.com/mauricio-gt23/FruitApp-Frontend.git',
+         client: 'Tineo',
       },
       {
          id: 'finance-app',
@@ -167,6 +168,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
             'assets/finance/financeApp-image3.png',
          ],
          githubUrl: 'https://github.com/mauricio-gt23/FinanceApp.git',
+         client: 'SHAMARAD',
       },
       {
          id: 'portfolio-v1',
@@ -218,6 +220,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
             'assets/paradox/paradox-image6.png',
          ],
          githubUrl: 'https://github.com/mauricio-gt23/Paradox.git',
+         client: 'JH Studio',
       },
       {
          id: 'mi-chambita',
@@ -244,6 +247,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
             'assets/mi-chambita/chambita-image5.png',
          ],
          githubUrl: 'https://github.com/mauricio-gt23/Mi-Chambita.git',
+         client: 'SHAMARAD',
       },
    ];
 
