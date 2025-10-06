@@ -39,7 +39,7 @@
   width: 100%;
   max-width: 800px;
   background-color: $white;
-  border-radius: 16px;
+  margin: 0 auto;
   box-shadow: 0 10px 40px rgba($primary-500, 0.1);
   padding: 2.5rem;
   position: relative;
@@ -63,24 +63,17 @@
   }
 }
 
+.contact-card {
+  width: 100%;
+}
+
 // -----------------------------------------------------------------------------
 // CONTACT HEADER
 // -----------------------------------------------------------------------------
 
 .contact-header {
   text-align: center;
-  margin-bottom: 3.5rem;
   position: relative;
-  
-  &::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, $primary-500, $secondary-500);
-    margin: 1.5rem auto 0;
-    border-radius: 2px;
-  }
   
   .title-with-icon {
     display: flex;
@@ -97,13 +90,13 @@
   }
   
   .title {
-    font-size: 2.75rem;
-    font-weight: 800;
+    font-size: 3rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
-    color: $primary-600;
+    color: $primary-700;
     position: relative;
     display: inline-block;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Slab', serif;
     letter-spacing: -0.02em;
     
     &::before {
@@ -227,20 +220,6 @@
     display: flex;
     align-items: center;
     
-    &::before {
-      content: '!';
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 16px;
-      height: 16px;
-      background-color: $error;
-      color: white;
-      border-radius: 50%;
-      margin-right: 6px;
-      font-size: 12px;
-      font-weight: bold;
-    }
   }
   
   .form-actions {
@@ -261,6 +240,13 @@
       box-shadow: 0 8px 25px rgba($secondary-500, 0.3);
       position: relative;
       overflow: hidden;
+      
+      .button-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
       
       &::before {
         content: '';
@@ -298,25 +284,106 @@
   
   .form-feedback {
     margin-top: 1.5rem;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     
     .success-message {
       color: $success;
       font-weight: 500;
-      padding: 0.75rem;
-      background-color: rgba($success, 0.1);
+      padding: 1rem;
+      background-color: rgba($success, 0.15);
       border-radius: 8px;
-      border: 1px solid rgba($success, 0.2);
+      border: 1px solid rgba($success, 0.3);
+      box-shadow: 0 4px 12px rgba($success, 0.1);
+      
+      .message-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        
+        mat-icon {
+          color: inherit;
+          font-size: 1.5rem;
+          height: 1.5rem;
+          width: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .message-text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+          p {
+            margin: 0;
+            line-height: 1.4;
+            color: inherit;
+            
+            &:first-child {
+              font-weight: 600;
+            }
+            
+            &:last-child {
+              font-size: 0.95rem;
+              opacity: 0.9;
+            }
+          }
+        }
+      }
     }
     
     .error-message {
       color: $error;
       font-weight: 500;
-      padding: 0.75rem;
-      background-color: rgba($error, 0.1);
+      padding: 1rem;
+      background-color: rgba($error, 0.15);
       border-radius: 8px;
-      border: 1px solid rgba($error, 0.2);
+      border: 1px solid rgba($error, 0.3);
+      box-shadow: 0 4px 12px rgba($error, 0.1);
+      
+      .message-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+                mat-icon {
+          color: inherit;
+          font-size: 1.5rem;
+          height: 1.5rem;
+          width: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .message-text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+          p {
+            margin: 0;
+            line-height: 1.4;
+            color: inherit;
+            
+            &:first-child {
+              font-weight: 600;
+            }
+            
+            &:last-child {
+              font-size: 0.95rem;
+              opacity: 0.9;
+            }
+          }
+        }
     }
+  }
   }
 }
 

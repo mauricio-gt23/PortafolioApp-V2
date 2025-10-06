@@ -1,8 +1,7 @@
 <div class="contact-container" [@fadeIn]>
   <div class="container">
     <div class="contact-header" [@slideInLeft]>
-      <h1 class="contact-title">Contacto</h1>
-      <p class="contact-subtitle">¿Tienes un proyecto en mente? Envíame un mensaje y hablemos sobre cómo puedo ayudarte.</p>
+      <h1 class="title">Contacto</h1>
     </div>
     
     <div class="contact-content">
@@ -74,21 +73,33 @@
               class="submit-button" 
               [disabled]="isSubmitting"
             >
-              <span>{{ !isSubmitting ? 'Enviar mensaje' : 'Enviando...' }}</span>
-              <mat-icon>send</mat-icon>
+              <div class="button-content">
+                <span>{{ !isSubmitting ? 'Enviar mensaje' : 'Enviando...' }}</span>
+                <mat-icon>send</mat-icon>
+              </div>
             </button>
           </div>
           
           <!-- Form Status Messages -->
           <div class="form-feedback">
             <div *ngIf="submitSuccess" class="success-message">
-              <mat-icon>check_circle</mat-icon>
-              <span>¡Mensaje enviado con éxito! Gracias por contactarme.</span>
+              <div class="message-content">
+                <mat-icon>check_circle</mat-icon>
+                <div class="message-text">
+                  <p>¡Mensaje enviado con éxito!</p>
+                  <p>Gracias por contactarme.</p>
+                </div>
+              </div>
             </div>
             
             <div *ngIf="submitError" class="error-message">
-              <mat-icon>error</mat-icon>
-              <span>Ocurrió un error al enviar el mensaje. Por favor, intenta nuevamente.</span>
+              <div class="message-content">
+                <mat-icon>error</mat-icon>
+                <div class="message-text">
+                  <p>Ocurrió un error al enviar el mensaje.</p>
+                  <p>Por favor, intenta nuevamente.</p>
+                </div>
+              </div>
             </div>
           </div>
         </form>
