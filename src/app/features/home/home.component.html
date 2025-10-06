@@ -1,7 +1,26 @@
 <!-- Hero Section -->
 <section class="hero-section" [@fadeIn]>
   <div class="container">
-    <div class="hero-content">
+    <!-- Versión para pantallas grandes (lg, xl, xxl) -->
+    <div class="hero-content d-none d-lg-block">
+      <div class="hero-text-simplified" [@slideInLeft]>
+        <h1 class="hero-title">
+          <span class="role">Desarrollador Full Stack</span>
+        </h1>
+        <p class="hero-subtitle" [@fadeInUp]>
+          Transformo ideas en aplicaciones web y móviles funcionales, escalables y seguras
+        </p>
+        <div class="hero-actions" [@scaleIn] *ngIf="isSidebarHidden">
+          <button mat-stroked-button color="primary" class="contact-button">
+            <mat-icon>email</mat-icon>
+            Contactar
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Versión para pantallas pequeñas (xs, sm, md) - mantiene la estructura original -->
+    <div class="hero-content d-block d-lg-none">
       <div class="hero-text" [@slideInLeft]>
         <h1 class="hero-title">
           <span class="greeting">Hola, soy</span>
@@ -30,11 +49,76 @@
         </div>
       </div>
     </div>
+    
+    <!-- Contenido que se mostrará solo en pantallas grandes dentro de Hero Section -->
+    <div class="main-content d-none d-lg-block">
+      <!-- Services Section (integrado en Hero para pantallas grandes) -->
+      <div class="integrated-services" [@fadeInUp]>
+        <div class="services-grid">
+          <!-- Desarrollo Web -->
+          <div class="service-card" [@scaleIn]>
+            <div class="service-icon">
+              <img src="assets/desarrollo-web.png" alt="Desarrollo Web" class="service-image">
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Desarrollo Web</h3>
+              <p class="service-description">
+                Aplicaciones y sitios modernos, para una experiencia excepcional en todos los dispositivos.
+              </p>
+            </div>
+          </div>
+
+          <!-- Desarrollo Móvil -->
+          <div class="service-card" [@scaleIn]>
+            <div class="service-icon">
+              <img src="assets/desarrollo-mobil.png" alt="Desarrollo Móvil" class="service-image">
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Desarrollo Móvil</h3>
+              <p class="service-description">
+                Apps nativas con experiencia fluida en Android, optimizadas para rendimiento y usabilidad.
+              </p>
+            </div>
+          </div>
+
+          <!-- Backend & APIs -->
+          <div class="service-card" [@scaleIn]>
+            <div class="service-icon">
+              <img src="assets/desarrollo-backend.png" alt="Backend & APIs" class="service-image">
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Backend & APIs</h3>
+              <p class="service-description">
+                Integraciones robustas, arquitectura escalable y seguridad de datos para aplicaciones empresariales confiables.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Section (integrado en Hero para pantallas grandes) -->
+      <div class="integrated-stats" [@fadeIn]>
+        <div class="stats-grid">
+          <div class="stat-item" [@slideInLeft]>
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Proyectos completados</div>
+          </div>
+          <div class="stat-item" [@fadeInUp]>
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Años de experiencia</div>
+          </div>
+          <div class="stat-item" [@slideInRight]>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Clientes satisfechos</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Services Section -->
-<section class="services-section" [@fadeInUp]>
+<!-- Services Section (visible solo en pantallas menores a lg) -->
+<section class="services-section d-block d-lg-none" [@fadeInUp]>
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Lo que ofrezco</h2>
@@ -102,8 +186,8 @@
   </div>
 </section>
 
-<!-- Stats Section -->
-<section class="stats-section" [@fadeIn]>
+<!-- Stats Section (visible solo en pantallas menores a lg) -->
+<section class="stats-section d-block d-lg-none" [@fadeIn]>
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item" [@slideInLeft]>
