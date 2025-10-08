@@ -24,80 +24,127 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 3rem 1rem;
   }
 
-  // Estilos para pantallas pequeñas (mantiene el diseño original)
-  .hero-content.d-block.d-lg-none {
+  // Estilos para pantallas pequeñas
+  .hero-content.d-block.d-md-none {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     
-    @media (min-width: 768px) and (max-width: 991px) {
-      flex-direction: row;
+    .profile-circle {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: #f5c6b9;
+      display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
+      overflow: hidden;
+      margin: 0 auto 1.5rem;
+      
+      @media (min-width: 576px) {
+        width: 220px;
+        height: 220px;
+      }
+      
+      .profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
     
     .hero-text {
-      flex: 1;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
       
-      .hero-title {
-        font-size: 2.5rem;
+      .greeting {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+      }
+      
+      .name {
+        font-family: $font-family-secondary;
+        font-size: 2rem;
         font-weight: 700;
-        margin-bottom: 1.5rem;
+        color: #c4a68a;
+        margin-bottom: 0.5rem;
         line-height: 1.2;
-        display: flex;
-        flex-direction: column;
         
-        @media (min-width: 768px) and (max-width: 991px) {
+        @media (min-width: 576px) {
           font-size: 3rem;
         }
+      }
+      
+      .role {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #2d3748;
+        margin-bottom: 1rem;
         
-        .greeting {
+        @media (min-width: 576px) {
           font-size: 1.5rem;
-          font-weight: 500;
-          color: var(--text-secondary);
-          margin-bottom: 0.5rem;
-          
-          @media (min-width: 768px) and (max-width: 991px) {
-            font-size: 1.75rem;
-          }
-        }
-        
-        .name {
-          color: var(--primary-color);
-          margin-bottom: 0.5rem;
-        }
-        
-        .role {
-          color: var(--text-primary);
         }
       }
       
       .hero-subtitle {
-        font-size: 1.1rem;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
         color: var(--text-secondary);
-        margin-bottom: 2rem;
-        max-width: 600px;
+        margin: 1rem auto;
+        max-width: 500px;
         line-height: 1.6;
         
-        @media (min-width: 768px) and (max-width: 991px) {
-          font-size: 1.25rem;
+        @media (min-width: 576px) {
+          font-size: 1.1rem;
         }
       }
-    
-    }
-
-    .hero-visual {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       
-      .profile-card {
-        background: var(--card-bg);
-        border-radius: 16px;
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        
+        .social-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: #c4a68a;
+          color: white;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            transform: translateY(-3px);
+            background-color: #2d3748;
+          }
+          
+          mat-icon {
+            font-size: 20px;
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
         padding: 1.5rem;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         width: 100%;
@@ -156,11 +203,10 @@
           }
         }
       }
-    }
   }
   
-  // Estilos para pantallas grandes (nuevo diseño simplificado)
-  .hero-content.d-none.d-lg-block {
+  // Estilos para pantallas grandes
+  .hero-content.d-none.d-md-block {
     display: flex;
     flex-direction: column;
     
@@ -181,7 +227,7 @@
           color: var(--text-primary);
           
           &:first-child {
-            color: var(--primary-color);
+            color: $primary-700;
           }
         }
       }
@@ -203,7 +249,7 @@
   // Estilos para el contenido integrado en pantallas grandes
   .main-content {
     width: 100%;
-    margin-top: 3rem;
+    margin-top: 2rem;
     
     // Estilos para las secciones integradas
     .integrated-services {
@@ -475,7 +521,6 @@
         }
       }
     }
-  }
 }
 
 // -----------------------------------------------------------------------------
@@ -569,9 +614,9 @@
       }
 
       .service-icon {
-        width: 16rem; // 120px equivalente
-        height: 16rem; // 120px equivalente
-        border-radius: 1.25rem; // 20px equivalente
+        width: 16rem; 
+        height: 16rem;
+        border-radius: 1.25rem;
         background: linear-gradient(135deg, $primary-500, $secondary-500);
         display: flex;
         align-items: center;
@@ -628,7 +673,6 @@
           font-size: 1rem;
           line-height: 1.6;
           color: var(--text-secondary);
-          margin-bottom: 1.5rem;
           text-align: justify;
         }
 
@@ -715,7 +759,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: auto;
+    height: calc(100vh - 100px);
     padding: 3rem 1.5rem;
   }
 
@@ -730,6 +774,7 @@
 
 @media (max-width: 480px) {
   .hero-section {
+    height: calc(100vh - 95px);
     padding: 2rem 1rem;
   }
 
