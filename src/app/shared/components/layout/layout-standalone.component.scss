@@ -98,6 +98,8 @@
                color 0.9s cubic-bezier(0.4, 0, 0.2, 1), 
                box-shadow 0.9s cubic-bezier(0.4, 0, 0.2, 1);
    -webkit-overflow-scrolling: touch;
+   display: flex;
+   flex-direction: column;
    
    &.dark-theme {
       background: linear-gradient(135deg, $dark-primary-500 0%, $dark-primary-700 100%);
@@ -217,7 +219,7 @@
    @include text-lg; // Aumentado de text-base a text-lg
    font-weight: $font-weight-bold; // Cambiado de semibold a bold
    font-family: $font-family-secondary;
-   margin-bottom: $spacing-4;
+   margin-bottom: 0px !important;
    text-transform: uppercase;
    letter-spacing: 1px; // Aumentado de 0.5px a 1px
    transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -336,6 +338,11 @@
 
 // Actions Section
 .actions-section {
+   position: sticky;
+   bottom: $spacing-5;
+   margin-top: auto;
+   padding-top: $spacing-5;
+   
    .action-btn {
       position: relative;
       width: 100%;
