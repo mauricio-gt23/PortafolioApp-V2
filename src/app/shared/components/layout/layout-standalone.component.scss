@@ -1,9 +1,31 @@
 // =============================================================================
-// LAYOUT STANDALONE COMPONENT - ESTILOS ACTUALIZADOS
+// LAYOUT STANDALONE COMPONENT
 // =============================================================================
 
 @import '../../../../styles/variables';
 @import '../../../../styles/mixins';
+
+// -----------------------------------------------------------------------------
+// MIXINS ADICIONALES
+// -----------------------------------------------------------------------------
+
+// Mixin para transiciones comunes
+@mixin theme-transition {
+  transition: 
+    background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Mixin para estilos de tema oscuro
+@mixin dark-theme-styles {
+  .sidebar-container.dark-theme &,
+  [data-theme='dark'] &,
+  &.dark-theme {
+    @content;
+  }
+}
 
 // -----------------------------------------------------------------------------
 // ESTILOS PARA EL BOTÓN TOGGLE DE TEMA
@@ -46,17 +68,17 @@
    }
 
    // Estilos específicos para tema oscuro
-    [data-theme='dark'] & {
-       background-color: rgba($dark-primary-500, 0.2) !important;
-       border-color: rgba($dark-primary-500, 0.3) !important;
-       color: $dark-text-primary !important;
+   @include dark-theme-styles {
+      background-color: rgba($dark-primary-500, 0.2) !important;
+      border-color: rgba($dark-primary-500, 0.3) !important;
+      color: $dark-text-primary !important;
 
-       &:hover {
-          background-color: rgba($dark-primary-400, 0.3) !important;
-          border-color: rgba($dark-primary-400, 0.5) !important;
-          box-shadow: 0 4px 12px rgba($dark-primary-500, 0.4) !important;
-       }
-    }
+      &:hover {
+         background-color: rgba($dark-primary-400, 0.3) !important;
+         border-color: rgba($dark-primary-400, 0.5) !important;
+         box-shadow: 0 4px 12px rgba($dark-primary-500, 0.4) !important;
+      }
+   }
 }
 
 // Layout Container
@@ -94,23 +116,18 @@
    overflow-y: auto;
    z-index: $z-index-fixed;
    box-shadow: $shadow-lg;
-   transition: background 0.9s cubic-bezier(0.4, 0, 0.2, 1),
-               color 0.9s cubic-bezier(0.4, 0, 0.2, 1), 
-               box-shadow 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+   @include theme-transition;
    -webkit-overflow-scrolling: touch;
    display: flex;
    flex-direction: column;
    
-   &.dark-theme {
-      background: linear-gradient(135deg, $dark-primary-500 0%, $dark-primary-700 100%);
-   }
-
    @media (max-width: #{$breakpoint-md - 1px}) {
       display: none;
    }
 
    // Tema oscuro
    &.dark-theme {
+      background: linear-gradient(135deg, $dark-primary-500 0%, $dark-primary-700 100%);
       color: $dark-text-primary;
       box-shadow: 0 4px 20px rgba($dark-primary-900, 0.3);
       
@@ -147,7 +164,7 @@
    padding-bottom: $spacing-5;
    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-   .sidebar-container.dark-theme & {
+   @include dark-theme-styles {
       border-bottom-color: rgba($dark-text-primary, 0.2);
    }
 
@@ -161,8 +178,7 @@
          border: 3px solid rgba(255, 255, 255, 0.3);
          object-fit: cover;
          @include hover-lift;
-         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                     border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+         @include theme-transition;
          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
          
          @media (max-width: #{$breakpoint-lg}) {
@@ -175,7 +191,7 @@
             transform: scale(1.05);
          }
 
-         .sidebar-container.dark-theme & {
+         @include dark-theme-styles {
             border-color: rgba($dark-text-primary, 0.3);
 
             &:hover {
@@ -191,10 +207,10 @@
       font-weight: $font-weight-bold;
       font-family: $font-family-primary;
       color: $white;
-      transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      @include theme-transition;
       letter-spacing: 0.5px;
 
-      .sidebar-container.dark-theme & {
+      @include dark-theme-styles {
          color: $dark-text-primary;
       }
    }
@@ -205,10 +221,10 @@
       color: rgba(255, 255, 255, 0.9);
       font-weight: $font-weight-medium;
       font-family: $font-family-secondary;
-      transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      @include theme-transition;
       letter-spacing: 0.3px;
 
-      .sidebar-container.dark-theme & {
+      @include dark-theme-styles {
          color: rgba($dark-text-primary, 0.9);
       }
    }
@@ -216,15 +232,15 @@
 
 // Section Titles
 .section-title {
-   @include text-lg; // Aumentado de text-base a text-lg
-   font-weight: $font-weight-bold; // Cambiado de semibold a bold
+   @include text-lg;
+   font-weight: $font-weight-bold;
    font-family: $font-family-secondary;
    margin-bottom: 0px !important;
    text-transform: uppercase;
-   letter-spacing: 1px; // Aumentado de 0.5px a 1px
-   transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+   letter-spacing: 1px;
+   @include theme-transition;
 
-   .sidebar-container.dark-theme & {
+   @include dark-theme-styles {
       color: rgba($dark-text-primary, 0.9);
    }
 }
@@ -410,8 +426,7 @@
    overflow: hidden;
    background-color: var(--background-primary);
    color: var(--text-primary);
-   transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-               color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+   @include theme-transition;
 
    @media (max-width: #{$breakpoint-md - 1px}) {
       margin-left: 0;
@@ -436,10 +451,8 @@
    color: $white;
    height: 64px;
    box-shadow: $shadow-md;
-   transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-               background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-               color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-               box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+   transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+   @include theme-transition;
    overflow: hidden;
 
    @media (max-width: #{$breakpoint-md - 1px}) {
@@ -470,7 +483,6 @@
       
       @media (max-width: #{$breakpoint-md - 1px}) {
          justify-content: center !important;
-         margin-bottom: $spacing-2;
       }
    }
 
@@ -485,7 +497,7 @@
       text-overflow: ellipsis;
       line-height: 1.2;
       display: block;
-      transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      @include theme-transition;
 
       @media (max-width: #{$breakpoint-md - 1px}) {
          @include text-lg;
@@ -495,7 +507,7 @@
          @include text-base;
       }
 
-      .navbar-container.dark-theme & {
+      @include dark-theme-styles {
          color: $dark-text-primary;
       }
    }
@@ -517,9 +529,8 @@
       color: $white !important;
       border-radius: $border-radius-lg;
       padding: $spacing-2 $spacing-4;
-      transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                  transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                  color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      @include theme-transition;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       @include focus-visible;
       min-width: auto;
       margin: 0 $spacing-1;
@@ -536,7 +547,7 @@
          font-weight: $font-weight-semibold;
       }
 
-      .navbar-container.dark-theme & {
+      @include dark-theme-styles {
          color: $dark-text-primary !important;
 
          &:hover {
@@ -566,8 +577,8 @@
    flex: 1;
    overflow-y: auto;
    overflow-x: hidden;
-   margin-top: 40px;
-   height: calc(100vh - 40px);
+   margin-top: 64px;
+   height: calc(100vh - 64px);
    background-color: var(--background-secondary);
    @include custom-scrollbar;
    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -590,12 +601,41 @@
    }
 }
 
+// Mixins para media queries
+@mixin responsive-md-down {
+   @media (max-width: #{$breakpoint-md - 1px}) {
+      @content;
+   }
+}
+
+@mixin responsive-sm-down {
+   @media (max-width: #{$breakpoint-sm - 1px}) {
+      @content;
+   }
+}
+
+@mixin responsive-xs-down {
+   @media (max-width: 480px) {
+      @content;
+   }
+}
+
+@mixin responsive-md-to-sm {
+   @media (max-width: #{$breakpoint-lg - 1px}) and (min-width: #{$breakpoint-sm}) {
+      @content;
+   }
+}
+
 // Responsive Design
-@media (max-width: #{$breakpoint-md - 1px}) {
+@include responsive-md-down {
+   .page-content {
+      margin-top: 100px;
+      height: calc(100vh - 100px);
+   }
+
    .navbar-container {
-      left: 0;
       height: auto;
-      min-height: 64px;
+      min-height: 100px;
 
       .container-fluid {
          padding: $spacing-2 $spacing-3;
@@ -622,7 +662,7 @@
    }
 }
 
-@media (max-width: #{$breakpoint-sm - 1px}) {
+@include responsive-sm-down {
    .page-content {
       margin-top: 80px;
       height: calc(100vh - 80px);
@@ -655,41 +695,41 @@
 }
 
 // Extra small screens
-@media (max-width: 480px) {
+@include responsive-xs-down {
    .sidebar-container {
       .profile-section {
          .name {
-            @include text-lg; // Más reducido para pantallas extra pequeñas
+            @include text-lg;
             letter-spacing: 0.2px;
          }
 
          .title {
-            @include text-sm; // Más reducido para pantallas extra pequeñas
+            @include text-sm;
             letter-spacing: 0.1px;
          }
       }
 
       .section-title {
-         @include text-sm; // Más reducido para pantallas extra pequeñas
+         @include text-sm;
          letter-spacing: 0.6px;
       }
 
       .contact-item,
       .social-link {
          mat-icon {
-            font-size: 20px; // Mantener tamaño mínimo para visibilidad
+            font-size: 20px;
             width: 20px;
             height: 20px;
          }
 
          span {
-            @include text-xs; // Más reducido para pantallas extra pequeñas
+            @include text-xs;
             line-height: 1.2;
          }
       }
 
       .action-btn {
-         @include text-xs; // Más reducido para pantallas extra pequeñas
+         @include text-xs;
          letter-spacing: 0.2px;
       }
    }
@@ -714,7 +754,7 @@
 }
 
 // Medium screens adjustments
-@media (max-width: #{$breakpoint-lg - 1px}) and (min-width: #{$breakpoint-sm}) {
+@include responsive-md-to-sm {
    .navbar-container {
       .nav-link-btn {
          padding: $spacing-1 $spacing-2;
@@ -725,10 +765,4 @@
          }
       }
    }
-}
-
-// Layout transitions
-.main-content,
-.navbar-container {
-   @include smooth-transition(all);
 }

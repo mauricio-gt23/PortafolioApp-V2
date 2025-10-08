@@ -112,7 +112,7 @@ import {
                            <button
                               mat-icon-button
                               (click)="toggleTheme()"
-                              class="theme-toggle-btn ms-2"
+                              class="theme-toggle-btn"
                               [title]="
                                  isDarkTheme
                                     ? 'Cambiar a tema claro'
