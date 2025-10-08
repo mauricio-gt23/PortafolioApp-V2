@@ -451,12 +451,4 @@ select {
 // Clase para contenido principal accesible
 .main-content {
    min-height: 100vh;
-   padding-top: $spacing-4;
-
-   @media (min-width: $breakpoint-md) {
-      padding-top: $spacing-6;
-   }
-   @media (min-width: $breakpoint-md) {
-      padding-top: $spacing-6;
-   }
 }

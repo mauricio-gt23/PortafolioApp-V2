@@ -618,20 +618,12 @@
       width: 100vw;
    }
 
-   .content-container {
-      padding: $spacing-4;
-   }
-
    .page-content {
       margin-top: 80px;
    }
 }
 
 @media (max-width: #{$breakpoint-sm - 1px}) {
-   .content-container {
-      padding: $spacing-3;
-   }
-
    .page-content {
       margin-top: 80px;
       height: calc(100vh - 80px);
