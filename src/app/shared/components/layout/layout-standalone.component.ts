@@ -174,7 +174,7 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
       email: 'mauricio_carmen01@hotmail.com',
       phone: '+51 937598438',
       location: 'Lima, Perú',
-      avatar: 'assets/images/avatar.jpg',
+      avatar: 'assets/Perfil.png',
    };
 
    socialLinks = [
