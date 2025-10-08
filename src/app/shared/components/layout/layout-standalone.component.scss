@@ -634,7 +634,6 @@
    }
 
    .navbar-container {
-      height: auto;
       min-height: 100px;
 
       .container-fluid {
@@ -664,13 +663,12 @@
 
 @include responsive-sm-down {
    .page-content {
-      margin-top: 80px;
-      height: calc(100vh - 80px);
+      margin-top: 100px;
+      height: calc(100vh - 100px);
    }
 
    .navbar-container {
-      height: auto;
-      min-height: 80px;
+      min-height: 100px;
 
       .container-fluid {
          padding: $spacing-2;
@@ -696,6 +694,11 @@
 
 // Extra small screens
 @include responsive-xs-down {
+   .page-content {
+      margin-top: 95px;
+      height: calc(100vh - 95px);
+   }
+
    .sidebar-container {
       .profile-section {
          .name {
@@ -735,7 +738,7 @@
    }
 
    .navbar-container {
-      min-height: 90px;
+      min-height: 95px;
 
       .container-fluid {
          padding: $spacing-1;
