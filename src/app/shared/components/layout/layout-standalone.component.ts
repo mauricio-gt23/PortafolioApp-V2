@@ -83,7 +83,7 @@ import {
                </div>
 
                <!-- Quick Actions -->
-               <div class="actions-section" [@scaleIn]>
+               <div class="actions-section d-none d-md-block" [@scaleIn]>
                   <button
                      mat-raised-button
                      color="accent"
@@ -138,6 +138,8 @@ import {
                                  [routerLink]="link.path"
                                  routerLinkActive="active-link"
                                  class="nav-link-btn"
+                                 [class.d-none]="link.path === '/contact' && !isMobile"
+                                 [class.d-md-none]="link.path === '/contact'"
                               >
                                  <mat-icon class="me-1">{{
                                     link.icon
@@ -167,6 +169,7 @@ import {
 export class LayoutStandaloneComponent implements OnInit, OnDestroy {
    private destroy$ = new Subject<void>();
    isDarkTheme = false;
+   isMobile = false;
 
    personalInfo = {
       name: 'Mauricio',
@@ -194,6 +197,7 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
       { path: '/home', label: 'Inicio', icon: 'home' },
       { path: '/about', label: 'Acerca', icon: 'person' },
       { path: '/projects', label: 'Proyectos', icon: 'work' },
+      { path: '/contact', label: 'Contactar', icon: 'send' },
    ];
 
    constructor(
@@ -204,7 +208,10 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
    }
 
    ngOnInit(): void {
-      // Component initialization
+      // Detectar pantallas móviles
+      this.breakpointObserver.observe(['(max-width: 767px)']).subscribe(result => {
+         this.isMobile = result.matches;
+      });
    }
 
    toggleTheme(): void {
