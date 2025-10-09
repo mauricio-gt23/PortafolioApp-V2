@@ -98,6 +98,23 @@
           </div>
         </div>
       </div>
+
+      <div class="integrated-stats" [@fadeIn]>
+        <div class="stats-grid">
+          <div class="stat-item" [@slideInLeft]>
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Proyectos completados</div>
+          </div>
+          <div class="stat-item" [@fadeInUp]>
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Años de experiencia</div>
+          </div>
+          <div class="stat-item" [@slideInRight]>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Clientes satisfechos</div>
+          </div>
+        </div>
+      </div>
     </div>
     
     <!-- Contenido original para pantallas xl en adelante -->
@@ -219,7 +236,7 @@
 </section>
 
 <!-- Stats Section (visible solo en pantallas menores a lg) -->
-<section class="stats-section d-block d-xl-none" [@fadeIn]>
+<section class="stats-section d-block d-md-none" [@fadeIn]>
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item" [@slideInLeft]>
