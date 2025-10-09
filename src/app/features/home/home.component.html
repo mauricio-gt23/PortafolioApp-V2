@@ -37,8 +37,71 @@
       </div>
     </div>
     
-    <!-- Contenido que se mostrará solo en pantallas grandes dentro de Hero Section -->
-    <div class="main-content d-none d-md-block">
+    <!-- Contenido que se mostrará solo en pantallas md-lg dentro de Hero Section -->
+    <div class="main-content d-none d-md-block d-xl-none">
+      <!-- Services Section (integrado en Hero para pantallas grandes) -->
+      <div class="integrated-services" [@fadeInUp]>
+        <!-- Services Carousel -->
+        <div class="services-carousel" [@fadeIn] *ngIf="services && services.length > 0">
+          <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-transition="200">
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+              <button 
+                *ngFor="let service of services; let i = index" 
+                type="button" 
+                [attr.data-bs-target]="'#servicesCarousel'" 
+                [attr.data-bs-slide-to]="i" 
+                [class.active]="i === 0"
+                [attr.aria-label]="'Slide ' + (i + 1)">
+              </button>
+            </div>
+
+            <!-- Carousel Inner -->
+            <div class="carousel-inner">
+              <div 
+                *ngFor="let service of services; let i = index" 
+                class="carousel-item"
+                [class.active]="i === 0">
+                <div class="service-slide">
+                  <div class="service-card service-carousel-card" [@scaleIn]>
+                    <div class="service-icon">
+                      <img [src]="service.image" [alt]="service.title" class="service-image">
+                    </div>
+                    <div class="service-content">
+                      <h3 class="service-title">{{ service.title }}</h3>
+                      <p class="service-description">
+                        {{ service.description }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button 
+              class="carousel-control-prev" 
+              type="button" 
+              data-bs-target="#servicesCarousel" 
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button 
+              class="carousel-control-next" 
+              type="button" 
+              data-bs-target="#servicesCarousel" 
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contenido original para pantallas xl en adelante -->
+    <div class="main-content d-none d-xl-block">
       <!-- Services Section (integrado en Hero para pantallas grandes) -->
       <div class="integrated-services" [@fadeInUp]>
         <div class="services-grid">
@@ -156,7 +219,7 @@
 </section>
 
 <!-- Stats Section (visible solo en pantallas menores a lg) -->
-<section class="stats-section d-block d-lg-none" [@fadeIn]>
+<section class="stats-section d-block d-xl-none" [@fadeIn]>
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item" [@slideInLeft]>
