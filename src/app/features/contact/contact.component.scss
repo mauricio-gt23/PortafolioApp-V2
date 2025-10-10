@@ -10,7 +10,7 @@
 // -----------------------------------------------------------------------------
 
 .contact-container {
-  min-height: calc(100vh - 64px);
+  height: calc(100vh - 64px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,7 +223,6 @@
   }
   
   .form-actions {
-    margin-top: 2.5rem;
     display: flex;
     justify-content: center;
     
@@ -391,15 +390,12 @@
 @media (max-width: 768px) {
   .contact-container {
     padding: 2rem 1rem;
+    height: calc(100vh - 100px);
   }
   
   .contact-content {
     padding: 1.75rem;
     border-radius: 16px;
-  }
-  
-  .contact-header {
-    margin-bottom: 1.5rem;
   }
   
   .contact-info {
@@ -419,9 +415,7 @@
       margin-bottom: 1.5rem;
     }
     
-    .form-actions {
-      margin-top: 2rem;
-      
+    .form-actions {  
       .submit-button {
         width: 100%;
         padding: 0.8rem 1.5rem;
@@ -432,6 +426,7 @@
 
 @media (max-width: 480px) {
   .contact-container {
+    min-height: calc(100vh - 95px);
     padding: 1.5rem 0.75rem;
   }
   
@@ -440,7 +435,15 @@
     border-radius: 12px;
   }
   
-  .contact-header .title {
-    font-size: 1.75rem;
+  .contact-header {
+    .title {
+        font-size: 1.75rem;
+      }
+  }
+
+  .contact-form .form-group {
+    input, textarea {
+      font-size: 0.7rem;
+    }
   }
 }
