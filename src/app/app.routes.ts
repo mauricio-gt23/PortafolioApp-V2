@@ -8,25 +8,32 @@ export const routes: Routes = [
    },
    {
       path: 'home',
-      loadChildren: () =>
-         import('./features/home/home.module').then(m => m.HomeModule),
+      loadComponent: () =>
+         import('./features/home/home.component').then(c => c.HomeComponent),
    },
    {
       path: 'about',
-      loadChildren: () =>
-         import('./features/about/about.module').then(m => m.AboutModule),
+      loadComponent: () =>
+         import('./features/about/about.component').then(c => c.AboutComponent),
    },
    {
       path: 'projects',
-      loadChildren: () =>
-         import('./features/projects/projects.module').then(
-            m => m.ProjectsModule
+      loadComponent: () =>
+         import('./features/projects/projects.component').then(
+            c => c.ProjectsComponent
+         ),
+   },
+   {
+      path: 'projects/:id',
+      loadComponent: () =>
+         import('./features/projects/project-detail/project-detail.component').then(
+            c => c.ProjectDetailComponent
          ),
    },
    {
       path: 'contact',
-      loadChildren: () =>
-         import('./features/contact/contact.module').then(m => m.ContactModule),
+      loadComponent: () =>
+         import('./features/contact/contact.component').then(c => c.ContactComponent),
    },
    {
       path: '**',

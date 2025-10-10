@@ -1,5 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Subject } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 import {
    fadeIn,
    fadeInUp,
@@ -19,6 +24,8 @@ interface Service {
    templateUrl: './home.component.html',
    styleUrls: ['./home.component.scss'],
    animations: [fadeInUp, slideInLeft, slideInRight, scaleIn, fadeIn],
+   standalone: true,
+   imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule, RouterModule],
 })
 export class HomeComponent implements OnInit, OnDestroy {
    private destroy$ = new Subject<void>();

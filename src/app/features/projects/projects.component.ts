@@ -1,5 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+import { Router, RouterModule } from '@angular/router';
 import {
    fadeIn,
    fadeInUp,
@@ -26,6 +31,8 @@ export interface Project {
    templateUrl: './projects.component.html',
    styleUrls: ['./projects.component.scss'],
    animations: [fadeInUp, slideInLeft, slideInRight, scaleIn, fadeIn],
+   standalone: true,
+   imports: [CommonModule, RouterModule, MatIconModule, MatButtonModule, MatCardModule, MatChipsModule],
 })
 export class ProjectsComponent {
    webProjects: Project[] = [
