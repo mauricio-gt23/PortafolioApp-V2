@@ -468,7 +468,6 @@
 
    .container-fluid {
       height: 100%;
-      padding: 0 $spacing-5;
       max-width: none;
    }
 
@@ -762,6 +761,11 @@
 
          span {
             @include text-sm;
+         }
+         
+         // Ocultar iconos en pantallas md y lg
+         mat-icon {
+            display: none;
          }
       }
    }

@@ -104,9 +104,7 @@ import {
                <div class="container-fluid">
                   <div class="row w-100 align-items-center">
                      <!-- Logo/Brand Section -->
-                     <div
-                        class="col-12 col-md-5 col-lg-5 col-xl-6 p-0 text-center text-md-start"
-                     >
+                     <div class="col-12 col-md-4 col-lg-5 col-xl-6 p-0 text-center text-md-start">
                         <div class="brand-section d-flex justify-content-center justify-content-md-start align-items-center">
                            <span class="navbar-brand">PORTAFOLIO WEB</span>
                            <button
@@ -127,10 +125,10 @@ import {
                      </div>
 
                      <!-- Navigation Links -->
-                     <div class="col-12 col-md-1 col-lg-2 col-xl-4 p-0">
+                     <div class="col-12 col-md-2 col-lg-2 col-xl-4 p-0">
                         <nav class="navbar-nav">
                            <div
-                              class="d-flex justify-content-center justify-content-md-center"
+                              class="d-flex justify-content-center justify-content-md-start"
                            >
                               <button
                                  mat-button
