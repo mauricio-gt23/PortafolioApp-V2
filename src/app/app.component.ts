@@ -11,7 +11,7 @@ import { LayoutStandaloneComponent } from './shared/components/layout/layout-sta
    styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-   title = 'PortafolioApp-V2';
+   title = 'Portfolio';
 
    constructor(
       private themeService: ThemeService,
