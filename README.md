@@ -1,27 +1,63 @@
-# PortafolioAppV2
+# 🚀 Portfolio App V2
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+## 📝 Description
+A modern, responsive portfolio application built with Angular. This project showcases professional experience, skills, and projects in an elegant and interactive interface.
 
-## Development server
+## ✨ Key Features
+- 📱 Fully responsive design for all devices
+- 🎨 Modern UI with Angular Material components
+- 🖼️ Project showcase with detailed information
+- 📊 Skills visualization
+- 📬 Contact form integration
+- 🌓 Light/Dark theme support
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🛠️ Installation
 
-## Code scaffolding
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or pnpm
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Setup Instructions
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/PortafolioApp-V2.git
+cd PortafolioApp-V2
+```
 
-## Build
+2. Install dependencies
+```bash
+# Using npm
+npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Using pnpm
+pnpm install
+```
 
-## Running unit tests
+3. Run the development server
+```bash
+# Using npm
+npm start
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Using pnpm
+pnpm start
+```
 
-## Running end-to-end tests
+4. Open your browser and navigate to `http://localhost:4200`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🔧 Technologies Used
+- **Frontend Framework**: Angular 17
+- **UI Components**: Angular Material
+- **Styling**: SCSS, Bootstrap 5
+- **Animations**: Anime.js
+- **Form Handling**: Angular Forms
+- **Email Integration**: EmailJS
+- **Package Manager**: npm/pnpm
+- **Code Quality**: ESLint, Prettier
+- **Testing**: Jasmine
 
-## Further help
+## 👨‍💻 Author
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Mauricio Carmen - Full Stack Developer** 
+---
+
+⭐ Don't forget to give the project a star if you liked it!
