@@ -4,19 +4,19 @@
     
     <!-- Header Section -->
     <div class="section-header" [@fadeInUp]>
-      <h1 class="section-title">Proyectos</h1>
-      <p class="section-subtitle">Explora mi trabajo en desarrollo web y móvil, desde aplicaciones empresariales hasta proyectos personales innovadores</p>
+      <h1 class="section-title">Projects</h1>
+      <p class="section-subtitle">Explore my work in web and mobile development, from enterprise applications to innovative personal projects</p>
     </div>
 
         <!-- Mobile Applications Section -->
     <div class="projects-category" [@slideInRight]>
       <h2 class="category-title">
         <mat-icon>phone_android</mat-icon>
-        Aplicaciones Móviles
+        Mobile Applications
       </h2>
       <p class="category-description">
-        Desarrollo de aplicaciones móviles nativas para Android utilizando Kotlin y Jetpack Compose, 
-        con enfoque en rendimiento, usabilidad y experiencia de usuario intuitiva.
+        Development of native mobile applications for Android using Kotlin and Jetpack Compose, 
+        focusing on performance, usability, and intuitive user experience.
       </p>
       
       <div class="projects-grid">
@@ -31,7 +31,7 @@
             <!-- Project Type Badge -->
             <div class="project-type-badge" [ngClass]="'project-type-' + project.projectType">
               <mat-icon>{{ project.projectType === 'propio' ? 'person' : 'business' }}</mat-icon>
-              <span>{{ project.projectType === 'propio' ? 'Proyecto Propio' : 'Proyecto Cliente' }}</span>
+              <span>{{ project.projectType === 'propio' ? 'Personal Project' : 'Client Project' }}</span>
             </div>
           </div>
 
@@ -46,7 +46,7 @@
             
             <!-- Technologies -->
             <div class="technologies-section">
-              <h4 class="tech-title">Tecnologías</h4>
+              <h4 class="tech-title">Technologies</h4>
               <div class="technologies">
                 <mat-chip-set>
                   <mat-chip *ngFor="let tech of project.technologies">
@@ -67,7 +67,7 @@
               class="action-button"
               (click)="viewProjectDetails(project.id)">
               <mat-icon>visibility</mat-icon>
-              Ver Detalles
+              View Details
             </button>
             <a 
               *ngIf="project.githubUrl" 
@@ -87,10 +87,10 @@
     <div class="projects-category" [@slideInLeft]>
       <h2 class="category-title">
         <mat-icon>web</mat-icon>
-        Aplicaciones Web
+        Web Applications
       </h2>
       <p class="category-description">
-        Desarrollo de aplicaciones web modernas enfocadas en experiencia de usuario excepcional y arquitecturas escalables.
+        Development of modern web applications focused on exceptional user experience and scalable architectures.
       </p>
       
       <div class="projects-grid">
@@ -105,7 +105,7 @@
             <!-- Project Type Badge -->
             <div class="project-type-badge" [ngClass]="'project-type-' + project.projectType">
               <mat-icon>{{ project.projectType === 'propio' ? 'person' : 'business' }}</mat-icon>
-              <span>{{ project.projectType === 'propio' ? 'Proyecto Propio' : 'Proyecto Cliente' }}</span>
+              <span>{{ project.projectType === 'propio' ? 'Personal Project' : 'Client Project' }}</span>
             </div>
           </div>
 
@@ -118,7 +118,7 @@
             <p class="project-description">{{ project.description }}</p>      
             <!-- Technologies -->
             <div class="technologies-section">
-              <h4 class="tech-title">Tecnologías</h4>
+              <h4 class="tech-title">Technologies</h4>
               <div class="technologies">
                 <mat-chip-set>
                   <mat-chip *ngFor="let tech of project.technologies">

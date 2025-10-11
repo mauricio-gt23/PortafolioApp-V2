@@ -51,27 +51,25 @@ interface Skill {
 })
 export class AboutComponent {
    personalDescription = `
-      Soy un desarrollador Full Stack apasionado por crear soluciones tecnológicas innovadoras y escalables. 
-      Con más de 2 años de experiencia en el desarrollo de aplicaciones web y móviles, me especializo en 
-      tecnologías modernas como Angular, Spring Boot y Kotlin. Mi enfoque se centra en escribir código limpio, 
-      mantener las mejores prácticas y entregar productos de alta calidad que superen las expectativas del cliente.
+      I am a Full Stack developer passionate about creating innovative and scalable technological solutions.
+      With more than 2 years of experience in web and mobile application development, I specialize in
+      modern technologies such as Angular, Spring Boot and Kotlin. My approach focuses on writing clean,
+      maintainable and efficient code that solves real problems.
    `;
 
    experiences: Experience[] = [
       {
-         position: 'Desarrollador Full Stack',
+         position: 'Full-Stack Developer',
          company: 'Freelance',
-         period: '2024 - Presente',
-         description:
-            'Diseño y desarrollo de aplicaciones móviles a medida, abordando todas las fases del ciclo de vida del software: análisis de requerimientos, arquitectura, programación, pruebas y despliegue. Integración de servicios externos, uso de Firebase para autenticación, base de datos y despliegue, además de la optimización de la experiencia de usuario.',
+         period: '2024 - Current',
+         description: 'Design and development of custom mobile applications, addressing all phases of the software lifecycle: requirements analysis, architecture, programming, testing and deployment. Integration of external services, use of Firebase for authentication, database and deployment, as well as optimization of the user experience.',
          technologies: ['Kotlin', 'Firebase'],
       },
       {
-         position: 'Desarrollador Junior Full Stack',
+         position: 'Junior Full-Stack Developer',
          company: 'Sintad S.A.C',
-         period: '2022 - Presente',
-         description:
-            'Participación en el desarrollo de plataformas web y móviles empresariales, colaborando en la construcción de interfaces interactivas, APIs robustas y gestión de bases de datos. Apoyo en la implementación de nuevas funcionalidades, despliegue en la nube con AWS y mejora continua de los sistemas existentes.',
+         period: '2022 - Current',
+         description: 'Participation in the development of enterprise web and mobile platforms, collaborating in the construction of interactive interfaces, robust APIs and database management. Support in the implementation of new functionalities, cloud deployment with AWS and continuous improvement of existing systems.',
          technologies: [
             'Angular',
             'Spring Boot',
@@ -84,18 +82,17 @@ export class AboutComponent {
 
    education: Education[] = [
       {
-         degree: 'Ingeniería de Software',
+         degree: 'Software Engineering',
          institution: 'Universidad Peruana de Ciencias Aplicadas',
          period: '2018 - 2024',
-         description:
-            'Formación integral en desarrollo de software, algoritmos, estructuras de datos y arquitectura de sistemas.',
+         description: 'Comprehensive training in software development, algorithms, data structures and systems architecture.',
       },
       {
-         degree: 'Certificación Cloud Practitioner',
+         degree: 'Cloud Practitioner Certification',
          institution: 'AWS',
          period: '2025',
          description:
-            'Certificación en servicios de la nube de AWS, enfocada en la implementación, administración y monitorización de infraestructura en la nube.',
+            'Certification in cloud services of AWS, focused on implementing, administering and monitoring cloud infrastructure.',
       },
    ];
 

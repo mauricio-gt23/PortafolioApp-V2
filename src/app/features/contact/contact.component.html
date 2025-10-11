@@ -1,7 +1,7 @@
 <div class="contact-container" [@fadeIn]>
   <div class="container">
     <div class="contact-header" [@slideInLeft]>
-      <h1 class="title">Contacto</h1>
+      <h1 class="title">Contact</h1>
     </div>
     
     <div class="contact-content">
@@ -14,55 +14,55 @@
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
           <!-- Email Field -->
           <div class="form-group">
-            <label for="email_id">Correo electrónico</label>
+            <label for="email_id">Email</label>
             <input 
               type="email" 
               id="email_id" 
               formControlName="email_id" 
-              placeholder="tu@email.com"
+              placeholder="your@email.com"
               [ngClass]="{'invalid': hasError('email_id', 'required') || hasError('email_id', 'email')}"
             >
             <div class="error-message" *ngIf="hasError('email_id', 'required')">
-              El correo electrónico es requerido
+              Email is required
             </div>
             <div class="error-message" *ngIf="hasError('email_id', 'email')">
-              Ingresa un correo electrónico válido
+              Please enter a valid email
             </div>
           </div>
           
           <!-- Subject Field -->
           <div class="form-group">
-            <label for="subject">Asunto</label>
+            <label for="subject">Subject</label>
             <input 
               type="text" 
               id="subject" 
               formControlName="subject" 
-              placeholder="Asunto del mensaje"
+              placeholder="Message subject"
               [ngClass]="{'invalid': hasError('subject', 'required') || hasError('subject', 'minlength')}"
             >
             <div class="error-message" *ngIf="hasError('subject', 'required')">
-              El asunto es requerido
+              Subject is required
             </div>
             <div class="error-message" *ngIf="hasError('subject', 'minlength')">
-              El asunto debe tener al menos 3 caracteres
+              Subject must be at least 3 characters
             </div>
           </div>
           
           <!-- Message Field -->
           <div class="form-group">
-            <label for="message">Mensaje</label>
+            <label for="message">Message</label>
             <textarea 
               id="message" 
               formControlName="message" 
               rows="6" 
-              placeholder="Escribe tu mensaje aquí..."
+              placeholder="Write your message here..."
               [ngClass]="{'invalid': hasError('message', 'required') || hasError('message', 'minlength')}"
             ></textarea>
             <div class="error-message" *ngIf="hasError('message', 'required')">
-              El mensaje es requerido
+              Message is required
             </div>
             <div class="error-message" *ngIf="hasError('message', 'minlength')">
-              El mensaje debe tener al menos 10 caracteres
+              Message must be at least 10 characters
             </div>
           </div>
           
@@ -74,7 +74,7 @@
               [disabled]="isSubmitting"
             >
               <div class="button-content">
-                <span>{{ !isSubmitting ? 'Enviar mensaje' : 'Enviando...' }}</span>
+                <span>{{ !isSubmitting ? 'Send message' : 'Sending...' }}</span>
                 <mat-icon>send</mat-icon>
               </div>
             </button>
@@ -86,8 +86,8 @@
               <div class="message-content">
                 <mat-icon>check_circle</mat-icon>
                 <div class="message-text">
-                  <p>¡Mensaje enviado con éxito!</p>
-                  <p>Gracias por contactarme.</p>
+                  <p>Message sent successfully!</p>
+                  <p>Thank you for contacting me.</p>
                 </div>
               </div>
             </div>
@@ -96,8 +96,8 @@
               <div class="message-content">
                 <mat-icon>error</mat-icon>
                 <div class="message-text">
-                  <p>Ocurrió un error al enviar el mensaje.</p>
-                  <p>Por favor, intenta nuevamente.</p>
+                  <p>An error occurred while sending the message.</p>
+                  <p>Please try again.</p>
                 </div>
               </div>
             </div>

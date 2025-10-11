@@ -3,29 +3,29 @@
     <!-- Loading State -->
     <div *ngIf="loading" class="loading-container">
       <div class="loading-spinner"></div>
-      <p>Cargando proyecto...</p>
+      <p>Loading project...</p>
     </div>
 
     <!-- Project Detail Content -->
     <div *ngIf="!loading && project" class="project-detail-content">
       
-      <!-- Layout para pantallas xs, sm, md y lg: Header → Images → Information -->
+      <!-- Layout for xs, sm, md and lg screens: Header → Images → Information -->
       <div class="d-block d-xl-none">
         <!-- Header Section -->
         <div class="project-header" [@slideInLeft]>
           <div class="header-top">
-            <button mat-icon-button class="back-button" (click)="goBack()" aria-label="Volver a proyectos">
+            <button mat-icon-button class="back-button" (click)="goBack()" aria-label="Back to projects">
               <mat-icon>arrow_back</mat-icon>
             </button>
             
             <div class="project-meta">
               <div class="category-badge">
                 <mat-icon>{{ getCategoryIcon(project.category) }}</mat-icon>
-                <span>{{ getCategoryText(project.category) }}</span>
+                <span>{{ getCategoryLabel(project.category) }}</span>
               </div>
               <div class="project-type-badge" [ngClass]="'project-type-' + project.projectType">
                 <mat-icon>{{ project.projectType === 'propio' ? 'person' : 'business' }}</mat-icon>
-                <span>{{ project.projectType === 'propio' ? 'Proyecto Propio' : 'Proyecto Cliente' }}</span>
+                <span>{{ project.projectType === 'propio' ? 'Personal Project' : 'Client Project' }}</span>
               </div>
             </div>
           </div>
@@ -40,7 +40,7 @@
                 <div class="info-item" *ngIf="project.client">
                   <mat-icon>business</mat-icon>
                   <div>
-                    <span class="label">Cliente</span>
+                    <span class="label">Client</span>
                     <span class="value">{{ project.client }}</span>
                   </div>
                 </div>
@@ -50,7 +50,7 @@
               <div class="header-action" *ngIf="project.githubUrl">
                 <button mat-raised-button color="accent" (click)="openUrl(project.githubUrl)">
                   <mat-icon>code</mat-icon>
-                  Ver Código
+                  View Code
                 </button>
               </div>
             </div>
@@ -79,7 +79,7 @@
                 class="carousel-item"
                 [class.active]="i === 0">
                 <div class="image-container">
-                  <img [src]="image" [alt]="project.title + ' - Imagen ' + (i + 1)" class="d-block w-100 project-image">
+                  <img [src]="image" [alt]="project.title + ' - Image ' + (i + 1)" class="d-block w-100 project-image">
                 </div>
               </div>
             </div>
@@ -109,13 +109,13 @@
         <!-- Project Information Section -->
         <div class="project-information-section" [@fadeIn]>
           <div class="container">
-            <h2 class="section-title">Descripción general</h2>
+            <h2 class="section-title">Overview</h2>
             <div class="project-description-content">
               <mat-card class="content-card">
                 <mat-card-header>
                   <mat-card-title>
                     <mat-icon>description</mat-icon>
-                    Acerca del Proyecto
+                    About the Project
                   </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
@@ -127,7 +127,7 @@
                 <mat-card-header>
                   <mat-card-title>
                     <mat-icon>build</mat-icon>
-                    Tecnologías
+                    Technologies
                   </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
@@ -151,18 +151,18 @@
           <div class="col-xl-5">
             <div class="project-header" [@slideInLeft]>
               <div class="header-top">
-                <button mat-icon-button class="back-button" (click)="goBack()" aria-label="Volver a proyectos">
+                <button mat-icon-button class="back-button" (click)="goBack()" aria-label="Back to projects">
                   <mat-icon>arrow_back</mat-icon>
                 </button>
                 
                 <div class="project-meta">
                   <div class="category-badge">
                     <mat-icon>{{ getCategoryIcon(project.category) }}</mat-icon>
-                    <span>{{ getCategoryText(project.category) }}</span>
+                    <span>{{ getCategoryLabel(project.category) }}</span>
                   </div>
                   <div class="project-type-badge" [ngClass]="'project-type-' + project.projectType">
                     <mat-icon>{{ project.projectType === 'propio' ? 'person' : 'business' }}</mat-icon>
-                    <span>{{ project.projectType === 'propio' ? 'Proyecto Propio' : 'Proyecto Cliente' }}</span>
+                    <span>{{ project.projectType === 'propio' ? 'Personal Project' : 'Client Project' }}</span>
                   </div>
                 </div>
               </div>
@@ -177,7 +177,7 @@
                     <div class="info-item" *ngIf="project.client">
                       <mat-icon>business</mat-icon>
                       <div>
-                        <span class="label">Cliente</span>
+                        <span class="label">Client</span>
                         <span class="value">{{ project.client }}</span>
                       </div>
                     </div>
@@ -187,7 +187,7 @@
                   <div class="header-action" *ngIf="project.githubUrl">
                     <button mat-raised-button color="accent" (click)="openUrl(project.githubUrl)">
                       <mat-icon>code</mat-icon>
-                      Ver Código
+                      View Code
                     </button>
                   </div>
                 </div>
@@ -203,7 +203,7 @@
                     <mat-card-header>
                       <mat-card-title>
                         <mat-icon>description</mat-icon>
-                        Acerca del Proyecto
+                        About the Project
                       </mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
@@ -215,7 +215,7 @@
                     <mat-card-header>
                       <mat-card-title>
                         <mat-icon>build</mat-icon>
-                        Tecnologías
+                        Technologies
                       </mat-card-title>
                     </mat-card-header>
                     <mat-card-content>

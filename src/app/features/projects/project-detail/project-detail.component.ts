@@ -26,7 +26,7 @@ export interface ProjectDetail {
    description: string;
    longDescription: string;
    category: 'web' | 'mobile';
-   projectType: 'propio' | 'cliente';
+   projectType: 'propio' | 'cliente'; // Keeping original values as they're used in logic
    technologies: string[];
    images: string[];
    githubUrl?: string;
@@ -105,9 +105,9 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
          id: 'legiz-landing',
          title: 'Legiz - Landing Page',
          subtitle: '',
-         description: 'Plataforma moderna para conectar abogados y clientes.',
+         description: 'Modern platform to connect lawyers and clients.',
          longDescription:
-            'Plataforma moderna diseñada para conectar abogados y clientes de manera eficiente. Ofrece una interfaz intuitiva que facilita la búsqueda y contratación de servicios legales.',
+            'Modern platform designed to efficiently connect lawyers and clients. It offers an intuitive interface that facilitates the search and hiring of legal services.',
          category: 'web',
          projectType: 'propio',
          technologies: ['HTML', 'CSS', 'JavaScript', 'Github Pages'],
@@ -123,10 +123,10 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       {
          id: 'fruit-app',
          title: 'Fruit App',
-         subtitle: 'Aplicación de gestión de frutas/jugos',
-         description: 'Seguimiento de ventas de frutas y jugos por internet.',
+         subtitle: 'Fruit/Juice Management Application',
+         description: 'Tracking of online fruit and juice sales.',
          longDescription:
-            'Aplicación web para el seguimiento y gestión de ventas de frutas y jugos por internet. Permite a los usuarios administrar inventario, procesar pedidos y analizar estadísticas de ventas.',
+            'Web application for tracking and managing online fruit and juice sales. Allows users to manage inventory, process orders, and analyze sales statistics.',
          category: 'web',
          projectType: 'cliente',
          technologies: [
@@ -149,10 +149,10 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       {
          id: 'finance-app',
          title: 'Finance App',
-         subtitle: 'Gestión de finanzas personales',
-         description: 'Aplicación moderna para alcanzar objetivos financieros.',
+         subtitle: 'Personal Finance Management',
+         description: 'Modern application to achieve financial goals.',
          longDescription:
-            'Aplicación web moderna diseñada para ayudar a los usuarios a gestionar sus finanzas personales y alcanzar sus objetivos financieros. Ofrece herramientas para seguimiento de gastos, presupuestos y planificación financiera.',
+            'Modern web application designed to help users manage their personal finances and achieve their financial goals. It offers tools for expense tracking, budgeting, and financial planning.',
          category: 'web',
          projectType: 'cliente',
          technologies: [
@@ -173,10 +173,10 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       {
          id: 'portfolio-v1',
          title: 'Portfolio v1',
-         subtitle: 'Portafolio de proyectos personales',
-         description: 'Plataforma web para mostrar proyectos y habilidades.',
+         subtitle: 'Personal Projects Portfolio',
+         description: 'Web platform to showcase projects and skills.',
          longDescription:
-            'Plataforma web personal diseñada para mostrar proyectos, habilidades y experiencia profesional. Incluye secciones para proyectos, habilidades técnicas, experiencia laboral y contacto.',
+            'Personal web platform designed to showcase projects, skills and professional experience. Includes sections for projects, technical skills, work experience and contact.',
          category: 'web',
          projectType: 'propio',
          technologies: [
@@ -198,10 +198,10 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       {
          id: 'paradox',
          title: 'Paradox',
-         subtitle: 'App de búsqueda de empleo',
-         description: 'Conectar solicitantes de empleo con empleadores',
+         subtitle: 'Job Search App',
+         description: 'Connect job seekers with employers',
          longDescription:
-            'Aplicación móvil diseñada para conectar solicitantes de empleo con empleadores de manera eficiente. Ofrece funcionalidades para búsqueda de empleo, creación de perfiles profesionales y gestión de aplicaciones.',
+            'Mobile application designed to efficiently connect job seekers with employers. Offers functionalities for job search, creation of professional profiles and application management.',
          category: 'mobile',
          projectType: 'cliente',
          technologies: [
@@ -225,10 +225,10 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       {
          id: 'mi-chambita',
          title: 'Mi Chambita',
-         subtitle: 'App para emprendedores',
-         description: 'Herramienta para registrar ventas, gastos e inventario.',
+         subtitle: 'Startup Business Management App',
+         description: 'Tool to record sales, expenses and inventory.',
          longDescription:
-            'Aplicación móvil diseñada para emprendedores que necesitan una herramienta sencilla pero potente para registrar ventas, gastos e inventario. Ideal para pequeños negocios que buscan digitalizar sus operaciones.',
+            'Mobile application designed for entrepreneurs who need a simple but powerful tool to record sales, expenses and inventory. Ideal for small businesses looking to digitize their operations.',
          category: 'mobile',
          projectType: 'cliente',
          technologies: [
@@ -293,7 +293,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       return category === 'web' ? 'web' : 'phone_android';
    }
 
-   getCategoryText(category: string): string {
-      return category === 'web' ? 'Aplicación Web' : 'Aplicación Móvil';
-   }
+   getCategoryLabel(category: string): string {
+    return category === 'web' ? 'Web Application' : 'Mobile Application';
+  }
 }

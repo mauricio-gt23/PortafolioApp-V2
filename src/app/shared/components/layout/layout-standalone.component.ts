@@ -49,7 +49,7 @@ import {
 
                <!-- Contact Info -->
                <div class="contact-section" [@slideInLeft]>
-                  <h4 class="section-title">Contacto</h4>
+                  <h4 class="section-title">Contact</h4>
                   <div class="contact-item">
                      <mat-icon>email</mat-icon>
                      <span>{{ personalInfo.email }}</span>
@@ -66,7 +66,7 @@ import {
 
                <!-- Social Links -->
                <div class="social-section" [@slideInRight]>
-                  <h4 class="section-title">Redes Sociales</h4>
+                  <h4 class="section-title">Social</h4>
                   <div class="social-links">
                      <a
                         *ngFor="let link of socialLinks"
@@ -91,7 +91,7 @@ import {
                      routerLink="/contact"
                   >
                      <mat-icon>send</mat-icon>
-                     Contáctame
+                     Contact Me
                   </button>
                </div>
             </div>
@@ -106,15 +106,15 @@ import {
                      <!-- Logo/Brand Section -->
                      <div class="col-12 col-md-4 col-lg-5 col-xl-6 p-0 text-center text-md-start">
                         <div class="brand-section d-flex justify-content-center justify-content-md-start align-items-center">
-                           <span class="navbar-brand">PORTAFOLIO WEB</span>
+                           <span class="navbar-brand">PORTFOLIO</span>
                            <button
                               mat-icon-button
                               (click)="toggleTheme()"
                               class="theme-toggle-btn"
                               [title]="
                                  isDarkTheme
-                                    ? 'Cambiar a tema claro'
-                                    : 'Cambiar a tema oscuro'
+                                    ? 'Light theme'
+                                    : 'Dark theme'
                               "
                            >
                               <mat-icon>{{
@@ -192,10 +192,10 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
    ];
 
    navigationLinks = [
-      { path: '/home', label: 'Inicio', icon: 'home' },
-      { path: '/about', label: 'Acerca', icon: 'person' },
-      { path: '/projects', label: 'Proyectos', icon: 'work' },
-      { path: '/contact', label: 'Contactar', icon: 'send' },
+      { path: '/home', label: 'Home', icon: 'home' },
+      { path: '/about', label: 'About', icon: 'person' },
+      { path: '/projects', label: 'Projects', icon: 'work' },
+      { path: '/contact', label: 'Contact', icon: 'send' },
    ];
 
    constructor(
@@ -206,7 +206,7 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
    }
 
    ngOnInit(): void {
-      // Detectar pantallas móviles
+      // Detect mobile screens
       this.breakpointObserver.observe(['(max-width: 767px)']).subscribe(result => {
          this.isMobile = result.matches;
       });

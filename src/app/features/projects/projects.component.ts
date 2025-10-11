@@ -13,14 +13,14 @@ import {
    slideInRight,
 } from '../../shared/animations/animations';
 
-// Interface para la estructura de datos de proyectos
+// Interface for project data structure
 export interface Project {
    id: string;
    title: string;
    subtitle: string;
    description: string;
    category: 'web' | 'mobile';
-   projectType: 'propio' | 'cliente';
+   projectType: 'propio' | 'cliente'; // Keeping original values as they're used in logic
    technologies: string[];
    image: string;
    githubUrl?: string;
@@ -40,7 +40,7 @@ export class ProjectsComponent {
          id: 'legiz-landing',
          title: 'Legiz - Landing Page',
          subtitle: '',
-         description: 'Plataforma moderna para conectar abogados y clientes.',
+         description: 'Modern platform to connect lawyers and clients',
          category: 'web',
          projectType: 'propio',
          technologies: ['HTML', 'CSS', 'JavaScript', 'Github Pages'],
@@ -50,8 +50,8 @@ export class ProjectsComponent {
       {
          id: 'fruit-app',
          title: 'Fruit App',
-         subtitle: 'Aplicación de gestión de frutas/jugos',
-         description: 'Seguimiento de ventas de frutas y jugos por internet.',
+         subtitle: 'Fruit/Juice Management Application',
+         description: 'Tracking of online fruit and juice sales',
          category: 'web',
          projectType: 'cliente',
          technologies: [
@@ -68,8 +68,8 @@ export class ProjectsComponent {
       {
          id: 'finance-app',
          title: 'Finance App',
-         subtitle: 'Gestión de finanzas personales',
-         description: 'Aplicación moderna para alcanzar objetivos financieros.',
+         subtitle: 'Personal Finance Management',
+         description: 'Modern application to achieve financial goals',
          category: 'web',
          projectType: 'cliente',
          technologies: [
@@ -85,8 +85,8 @@ export class ProjectsComponent {
       {
          id: 'portfolio-v1',
          title: 'Portfolio v1',
-         subtitle: 'Portafolio de proyectos personales',
-         description: 'Plataforma web para mostrar proyectos y habilidades.',
+         subtitle: 'Personal Projects Portfolio',
+         description: 'Web platform to showcase projects and skills',
          category: 'web',
          projectType: 'propio',
          technologies: [
@@ -104,8 +104,8 @@ export class ProjectsComponent {
       {
          id: 'paradox',
          title: 'Paradox',
-         subtitle: 'App de búsqueda de empleo',
-         description: 'Conectar solicitantes de empleo con empleadores',
+         subtitle: 'Job Search App',
+         description: 'Connect job seekers with employers',
          category: 'mobile',
          projectType: 'cliente',
          technologies: ['Kotlin', 'Retrofit', 'Firebase', 'Material Design'],
@@ -115,8 +115,8 @@ export class ProjectsComponent {
       {
          id: 'mi-chambita',
          title: 'Mi Chambita',
-         subtitle: 'App para emprendedores',
-         description: 'Herramienta para registrar ventas, gastos e inventario.',
+         subtitle: 'Startup Business Management App',
+         description: 'Tool for recording sales, expenses, and inventory',
          category: 'mobile',
          projectType: 'cliente',
          technologies: [
