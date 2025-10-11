@@ -11,7 +11,10 @@
     "lint:fix": "eslint src/**/*.ts src/**/*.html --fix",
     "format": "prettier --write src/**/*.{ts,html,scss,css,json}",
     "format:check": "prettier --check src/**/*.{ts,html,scss,css,json}",
-    "lint-and-format": "npm run lint:fix && npm run format"
+    "lint-and-format": "npm run lint:fix && npm run format",
+    "build:prod": "ng build --configuration production",
+    "firebase:deploy": "ng build --configuration production && npx firebase deploy --only hosting",
+    "firebase:preview": "ng build --configuration production && npx firebase hosting:channel:deploy preview"
   },
   "private": true,
   "dependencies": {
@@ -47,6 +50,7 @@
     "eslint": "^9.35.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
+    "firebase-tools": "11.30.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

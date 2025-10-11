@@ -54,6 +54,7 @@ pnpm start
 - **Package Manager**: npm/pnpm
 - **Code Quality**: ESLint, Prettier
 - **Testing**: Jasmine
+- **Hosting**: Firebase Hosting
 
 ## 👨‍💻 Author
 
