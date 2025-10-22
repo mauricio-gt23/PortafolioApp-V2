@@ -51,25 +51,26 @@ interface Skill {
 })
 export class AboutComponent {
    personalDescription = `
-      I am a Full Stack developer passionate about creating innovative and scalable technological solutions.
-      With more than 2 years of experience in web and mobile application development, I specialize in
-      modern technologies such as Angular, Spring Boot and Kotlin. My approach focuses on writing clean,
-      maintainable and efficient code that solves real problems.
+      I am an Android Developer focused on building modern, high-quality mobile applications.
+With 3 years of experience as a Full Stack Developer, I bring a solid background in both frontend and backend technologies, which allows me to design scalable and efficient mobile solutions.
+I specialize in Kotlin, Jetpack Compose, and Firebase, and my approach centers on writing clean, maintainable code that delivers seamless user experiences.
    `;
 
    experiences: Experience[] = [
       {
-         position: 'Full-Stack Developer',
+         position: 'Android Developer',
          company: 'Freelance',
-         period: '2024 - Current',
-         description: 'Design and development of custom mobile applications, addressing all phases of the software lifecycle: requirements analysis, architecture, programming, testing and deployment. Integration of external services, use of Firebase for authentication, database and deployment, as well as optimization of the user experience.',
+         period: '2025 - Current',
+         description:
+            'Design and development of custom mobile applications, addressing all phases of the software lifecycle: requirements analysis, architecture, programming, testing and deployment. Integration of external services, use of Firebase for authentication, database and deployment, as well as optimization of the user experience.',
          technologies: ['Kotlin', 'Firebase'],
       },
       {
          position: 'Junior Full-Stack Developer',
          company: 'Sintad S.A.C',
          period: '2022 - Current',
-         description: 'Participation in the development of enterprise web and mobile platforms, collaborating in the construction of interactive interfaces, robust APIs and database management. Support in the implementation of new functionalities, cloud deployment with AWS and continuous improvement of existing systems.',
+         description:
+            'Participation in the development of enterprise web and mobile platforms, collaborating in the construction of interactive interfaces, robust APIs and database management. Support in the implementation of new functionalities, cloud deployment with AWS and continuous improvement of existing systems.',
          technologies: [
             'Angular',
             'Spring Boot',
@@ -85,7 +86,8 @@ export class AboutComponent {
          degree: 'Software Engineering',
          institution: 'Universidad Peruana de Ciencias Aplicadas',
          period: '2018 - 2024',
-         description: 'Comprehensive training in software development, algorithms, data structures and systems architecture.',
+         description:
+            'Comprehensive training in software development, algorithms, data structures and systems architecture.',
       },
       {
          degree: 'Cloud Practitioner Certification',

@@ -171,7 +171,7 @@ export class LayoutStandaloneComponent implements OnInit, OnDestroy {
 
    personalInfo = {
       name: 'Mauricio',
-      title: 'Full-Stack Developer',
+      title: 'Android Developer',
       email: 'mauricio_carmen01@hotmail.com',
       phone: '+51 937598438',
       location: 'Lima, Perú',
