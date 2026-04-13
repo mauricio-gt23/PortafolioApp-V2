@@ -68,7 +68,7 @@ I specialize in Kotlin, Jetpack Compose, and Firebase, and my approach centers o
       {
          position: 'Junior Full-Stack Developer',
          company: 'Sintad S.A.C',
-         period: '2022 - Current',
+         period: '2022 - 2026',
          description:
             'Participation in the development of enterprise web and mobile platforms, collaborating in the construction of interactive interfaces, robust APIs and database management. Support in the implementation of new functionalities, cloud deployment with AWS and continuous improvement of existing systems.',
          technologies: [
@@ -77,6 +77,21 @@ I specialize in Kotlin, Jetpack Compose, and Firebase, and my approach centers o
             'PostgreSQL',
             'Kotlin',
             'AWS',
+         ],
+      },
+            {
+         position: 'Android Developer',
+         company: 'Compartamos Financiera S.A.',
+         period: '2026 - Current',
+         description:
+            'Focused on the management of client groups by business advisors optimize the tracking of disbursements and operations in the field.',
+         technologies: [
+            'Kotlin',
+            'XML',
+            'Jetpack Compose',
+            'Firebase',
+            'Hilt',
+            'Koint'
          ],
       },
    ];
